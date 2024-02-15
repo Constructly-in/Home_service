@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "570696891484",
+    "project_id": "constructly-in",
+    "storage_bucket": "constructly-in.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570696891484:android:43cdece1d4246067d57a99",
+        "android_client_info": {
+          "package_name": "com.home_service"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbaLkJTzf8b6n_wJisNEMpRVJo2iDIcU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
