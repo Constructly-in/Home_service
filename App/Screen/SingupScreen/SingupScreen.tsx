@@ -42,8 +42,11 @@ export default function SingupScreen() {
 
                 <View style={styles.innerContainer}>
                     {/* value , on chance text  */}
+                    
                     <Text>shiuhgiuhg</Text>
-                    <MyTextInput placeholder="Phone Number" />
+                    {/* <MyTextInput placeholder="Phone Number" /> */}
+
+
                     <MyTextInput value={email} onChangeText={text => setEmail(text)} placeholder="Enter E-Mail or User Name" />
                     <MyTextInput value={password} onChangeText={text => setPasswword(text)} placeholder="Password" secureTextEntry />
                     <MyTextInput  placeholder="Confirm Password" secureTextEntry />
