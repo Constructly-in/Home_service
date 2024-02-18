@@ -4,12 +4,7 @@ import color from '../../utility/color'
 
 
 
-export default function Login() {
-
-
-
- 
-
+export default function Login({navigation}) {
 
  
   return (
@@ -26,7 +21,7 @@ export default function Login() {
           paddingTop: 10
         }}>Best site to find best Service near your locality </Text>
 
-        <TouchableOpacity style={styles.button} onPress={() => console.log("press")}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("SignScreen")}>
           <Text style={{ fontSize: 17 , color: color.PRIMARY ,textAlign : 'center' ,  }}>
             Let's get started
           </Text>
@@ -45,20 +40,20 @@ const styles = StyleSheet.create({
   loginScreen: {
     width: 300,
     height: 300,
-    marginTop: 150,
+    marginTop: 90,
     borderWidth: 4,
     //  borderColor: color.BLACK,
     borderRadius: 15,
     marginBottom: 110,
    
 
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity:  0.17,
-    shadowRadius: 3.05,
-    elevation: 4 ,
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 3,
+    // },
+    // shadowOpacity:  0.17,
+    // shadowRadius: 3.05,
+    // elevation: 4 ,
 
     // shadowOffset: {
     //   width: 0,

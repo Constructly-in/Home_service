@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     fontSize:16,
     paddingBottom:0,
     fontWeight:"500",
-    color:color.white
+    // color:color.white
     
   },
   Border:{

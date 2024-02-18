@@ -1,11 +1,11 @@
-import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { Button, Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import color from '../../utility/color'
 import MyButton from '../../../src/assets/Component/MyButton'
 import MyTextInput from '../../../src/assets/Component/MyTextInput'
 import Socialmedia from '../../../src/assets/Component/Socialmedia'
 
-export default function SignScreen() {
+export default function SignScreen({ navigation }) {
   return (
     <View style={styles.Container}>
       <ImageBackground source={require('./../../../image/OneDrive-2024-02-07/bg.png')}
@@ -25,12 +25,14 @@ export default function SignScreen() {
           <MyTextInput placeholder="Enter E-Mail or User Name" />
           <MyTextInput placeholder="Password" secureTextEntry />
 
-          <Text style={styles.TextAccount}> Don't Have an account yet ?</Text>
+           <Text style={styles.TextAccount}  onPress={() => navigation.navigate("SingupScreen")} > Don"t Have an account yet ?</Text> 
+
+      
           <MyButton title={"LOGIN"} />
-          <Text style = {styles.Ortext}>OR</Text>
+          <Text style={styles.Ortext}>OR</Text>
           <Socialmedia />
         </View>
-        
+
       </ImageBackground>
     </View>
   )
@@ -87,11 +89,11 @@ const styles = StyleSheet.create({
     color: color.BLACK,
     marginBottom: 9,
     fontWeight: '400',
-    fontSize:15
+    fontSize: 15
   },
-  Ortext:{
-    fontSize:25,
-    color:color.BLACK,
-    marginTop:10
+  Ortext: {
+    fontSize: 25,
+    color: color.BLACK,
+    marginTop: 10
   }
 })

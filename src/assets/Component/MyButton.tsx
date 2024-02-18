@@ -5,7 +5,7 @@ import color from '../../../App/utility/color'
 interface Props {
     title: string
 }
-const MyButton : FC <Props> = ({title ,onPress}) => {
+const MyButton : FC <Props> = ({title , onPress}) => {
   return (
     <TouchableOpacity  onPress={onPress} style = {styles.Container}>
         <Text style = { styles.Title }>{title}</Text>

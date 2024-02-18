@@ -13,7 +13,7 @@ export default function SingupScreen() {
     const [password, setPasswword] = useState("")
     const [Confipassword, setConfirmPassword] = useState("")
 
-    const SignUpTestfn = () => {
+    const signUpTestfn = () => {
         //                               argument (sting)|promises
         auth().createUserWithEmailAndPassword(email, password).then(() => {
 
@@ -43,16 +43,16 @@ export default function SingupScreen() {
                 <View style={styles.innerContainer}>
                     {/* value , on chance text  */}
                     
-                    <Text>shiuhgiuhg</Text>
-                    {/* <MyTextInput placeholder="Phone Number" /> */}
+                    
+                    <MyTextInput placeholder="Phone Number" />
 
 
-                    <MyTextInput value={email} onChangeText={text => setEmail(text)} placeholder="Enter E-Mail or User Name" />
-                    <MyTextInput value={password} onChangeText={text => setPasswword(text)} placeholder="Password" secureTextEntry />
+                    <MyTextInput value={email} onChangeText={(text:string) => setEmail(text)} placeholder="Enter E-Mail or User Name" />
+                    <MyTextInput value={password} onChangeText={(text:string) => setPasswword(text)} placeholder="Password" secureTextEntry />
                     <MyTextInput  placeholder="Confirm Password" secureTextEntry />
 
-                    <Text style={styles.TextAccount}> Don't Have an account yet ?</Text>
-                    <MyButton onPress={SignUpTestfn} title={"Sign up"} />
+                   
+                    <MyButton onPress={ signUpTestfn} title={"Sign up"} />
                     <Text style={styles.Ortext}>OR</Text>
                     <Socialmedia />
                 </View>
