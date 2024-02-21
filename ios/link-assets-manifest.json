@@ -2,6 +2,14 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/Fonts/Cardo-Bold.ttf",
+      "sha1": "b29f4ca8d183e351b907b81204fbb5944dffe69a"
+    },
+    {
+      "path": "src/assets/Fonts/Cardo-Regular.ttf",
+      "sha1": "ac5eb3f9a3b9c1e5aaf8a5c9b871ed89634d289f"
+    },
+    {
       "path": "src/assets/Fonts/KaushanScript-Regular.ttf",
       "sha1": "8b203c70f9c8f5d437eb5a87a6c7df39fb2996b7"
     },

@@ -1,0 +1,68 @@
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsive-screen';
+import React from 'react';
+import color from '../../utility/color';
+
+export default function Login({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center' }}>
+      <Image
+        source={require('./../../../image/OneDrive-2024-02-07/frontpage.png')}
+        style={styles.loginScreen}
+      />
+      <View style={styles.subContainer}>
+        <Text style={styles.heading_1}>
+          Lets's find <Text style={{ fontWeight: 'bold' }}> Professional Contractor , Repair / PG's for student / Buy plot</Text> Service
+        </Text>
+
+        <Text style={{
+          fontSize: widthPercentageToDP('4%'), textAlign: 'center', color: '#ffffff',
+          paddingTop: heightPercentageToDP('1%'),
+        }}>"Building Dreams, One Brick at a Time" </Text>
+
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("SignScreen")}>
+          <Text style={{ fontSize: widthPercentageToDP('4%'), color: color.PRIMARY, textAlign: 'center' }}>
+            Let's get started
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  loginScreen: {
+    width: widthPercentageToDP('80%'),
+    height: heightPercentageToDP('45%'),
+    marginTop: heightPercentageToDP('10%'),
+    borderWidth: 4,
+    borderRadius: 15,
+    marginBottom: heightPercentageToDP('10%'),
+  },
+
+  subContainer: {
+    width: '100%',
+    backgroundColor: color.PRIMARY,
+    height: '55%',
+    marginTop: -heightPercentageToDP('2%'),
+    borderRadius: 30,
+    padding: widthPercentageToDP('5%'),
+  },
+
+  heading_1: {
+    fontSize: widthPercentageToDP('5%'),
+    color: color.white,
+    textAlign: 'center',
+  },
+
+  button: {
+    marginTop: heightPercentageToDP('4%'),
+    marginLeft: widthPercentageToDP('2%'),
+    marginRight: widthPercentageToDP('2%'),
+    paddingLeft: widthPercentageToDP('5%'),
+    paddingTop: heightPercentageToDP('2%'),
+    height: heightPercentageToDP('7%'),
+    backgroundColor: '#ffffff',
+    borderRadius: 99,
+  },
+});

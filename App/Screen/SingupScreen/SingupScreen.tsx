@@ -20,7 +20,8 @@ export default function SingupScreen() {
             Alert.alert('User create with this credentail ' + email , password)
         })
             .catch(err => {
-                console.log(err);
+                console.log(err.nativeErrorMesssage);
+                Alert.alert(err.nativeErrorMesssage)
             });
     };
 
@@ -51,10 +52,12 @@ export default function SingupScreen() {
                     <MyTextInput value={password} onChangeText={(text:string) => setPasswword(text)} placeholder="Password" secureTextEntry />
                     <MyTextInput  placeholder="Confirm Password" secureTextEntry />
 
-                   
+                    
+
                     <MyButton onPress={ signUpTestfn} title={"Sign up"} />
-                    <Text style={styles.Ortext}>OR</Text>
-                    <Socialmedia />
+                    {/* <Text style={styles.Ortext}>OR</Text> */}
+                   
+                    {/* <Socialmedia /> */}
                 </View>
 
             </ImageBackground>

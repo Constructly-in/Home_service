@@ -8,6 +8,7 @@ import SingupScreen from './App/Screen/SingupScreen/SingupScreen';
 import StackNavigator from './App/Screen/navigation/StackNavigator';
 
 import { NavigationContainer } from '@react-navigation/native';
+import Test from './App/Screen/Loginscreen/Test';
 
 
 export default function App() {
@@ -17,9 +18,10 @@ export default function App() {
      
 
 
-      <NavigationContainer>
-      <StackNavigator />
-      </NavigationContainer>
+       <NavigationContainer>
+       <StackNavigator />
+       </NavigationContainer>
+      
       
 
 
