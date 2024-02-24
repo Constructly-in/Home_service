@@ -8,7 +8,7 @@ export default function Login({navigation}) {
 
  
   return (
-    <View style={{ alignItems: 'center' }}>
+    <View style={{ alignItems: 'center'  }}>
       <Image source={require('./../../../image/OneDrive-2024-02-07/frontpage.png')}
         style={styles.loginScreen}
       />
@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     //  borderColor: color.BLACK,
     borderRadius: 15,
     marginBottom: 110,
+    // elevation:10
    
 
     // shadowOffset: {

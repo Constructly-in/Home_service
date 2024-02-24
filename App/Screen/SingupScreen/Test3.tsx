@@ -32,10 +32,11 @@ export default function SingupScreen() {
                     source={require('./../../../image/OneDrive-2024-02-07/logo.png')}
                     style={styles.LogoImage}
                 /> */}
-
+                <View style = {{position:"relative" , top : "5%"}} >
                 <Text style={styles.Title} >
                     Constructly.in
                 </Text>
+                </View>
 
                 <View style={styles.innerContainer}>
                     <MyTextInput placeholder="Phone Number" />

@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         width:"100%",
         justifyContent:"center",
         alignItems:"center",
-        backgroundColor: color.PRIMARY,
+        backgroundColor: color.Offwhite,
         borderRadius: 30,
         marginBottom:"0.1%",
         marginTop:"2%",
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     },
 
     Title:{
-        color: color.BLACK ,
+        color: color.PRIMARY ,
         fontSize: 18 ,
         fontFamily : 'Merriweather-Regulars',
         // fontWeight: '600',
