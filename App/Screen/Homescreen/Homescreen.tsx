@@ -5,6 +5,7 @@ import InterShip from '../../../src/assets/Features/Student/InterShip/InterShip'
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen'
 import color from '../../utility/color'
 import Douts from '../../../src/assets/Features/Student/Douts'
+import LinearGradient from 'react-native-linear-gradient'
 
 export default function Homescreen() {
   return (
@@ -16,14 +17,21 @@ export default function Homescreen() {
 
         </View>
       </View>
+      {/* <View style ={styles.mainContainer}>  */}
+      <LinearGradient start={{x: 0, y: 0}} 
+                                end={{x: 1, y: 0}} 
+                                colors={['#000000', '#20232C']} 
+                                style={styles.mainContainer}>
       <ScrollView>
-      <View style ={styles.mainContainer}> 
+      
       <InterShip />
       <Douts />
       <Douts />
-      </View> 
+     
       
       </ScrollView>
+      </LinearGradient>
+      {/* </View>  */}
     </SafeAreaView>
   
   )
@@ -42,7 +50,7 @@ const styles = StyleSheet.create({
     display:"flex",
     flexDirection:"row",
     alignItems:"center",
-    paddingHorizontal:10
+    paddingHorizontal:20
   },
   LogoImage:{
     width:"40%",
@@ -54,8 +62,8 @@ const styles = StyleSheet.create({
   mainContainer:{
     backgroundColor:color.BLACK,
     borderTopLeftRadius:25,
-    borderTopRightRadius:25
-
+    borderTopRightRadius:25,
+    marginBottom:142
 
   }
 

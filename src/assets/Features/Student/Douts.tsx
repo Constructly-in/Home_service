@@ -10,7 +10,7 @@ const Douts = () => {
   return (
     <View  style = {styles.Bg}>
       
-    <Text style={styles.headingText}>INTERSHIP </Text>
+    <Text style={styles.headingText}>Doubts </Text>
     <View style = {styles.container}>
 
     <View style={[styles.cards, styles.elevated]}>
@@ -39,7 +39,7 @@ export default Douts
 
 const styles = StyleSheet.create({
   Bg:{
-    backgroundColor:color.BLACK,
+    // backgroundColor:color.BLACK,
     
   },
 
@@ -99,18 +99,19 @@ const styles = StyleSheet.create({
     },
   
     cardtitle:{
-         color: color.white,
+         color: color.BLACK,
          fontFamily: "Cardo-Bold",
          fontSize:24,
-         fontWeight:"600"
+         fontWeight:"600",
+         paddingTop:'2%'
     },
    
 
     cardDescription:{
-       color: color.Offwhite,
+       color: color.grey,
        fontSize:15,
        fontWeight:"500",
-       paddingVertical:"5%"
+       paddingVertical:"3%"
     },
 
   

@@ -7,7 +7,9 @@ export default{
     LightOrange:"rgba(255, 109, 0, 0.6)",
     Night:'#011502',
     Lightgrey:'#8F8E8E',
-    darkgey:'#535353'
+    darkgey:'#535353',
+    backgroung:"#20232A"
+
 
 
 }

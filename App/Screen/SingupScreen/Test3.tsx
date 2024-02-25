@@ -5,6 +5,7 @@ import color from '../../utility/color';
 import MyButton from '../../../src/assets/Component/MyButton';
 import MyTextInput from '../../../src/assets/Component/MyTextInput';
 import auth from "@react-native-firebase/auth";
+import LinearGradient from 'react-native-linear-gradient';
 
 export default function SingupScreen() {
     const [email, setEmail] = useState("");
@@ -24,6 +25,10 @@ export default function SingupScreen() {
 
     return (
         <View style={styles.Container}>
+            <LinearGradient start={{x: 0, y: 0}} 
+                                end={{x: 1, y: 0}} 
+                                colors={['#000000', '#20232C']} 
+                                style={styles.Container}>
             <ImageBackground
                 source={require('./../../../image/OneDrive-2024-02-07/realBg2.png')}
                 style={styles.loginScreen}
@@ -38,7 +43,14 @@ export default function SingupScreen() {
                 </Text>
                 </View>
 
-                <View style={styles.innerContainer}>
+                {/* <View style={styles.innerContainer}> */}
+
+
+                    <LinearGradient start={{x: 0, y: 0}} 
+                                end={{x: 1, y: 0}} 
+                                colors={['#242831', '#414345']} 
+                                style={styles.innerContainer}>
+
                     <MyTextInput placeholder="Name" />
                     <MyTextInput placeholder="Phone Number" />
                     <MyTextInput
@@ -60,8 +72,10 @@ export default function SingupScreen() {
                     />
 
                     <MyButton onPress={signUpTestfn} title={"Sign up"} />
-                </View>
+                    </LinearGradient>
+                {/* </View> */}
             </ImageBackground>
+            </LinearGradient>
         </View>
     );
 }
@@ -106,11 +120,11 @@ const styles = StyleSheet.create({
         top:"10%",
         shadowRadius: 2,
         shadowOffset: {
-          width: 100,
-          height: 100,
+          width: 0,
+          height: -3,
         },
-        shadowColor:color.white,
-        elevation: 10,
+        shadowColor:color.BLACK,
+        elevation: 5,
 
       },
 });

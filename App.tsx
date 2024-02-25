@@ -11,6 +11,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Test from './App/Screen/Loginscreen/Test';
 import Tabnavigation from './App/Navigation/Tabnavigation';
 import Homescreen from './App/Screen/Homescreen/Homescreen';
+import LinearGradient from 'react-native-linear-gradient';
 
 
 export default function App() {

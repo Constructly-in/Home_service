@@ -6,6 +6,7 @@ import MyButton from '../../../src/assets/Component/MyButton';
 import MyTextInput from '../../../src/assets/Component/MyTextInput';
 import auth from "@react-native-firebase/auth";
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import LinearGradient from 'react-native-linear-gradient';
 
 interface SignScreenProps {
     navigation: any; // Change 'any' to the actual type if possible
@@ -52,8 +53,12 @@ export default function SignScreen({ navigation }: SignScreenProps) {
 
     return (
         <View style={styles.Container}>
+            <LinearGradient start={{x: 0, y: 0}} 
+                                end={{x: 1, y: 0}} 
+                                colors={['#000000', '#20232C']} 
+                                style={styles.Container}>
             <ImageBackground
-                source={require('./../../../image/OneDrive-2024-02-07/realBg2.png')}
+                source={require('./../../../image/OneDrive-2024-02-07/loginBG.png')}
                 style={styles.loginScreen}
             >
                 {/* <Image
@@ -67,7 +72,12 @@ export default function SignScreen({ navigation }: SignScreenProps) {
                     </Text>
                 </View>
 
-                <View style={styles.innerContainer}>
+              
+                {/* <View style={styles.innerContainer}> */}
+                <LinearGradient start={{x: 0, y: 0}} 
+                                end={{x: 1, y: 0}} 
+                                colors={['#242831', '#414345']} 
+                                style={styles.innerContainer}>
 
                     
 
@@ -98,10 +108,12 @@ export default function SignScreen({ navigation }: SignScreenProps) {
                     <MyButton title={"LOGIN"} onPress={loginWithEmailAndPassword} />
                     <Text style={styles.Ortext}>OR</Text>
                     <MyButton title={"LOGIN WITH GOOGLE"} onPress={onGoogleButtonPress} />
-
-                </View>
+                    </LinearGradient>
+                {/* </View> */}
+                
 
             </ImageBackground>
+            </LinearGradient>
         </View>
     );
 }
@@ -148,8 +160,8 @@ const styles = StyleSheet.create({
           width: 100,
           height: 100,
         },
-        shadowColor:color.white,
-        elevation: 10,
+        shadowColor:color.BLACK,
+        elevation: 5,
     },
 
     TextAccount: {
@@ -171,5 +183,7 @@ const styles = StyleSheet.create({
         color: color.white,
         
     },
+
+    linearGradient:{},
  
 });
