@@ -1,11 +1,12 @@
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen'
-import color from '../../../../../App/utility/color'
-import MyButton from '../../../Component/MyButton'
-import Booknow from '../../../Component/Booknow'
+import MyButton from '../../Component/MyButton'
+import color from '../../../../App/utility/color'
+import Booknow from '../../Component/Booknow'
 
-const InterShip = () => {
+
+const Douts = () => {
   return (
     <View  style = {styles.Bg}>
       
@@ -23,7 +24,7 @@ const InterShip = () => {
         {/* <Text style = {styles.cardLable}> place where no one can visite</Text> */}
         <Text style = {styles.cardDescription}>toursist place  are the peace plac e apriioshyajh ioihusah kjbb 8uhkj gfiouh jnciulowsagtf nb erifgi dudgiufnb</Text>
         {/* <Text style = {styles.cardFooter}>toursist place </Text> */}
-        <Booknow  title={"Booknow"} onPress={undefined}  />
+        <Booknow  title={"KNow more"} onPress={undefined}  />
       </View>
 
       </View>
@@ -33,14 +34,13 @@ const InterShip = () => {
   )
 }
 
-export default InterShip
+export default Douts
 
 
 const styles = StyleSheet.create({
   Bg:{
     backgroundColor:color.BLACK,
-    borderTopLeftRadius:25,
-    borderTopRightRadius:25
+    
   },
 
     headingText: {

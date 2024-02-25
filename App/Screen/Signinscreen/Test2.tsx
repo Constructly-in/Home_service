@@ -53,7 +53,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
     return (
         <View style={styles.Container}>
             <ImageBackground
-                source={require('./../../../image/OneDrive-2024-02-07/realBg.png')}
+                source={require('./../../../image/OneDrive-2024-02-07/realBg2.png')}
                 style={styles.loginScreen}
             >
                 {/* <Image

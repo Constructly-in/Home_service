@@ -18,6 +18,7 @@ export default function Tabnavigation() {
   }}
   
   
+  
    
    >
     <Tab.Screen name="Home" component={Homescreen}
@@ -96,6 +97,8 @@ export default function Tabnavigation() {
 
   conatiner:{
     flex: 1,
+    
+           
     
   }
  })

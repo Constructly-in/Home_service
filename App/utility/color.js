@@ -5,7 +5,9 @@ export default{
     grey: "#5a5a5a",
     Offwhite: '#fffff0',
     LightOrange:"rgba(255, 109, 0, 0.6)",
-    Night:'#011502'
+    Night:'#011502',
+    Lightgrey:'#8F8E8E',
+    darkgey:'#535353'
 
 
 }

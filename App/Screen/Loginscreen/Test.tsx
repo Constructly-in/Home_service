@@ -5,7 +5,7 @@ import color from '../../utility/color';
 
 export default function Login({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center' }}>
+    <View style={{ flex: 1, alignItems: 'center' , backgroundColor:color.BLACK}}>
       <Image
         source={require('./../../../image/OneDrive-2024-02-07/frontpage.png')}
         style={styles.loginScreen}
@@ -16,12 +16,12 @@ export default function Login({ navigation }) {
         </Text>
 
         <Text style={{
-          fontSize: widthPercentageToDP('4%'), textAlign: 'center', color: '#ffffff',
+          fontSize: widthPercentageToDP('4%'), textAlign: 'center', color:color.PRIMARY,
           paddingTop: heightPercentageToDP('1%'),
         }}>"Building Dreams, One Brick at a Time" </Text>
 
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("SignScreen")}>
-          <Text style={{ fontSize: widthPercentageToDP('4%'), color: color.PRIMARY, textAlign: 'center' }}>
+          <Text style={{ fontSize: widthPercentageToDP('4%'), color: color.white, textAlign: 'center' }}>
             Let's get started
           </Text>
         </TouchableOpacity>
@@ -38,20 +38,23 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderRadius: 15,
     marginBottom: heightPercentageToDP('10%'),
+    backgroundColor:color.BLACK
   },
 
   subContainer: {
     width: '100%',
-    backgroundColor: color.PRIMARY,
+    backgroundColor: color.Offwhite,
     height: '55%',
     marginTop: -heightPercentageToDP('2%'),
     borderRadius: 30,
     padding: widthPercentageToDP('5%'),
+    shadowRadius: 2,
+   elevation:10
   },
 
   heading_1: {
     fontSize: widthPercentageToDP('5%'),
-    color: color.white,
+    color: color.BLACK,
     textAlign: 'center',
   },
 
@@ -62,7 +65,7 @@ const styles = StyleSheet.create({
     paddingLeft: widthPercentageToDP('5%'),
     paddingTop: heightPercentageToDP('2%'),
     height: heightPercentageToDP('7%'),
-    backgroundColor: '#ffffff',
+    backgroundColor:color.BLACK,
     borderRadius: 99,
   },
 });

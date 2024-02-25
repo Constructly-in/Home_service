@@ -9,6 +9,8 @@ import StackNavigator from './App/Screen/navigation/StackNavigator';
 
 import { NavigationContainer } from '@react-navigation/native';
 import Test from './App/Screen/Loginscreen/Test';
+import Tabnavigation from './App/Navigation/Tabnavigation';
+import Homescreen from './App/Screen/Homescreen/Homescreen';
 
 
 export default function App() {
@@ -18,12 +20,11 @@ export default function App() {
      
 
 
-       <NavigationContainer>
-       <StackNavigator />
-       </NavigationContainer>
+        <NavigationContainer>
+         <StackNavigator /> 
+        </NavigationContainer>
       
       
-
 
     
 

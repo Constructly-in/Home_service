@@ -25,7 +25,7 @@ export default function SingupScreen() {
     return (
         <View style={styles.Container}>
             <ImageBackground
-                source={require('./../../../image/OneDrive-2024-02-07/realBg.png')}
+                source={require('./../../../image/OneDrive-2024-02-07/realBg2.png')}
                 style={styles.loginScreen}
             >
                 {/* <Image
@@ -39,6 +39,7 @@ export default function SingupScreen() {
                 </View>
 
                 <View style={styles.innerContainer}>
+                    <MyTextInput placeholder="Name" />
                     <MyTextInput placeholder="Phone Number" />
                     <MyTextInput
                         value={email}
@@ -96,13 +97,20 @@ const styles = StyleSheet.create({
     innerContainer: {
         height: heightPercentageToDP('60%'),
         width: widthPercentageToDP('90%'),
-        backgroundColor: '#FFFFFF',
+        backgroundColor: color.BLACK,
         borderRadius: widthPercentageToDP('5%'),
         paddingHorizontal: widthPercentageToDP('10%'),
         alignItems: "center",
         justifyContent: "center",
         position:"relative",
         top:"10%",
-        elevation:10
+        shadowRadius: 2,
+        shadowOffset: {
+          width: 100,
+          height: 100,
+        },
+        shadowColor:color.white,
+        elevation: 10,
+
       },
 });
