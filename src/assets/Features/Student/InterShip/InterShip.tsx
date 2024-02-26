@@ -53,11 +53,7 @@ export default InterShip
 
 
 const styles = StyleSheet.create({
-  Bg: {
-    // backgroundColor:color.BLACK,
-    // borderTopLeftRadius:25,
-    // borderTopRightRadius:25
-  },
+ 
 
   headingText: {
     fontSize: 24,
@@ -114,9 +110,9 @@ const styles = StyleSheet.create({
 
   cardtitle: {
     color: color.white,
-    fontFamily: "Cardo-Bold",
+    fontFamily: "BebasNeue-Regula",
     fontSize: 24,
-    fontWeight: "600",
+    // fontWeight: "600",
     paddingTop: 10
   },
 

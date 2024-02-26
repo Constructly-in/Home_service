@@ -76,7 +76,10 @@ export default function SignScreen({ navigation }: SignScreenProps) {
                 {/* <View style={styles.innerContainer}> */}
                 <LinearGradient start={{x: 0, y: 0}} 
                                 end={{x: 1, y: 0}} 
-                                colors={['#242831', '#414345']} 
+
+                                // ['#242831', '#414345']
+                                
+                                colors={['#1f222a', '#414345']} 
                                 style={styles.innerContainer}>
 
                     

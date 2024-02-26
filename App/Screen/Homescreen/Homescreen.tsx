@@ -1,76 +1,185 @@
-import { View, Text , SafeAreaView, ImageBackground, StyleSheet, Image } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { ScrollView } from 'react-native-gesture-handler'
-import InterShip from '../../../src/assets/Features/Student/InterShip/InterShip'
-import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen'
-import color from '../../utility/color'
-import Douts from '../../../src/assets/Features/Student/Douts'
 import LinearGradient from 'react-native-linear-gradient'
+import MyButton from '../../../src/assets/Component/MyButton'
+import CategoryButton from '../../../src/assets/Component/CategoryButton'
+import color from '../../utility/color'
 
-export default function Homescreen() {
+const Homescreen = ({navigation}) => {
   return (
-    <SafeAreaView>
-      <View style = {styles.Container}>
-        <View style = {styles.subContainer}>
-        <Image source={require('/Users/prakh/projects/Home_service/image/OneDrive-2024-02-07/logo.png')}
-        style={styles.LogoImage} />
+    <LinearGradient start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 0 }}
+      colors={['#000000', '#20232C']}
+      style={styles.Container}>
 
-        </View>
-      </View>
-      {/* <View style ={styles.mainContainer}>  */}
-      <LinearGradient start={{x: 0, y: 0}} 
-                                end={{x: 1, y: 0}} 
-                                colors={['#000000', '#20232C']} 
-                                style={styles.mainContainer}>
-      <ScrollView>
-      
-      <InterShip />
-      <Douts />
-      <Douts />
-     
-      
-      </ScrollView>
-      </LinearGradient>
-      {/* </View>  */}
-    </SafeAreaView>
-  
+           <View style={styles.Header}>
+              <Text style={styles.TItle}>HYY..</Text>
+              <Text style={styles.SubTitle}>SEE FEATURES OF :-</Text>
+              
+            </View>
+
+            <View style={styles.SubContainer}>
+
+                {/* <View style={styles.RightContainer}> */}
+                 
+
+                      <View style={styles.Box}>
+                    
+                          {/* <Text>student</Text> */}
+
+                          <Image source={require('/Users/prakh/projects/Home_service/image/Login_AS/student.png')}
+                          style ={{width:"110%" , height:"110%" }}
+                          />
+                          <CategoryButton title={'STUDENT  >>'} onPress={() => navigation.navigate("Student")} />
+                      </View>
+
+                      <View style={[styles.HomeOwnerContainer, styles.Box]}>
+                          {/* <Text>Home</Text> */}
+
+                          <Image source={require('/Users/prakh/projects/Home_service/image/Login_AS/contractor.png')}
+                          style ={{width:"100%" , height:"100%" }}
+                          />
+                          <CategoryButton title={'STUDENT  >>'} onPress={() => navigation.navigate("Student")} />
+
+                      </View>
+
+                      <View style={[styles.HomeOwnerContainer, styles.Box]}>
+                          {/* <Text>Home</Text> */}
+
+                          <Image source={require('/Users/prakh/projects/Home_service/image/Login_AS/homeowner.png')}
+                          style ={{width:"100%" , height:"100%" }}
+                          />
+                          <CategoryButton title={'STUDENT  >>'} onPress={() => navigation.navigate("Student")} />
+
+                      </View>
+
+                      <View style={[styles.HomeOwnerContainer, styles.Box]}>
+                          {/* <Text>Home</Text> */}
+
+                          <Image source={require('/Users/prakh/projects/Home_service/image/Login_AS/shopowner.png')}
+                          style ={{width:"110%" , height:"100%" }}
+                          />
+                          <CategoryButton title={'BUyer  >>'} onPress={() => navigation.navigate("Student")} />
+
+
+                      </View>
+
+                {/* </View> */}
+
+                {/* <View style={styles.LeftContainer}>
+                  
+                  
+                     <View style={styles.ShopOwnerContainer}>
+                        <Text>shop</Text>
+                     </View>
+
+                     <View style={styles.ShopOwnerContainer}>
+                        <Text>contractor</Text>
+                     </View>
+
+                </View> */}
+
+               
+
+                {/* <View style={styles.ShopOwnerContainer}>
+                  <Text>Homescreen</Text>
+                </View> */}
+
+            </View>
+    </LinearGradient>
+
   )
 }
+
+export default Homescreen
+
 const styles = StyleSheet.create({
+
   Container: {
-      width:412,
-      height:70,
-      backgroundColor:color.white,
-      
-   
-  
+    // flex: 1,
   },
 
-  subContainer:{
-    display:"flex",
-    flexDirection:"row",
-    alignItems:"center",
-    paddingHorizontal:20
+  TItle:{
+     fontSize:25,
+    fontFamily:'Poppins-ExtraBold',
+    color:color.white,
   },
-  LogoImage:{
-    width:"40%",
-    height:70,
-
-
+  SubTitle:{
+    fontSize:40,
+    fontFamily:'Poppins-ExtraBold',
+    color:"#ededed"
   },
 
-  mainContainer:{
-    backgroundColor:color.BLACK,
-    borderTopLeftRadius:25,
-    borderTopRightRadius:25,
-    marginBottom:142
+  Header: {
+    // flex: 1,
+    
+    height:175,
+    paddingLeft:40,
+    paddingTop:40
+  },
 
-  }
+  SubContainer:{
+    // flex:7,
+    // width:410,
+  // backgroundColor:'white',
+    // borderWidth:6,
+    // borderColor:'red',
 
+    marginTop:10,
+    height:605,
+    flexWrap:'wrap',
+    // justifyContent:"center",
+    alignContent:'space-around',
 
+  },
 
+  Box:{
+    // flex:1,
+    // backgroundColor:"pink",
+    padding:10,
+    height:210,
+    width:180,
+    marginTop:60,
+    justifyContent:"center",
+    alignItems:"center"
+  },
 
+  // LeftContainer:{
+  //   flex:1,
+  //   flexWrap:'wrap',
+  //   flexDirection:'column',
+    
+    
+  //   // backgroundColor:'pink'
 
+  // },
 
+  // RightContainer:{
+  //   flex:1,
+  //   flexWrap:'wrap',
+  //   flexDirection:'column',
+    
+  //   // backgroundColor:'black'
+  // },
+
+  // Student_Container:{
+  //   flex:1,
+  //   backgroundColor:'pink'
+  // },
+
+  // Contractor_Container:{
+  //   flex:1,
+  //   backgroundColor:'red'
+  // },
+
+  // HomeOwnerContainer:{
+  //   flex:1,
+  //   backgroundColor:'green'
+  // },
+
+  // ShopOwnerContainer:{
+  //   flex:1,
+  //   backgroundColor:'brown'
+  // },
 
 })

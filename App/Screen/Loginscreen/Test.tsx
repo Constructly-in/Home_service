@@ -2,10 +2,15 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsive-screen';
 import React from 'react';
 import color from '../../utility/color';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default function Login({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center' , backgroundColor:color.BLACK}}>
+    // <View style={{ flex: 1, alignItems: 'center' , backgroundColor:color.BLACK}}>
+      <LinearGradient start={{x: 0, y: 0}} 
+                                end={{x: 1, y: 0}} 
+                                colors={['#000000', '#20232C']} 
+                                style={styles.Container}>
       <Image
         source={require('./../../../image/OneDrive-2024-02-07/frontpage.png')}
         style={styles.loginScreen}
@@ -26,11 +31,18 @@ export default function Login({ navigation }) {
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
+      </LinearGradient>
+    // </View>
   );
 }
 
 const styles = StyleSheet.create({
+
+  Container:{
+    flex: 1, 
+    alignItems: 'center'
+  },
+
   loginScreen: {
     width: widthPercentageToDP('80%'),
     height: heightPercentageToDP('45%'),
@@ -38,7 +50,7 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderRadius: 15,
     marginBottom: heightPercentageToDP('10%'),
-    backgroundColor:color.BLACK
+    // backgroundColor:color.BLACK
   },
 
   subContainer: {
