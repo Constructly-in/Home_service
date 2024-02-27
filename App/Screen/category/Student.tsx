@@ -12,7 +12,7 @@ export default function Homescreen() {
     <SafeAreaView>
       <View style = {styles.Container}>
         <View style = {styles.subContainer}>
-        <Image source={require('/Users/prakh/projects/Home_service/image/OneDrive-2024-02-07/logo.png')}
+        <Image source={require('/Users/prakh/projects/Home_service/image/Login_AS/logoNObg.png')}
         style={styles.LogoImage} />
 
         </View>
@@ -20,13 +20,14 @@ export default function Homescreen() {
       {/* <View style ={styles.mainContainer}>  */}
       <LinearGradient start={{x: 0, y: 0}} 
                                 end={{x: 1, y: 0}} 
-                                colors={['#000000', '#20232C']} 
+                                colors={['#090112', '#3f3c3f']} 
                                 style={styles.mainContainer}>
       <ScrollView>
       
       <InterShip />
-      <Douts />
-      <Douts />
+      <InterShip />
+      <InterShip />
+      
      
       
       </ScrollView>
@@ -39,7 +40,7 @@ export default function Homescreen() {
 const styles = StyleSheet.create({
   Container: {
       width:412,
-      height:70,
+      height:80,
       // backgroundColor:color.white,
       
    

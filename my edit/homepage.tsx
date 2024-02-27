@@ -5,19 +5,7 @@ import MyButton from '../../../src/assets/Component/MyButton'
 import CategoryButton from '../../../src/assets/Component/CategoryButton'
 import color from '../../utility/color'
 
-import { Dimensions } from 'react-native';
-import { RFValue } from 'react-native-responsive-fontsize';
-
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
-interface HomescreenProps {
-  navigation: any; // Change 'any' to the actual type if possible
-  
-}
-
-
-const Homescreen = ({navigation}:HomescreenProps) => {
+const Homepage = ({navigation}) => {
   return (
     <LinearGradient start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 0 }}
@@ -25,7 +13,7 @@ const Homescreen = ({navigation}:HomescreenProps) => {
       style={styles.Container}>
 
            <View style={styles.Header}>
-              <Text style={styles.Title}>HYY..</Text>
+              <Text style={styles.TItle}>HYY..</Text>
               <Text style={styles.SubTitle}>SEE FEATURES OF :-</Text>
               
             </View>
@@ -40,36 +28,36 @@ const Homescreen = ({navigation}:HomescreenProps) => {
                           {/* <Text>student</Text> */}
 
                           <Image source={require('/Users/prakh/projects/Home_service/image/Login_AS/student.png')}
-                          style ={{width:"90%" , height:"90%" }}
+                          style ={{width:"110%" , height:"110%" }}
                           />
                           <CategoryButton title={'STUDENT  >>'} onPress={() => navigation.navigate("Student")} />
                       </View>
 
-                      <View style={ styles.Box}>
+                      <View style={[styles.HomeOwnerContainer, styles.Box]}>
                           {/* <Text>Home</Text> */}
 
                           <Image source={require('/Users/prakh/projects/Home_service/image/Login_AS/contractor.png')}
-                          style ={{width:"90%" , height:"90%" }}
+                          style ={{width:"100%" , height:"100%" }}
                           />
                           <CategoryButton title={'STUDENT  >>'} onPress={() => navigation.navigate("Student")} />
 
                       </View>
 
-                      <View style={ styles.Box}>
+                      <View style={[styles.HomeOwnerContainer, styles.Box]}>
                           {/* <Text>Home</Text> */}
 
                           <Image source={require('/Users/prakh/projects/Home_service/image/Login_AS/homeowner.png')}
-                          style ={{width:"90%" , height:"90%" }}
+                          style ={{width:"100%" , height:"100%" }}
                           />
                           <CategoryButton title={'STUDENT  >>'} onPress={() => navigation.navigate("Student")} />
 
                       </View>
 
-                      <View style={styles.Box}>
+                      <View style={[styles.HomeOwnerContainer, styles.Box]}>
                           {/* <Text>Home</Text> */}
 
                           <Image source={require('/Users/prakh/projects/Home_service/image/Login_AS/shopowner.png')}
-                          style ={{width:"90%" , height:"90%" }}
+                          style ={{width:"110%" , height:"100%" }}
                           />
                           <CategoryButton title={'BUyer  >>'} onPress={() => navigation.navigate("Student")} />
 
@@ -103,48 +91,95 @@ const Homescreen = ({navigation}:HomescreenProps) => {
   )
 }
 
-export default Homescreen
+export default Homepage
 
 const styles = StyleSheet.create({
+
   Container: {
-    // Remove fixed height and width
-    flex: 1,
+    // flex: 1,
   },
 
-  Title: {
-    fontSize: RFValue(25), // Using responsive font size
-    fontFamily: 'Poppins-ExtraBold',
-    color: color.white,
+  TItle:{
+     fontSize:25,
+    fontFamily:'Poppins-ExtraBold',
+    color:color.white,
   },
-  
-  SubTitle: {
-    fontSize: RFValue(30), // Using responsive font size
-    fontFamily: 'Poppins-ExtraBold',
-    color: color.Lightgrey,
+  SubTitle:{
+    fontSize:40,
+    fontFamily:'Poppins-ExtraBold',
+    color:"#ededed"
   },
 
   Header: {
-    height: windowHeight * 0.2, // 20% of the screen height
-    paddingLeft: windowWidth * 0.1, // 10% of the screen width
-    paddingTop: windowHeight * 0.07, // 5% of the screen height
-    // backgroundColor:"red"
+    // flex: 1,
+    
+    height:175,
+    paddingLeft:40,
+    paddingTop:40
   },
 
-  SubContainer: {
-    marginTop: windowHeight * 0.01, // 1% of the screen height
-    height: windowHeight * 0.75, // 75% of the screen height
-    flexWrap: 'wrap',
-    alignContent: 'space-around',
-    // backgroundColor:'white'
+  SubContainer:{
+    // flex:7,
+    // width:410,
+  // backgroundColor:'white',
+    // borderWidth:6,
+    // borderColor:'red',
+
+    marginTop:10,
+    height:605,
+    flexWrap:'wrap',
+    // justifyContent:"center",
+    alignContent:'space-around',
+
   },
 
-  Box: {
-    padding: windowWidth * 0.02, // 2% of the screen width
-    height: windowHeight * 0.22, // 20% of the screen height
-    width: windowWidth * 0.45, // 40% of the screen width
-    marginTop: windowHeight * 0.07, // 5% of the screen height
-    justifyContent: 'center',
-    alignItems: 'center',
-    // backgroundColor:'pink'
+  Box:{
+    // flex:1,
+    // backgroundColor:"pink",
+    padding:10,
+    height:210,
+    width:180,
+    marginTop:60,
+    justifyContent:"center",
+    alignItems:"center"
   },
-});
+
+  // LeftContainer:{
+  //   flex:1,
+  //   flexWrap:'wrap',
+  //   flexDirection:'column',
+    
+    
+  //   // backgroundColor:'pink'
+
+  // },
+
+  // RightContainer:{
+  //   flex:1,
+  //   flexWrap:'wrap',
+  //   flexDirection:'column',
+    
+  //   // backgroundColor:'black'
+  // },
+
+  // Student_Container:{
+  //   flex:1,
+  //   backgroundColor:'pink'
+  // },
+
+  // Contractor_Container:{
+  //   flex:1,
+  //   backgroundColor:'red'
+  // },
+
+  // HomeOwnerContainer:{
+  //   flex:1,
+  //   backgroundColor:'green'
+  // },
+
+  // ShopOwnerContainer:{
+  //   flex:1,
+  //   backgroundColor:'brown'
+  // },
+
+})

@@ -15,7 +15,7 @@ const Booknow : FC <Props> = ({title , onPress}) => {
 
                                 // ['#242831', '#414345']
                                 
-                                colors={['#ffffff', '#fffff0']} 
+                                colors={['#ffc773' , color.PRIMARY]} 
                                 style={styles.Container}>
 
                                 
@@ -46,10 +46,10 @@ const styles = StyleSheet.create({
     },
 
     Title:{
-        color: color.white ,
-        fontSize: 22 ,
+        color: color.BLACK ,
+        fontSize: 28,
         paddingBottom:3,
-        fontFamily : 'Poppins-Bold',
+        fontFamily : 'BebasNeue-Regular',
        
 
     }

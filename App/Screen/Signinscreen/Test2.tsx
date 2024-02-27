@@ -10,6 +10,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 interface SignScreenProps {
     navigation: any; // Change 'any' to the actual type if possible
+    
 }
 
 export default function SignScreen({ navigation }: SignScreenProps) {
@@ -42,7 +43,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
         auth().signInWithEmailAndPassword(email, password)
             .then((res) => {
                 console.log(res);
-                Alert.alert("Logged IN");
+                // Alert.alert("Logged IN");
                 navigation.navigate("Tabnavigation");
             })
             .catch(err => {
@@ -51,7 +52,31 @@ export default function SignScreen({ navigation }: SignScreenProps) {
             });
     };
 
+    // const NeuMorph = ({children , size , style }) => {
+
+    //     return(
+    //         <View style = {styles.topShadow}>
+    //              <View style = {styles.bottomShadow}>
+    //                  <View 
+    //                    style = {[ styles.inner , {width: size || 40 , height: size || 40 , borderRadius: size /2 ||40/2},style
+    //                  ]}
+    //                 >
+    //                     {children}
+    //                 </View>
+
+    //              </View>
+    //         </View>     
+
+    //     )
+    // };
+
+
+
+
+
+
     return (
+
         <View style={styles.Container}>
             <LinearGradient start={{x: 0, y: 0}} 
                                 end={{x: 1, y: 0}} 
@@ -72,7 +97,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
                     </Text>
                 </View>
 
-              
+             {/* <NeuMorph > */}
                 {/* <View style={styles.innerContainer}> */}
                 <LinearGradient start={{x: 0, y: 0}} 
                                 end={{x: 1, y: 0}} 
@@ -108,15 +133,25 @@ export default function SignScreen({ navigation }: SignScreenProps) {
                             Don't Have an account yet ?
                         </Text>
 
+
+                  
+
                     <MyButton title={"LOGIN"} onPress={loginWithEmailAndPassword} />
+                    
+
+
                     <Text style={styles.Ortext}>OR</Text>
                     <MyButton title={"LOGIN WITH GOOGLE"} onPress={onGoogleButtonPress} />
                     </LinearGradient>
                 {/* </View> */}
-                
+                {/* </NeuMorph> */}
 
             </ImageBackground>
+
+            
+
             </LinearGradient>
+             
         </View>
     );
 }
@@ -151,7 +186,7 @@ const styles = StyleSheet.create({
     innerContainer: {
         height: heightPercentageToDP('60%'),
         width: widthPercentageToDP('90%'),
-        backgroundColor: color.BLACK,
+        // backgroundColor: color.BLACK,
         borderRadius: widthPercentageToDP('5%'),
         paddingHorizontal: widthPercentageToDP('10%'),
         alignItems: "center",
@@ -188,5 +223,34 @@ const styles = StyleSheet.create({
     },
 
     linearGradient:{},
- 
+
+    inner:{
+      backgroundColor:color.PRIMARY,
+      alignItems:"center",
+      justifyContent:"center",
+      borderColor:color.Offwhite,
+      borderWidth:1
+    },
+   
+    topShadow:{
+        shadowOffset:{
+            width:-6,
+            height: -6
+        },
+
+        shadowOpacity:1,
+        shadowRadius:6,
+        shadowColor:"FBFFFF"
+    },
+    bottomShadow:{
+        shadowOffset:{
+            width:  6,
+            height: 6
+        },
+
+        shadowOpacity:1,
+        shadowRadius:6,
+        shadowColor:"B7C4DD"
+    }
+
 });

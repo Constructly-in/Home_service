@@ -7,7 +7,12 @@ import MyTextInput from '../../../src/assets/Component/MyTextInput';
 import auth from "@react-native-firebase/auth";
 import LinearGradient from 'react-native-linear-gradient';
 
-export default function SingupScreen() {
+interface SignupScreenProps {
+    navigation: any; // Change 'any' to the actual type if possible
+    
+}
+
+export default function SingupScreen({navigation}:SignupScreenProps) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -16,6 +21,7 @@ export default function SingupScreen() {
         auth().createUserWithEmailAndPassword(email, password)
             .then(() => {
                 Alert.alert('User created with this credential ' + email, password);
+                navigation.navigate("Tabnavigation");
             })
             .catch(err => {
                 console.log(err.nativeErrorMesssage);

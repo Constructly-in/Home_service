@@ -1,129 +1,100 @@
-import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen'
-import color from '../../../../../App/utility/color'
-import MyButton from '../../../Component/MyButton'
-import Booknow from '../../../Component/Booknow'
-import LinearGradient from 'react-native-linear-gradient'
+import React from 'react';
+import { View, Text, Image, StyleSheet } from 'react-native';
+import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
+import LinearGradient from 'react-native-linear-gradient';
+import color from '../../../../../App/utility/color';
+import Booknow from '../../../Component/Booknow';
 
 const InterShip = () => {
   return (
-    <View style={styles.Bg}>
-
-      <Text style={styles.headingText}>
-        INTERSHIP
-      </Text>
+    <View>
+      <Text style={styles.headingText}>INTERNSHIP</Text>
       <View style={styles.container}>
-
-
-
         <View style={styles.cards}>
           <Image
             source={require('/Users/prakh/projects/Home_service/image/OneDrive-2024-02-07/Feature.jpg')}
             style={styles.CardImage}
           />
-
-          {/* <View style={styles.cardBody}> */}
-          <LinearGradient start={{ x: 0, y: 0 }}
+          <LinearGradient
+            start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             colors={['#242831', '#414345']}
-            style={styles.cardBody}>
-
-            <Text style={styles.cardtitle}>Toursist place </Text>
-
-            {/* <Text style = {styles.cardLable}> place where no one can visite</Text> */}
-            <Text style={styles.cardDescription}>toursist place  are the peace plac e apriioshyajh ioihusah kjbb 8uhkj gfiouh jnciulowsagtf nb erifgi dudgiufnb</Text>
-
-            {/* <Text style = {styles.cardFooter}>toursist place </Text> */}
-            <Booknow title={"Book now"} onPress={undefined} />
-
+            style={styles.cardBody}
+          >
+            <Text style={styles.cardtitle}>Tourist Place</Text>
+            <Text style={styles.cardDescription}>
+              Tourist places are peaceful locations where no one can visit. They are beautiful and
+              serene, offering a perfect escape from the hustle and bustle of daily life.
+            </Text>
+            <Booknow title={'Book now'} onPress={undefined} />
           </LinearGradient>
-          {/* </View> */}
-
         </View>
-
-
       </View>
-
     </View>
-  )
-}
-
-export default InterShip
-
+  );
+};
 
 const styles = StyleSheet.create({
- 
-
   headingText: {
-    fontSize: 24,
-    fontWeight: '600',
-    paddingTop: 20,
-    paddingHorizontal: 20,
-    color: color.white,
-    fontFamily: "Cardo-Bold",
+    fontSize: widthPercentageToDP('7%'), // Adjust font size based on width
+    
+    paddingTop: heightPercentageToDP('2%'), // Adjust padding based on height
+    paddingBottom: heightPercentageToDP('0%'),
+    paddingHorizontal: widthPercentageToDP('7%'), // Adjust padding based on width
+    color: color.Lightgrey,
+    fontFamily: 'Poppins-ExtraBold',
 
   },
-
-
 
   container: {
     flex: 1,
-    alignItems: "center"
+    alignItems: 'center',
   },
 
   cards: {
-    height: 420,
-    width: 380,
-    marginVertical: 9,
-    marginHorizontal: 12,
-    borderRadius: 10,
+    height: heightPercentageToDP('50%'), // Adjust height based on screen height
+    width: widthPercentageToDP('90%'), // Adjust width based on screen width
+    marginVertical: heightPercentageToDP('1%'), // Adjust margin based on screen height
+    borderRadius: widthPercentageToDP('2%'), // Adjust borderRadius based on screen width
 
-    shadowRadius: 10,
+    shadowRadius: widthPercentageToDP('1%'), // Adjust shadowRadius based on screen width
     shadowOffset: {
       width: 0,
-      height: -3,
+      height: -heightPercentageToDP('0.5%'), // Adjust shadowOffset based on screen height
     },
-    shadowColor: color.white,
-    elevation: 5,
-
-
+    shadowColor: color.BLACK,
+    elevation: 3,
   },
 
-
   CardImage: {
-    height: "51%",
-    width: "100%",
-    //   resizeMode:"contain",
-    justifyContent: "center",
+    height: heightPercentageToDP('25%'), // Adjust height based on screen height
+    width: '100%',
+    justifyContent: 'center',
     alignItems: 'center',
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-
+    borderTopLeftRadius: widthPercentageToDP('5%'), // Adjust borderRadius based on screen width
+    borderTopRightRadius: widthPercentageToDP('5%'), // Adjust borderRadius based on screen width
   },
 
   cardBody: {
-    paddingHorizontal: 15,
+    paddingHorizontal: widthPercentageToDP('4%'), // Adjust paddingHorizontal based on width
+    paddingVertical: widthPercentageToDP('4%'),
     flex: 1,
-    flexGrow: 1
+    flexGrow: 1,
   },
 
   cardtitle: {
     color: color.white,
-    fontFamily: "BebasNeue-Regula",
-    fontSize: 24,
-    // fontWeight: "600",
-    paddingTop: 10
+    fontFamily: 'BebasNeue-Regular',
+    fontSize: widthPercentageToDP('7%'), // Adjust font size based on width
+    paddingTop: heightPercentageToDP('2%'), // Adjust paddingTop based on height
   },
-
 
   cardDescription: {
     color: color.white,
-    fontSize: 15,
-    fontWeight: "500",
-    paddingVertical: "5%"
+    fontSize: widthPercentageToDP('3%'), // Adjust font size based on width
+    fontWeight: '500',
+    paddingVertical: heightPercentageToDP('1%'), // Adjust paddingVertical based on height
   },
+});
 
-
-
-})
+export default InterShip;
