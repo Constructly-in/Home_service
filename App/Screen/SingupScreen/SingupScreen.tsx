@@ -4,24 +4,33 @@ import color from '../../utility/color'
 import MyButton from '../../../src/assets/Component/MyButton'
 import MyTextInput from '../../../src/assets/Component/MyTextInput'
 import Socialmedia from '../../../src/assets/Component/Socialmedia'
-import auth from "@react-native-firebase/auth"
+import {useAuth}  from '../../Contexts/AuthContext'
 import { create } from 'react-test-renderer'
 
 export default function SingupScreen() {
-
+    const { signup } = useAuth();
+    const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
-    const [password, setPasswword] = useState("")
+    const [userPassword, setPasswword] = useState("")
     const [Confipassword, setConfirmPassword] = useState("")
 
-    const signUpTestfn = () => {
-        //                               argument (sting)|promises
-        auth().createUserWithEmailAndPassword(email, password).then(() => {
-
-            Alert.alert('User create with this credentail ' + email , password)
-        })
-            .catch(err => {
-                console.log(err);
-            });
+    const signUpTestfn = async () => {
+        if( phone !== "" && email !== "" && userPassword !== "" && Confipassword !== "" ){
+            if (userPassword !== Confipassword) {
+                Alert.alert("Password Doesn't match");
+            }
+            else {
+                try{   
+                    await signup(phone,email,userPassword);
+                }catch{
+                    Alert.alert("An error occured!");
+                }
+            }
+        }
+        else {
+            Alert.alert("Please Fill in all the details!");
+        }
+       
     };
 
 
@@ -44,12 +53,12 @@ export default function SingupScreen() {
                     {/* value , on chance text  */}
                     
                     
-                    <MyTextInput placeholder="Phone Number" />
+                    <MyTextInput value={phone} onChangeText={(text:string) => setPhone(text)} placeholder="Phone Number" />
 
 
                     <MyTextInput value={email} onChangeText={(text:string) => setEmail(text)} placeholder="Enter E-Mail or User Name" />
-                    <MyTextInput value={password} onChangeText={(text:string) => setPasswword(text)} placeholder="Password" secureTextEntry />
-                    <MyTextInput  placeholder="Confirm Password" secureTextEntry />
+                    <MyTextInput value={userPassword} onChangeText={(text:string) => setPasswword(text)} placeholder="Password" secureTextEntry />
+                    <MyTextInput value={Confipassword} onChangeText={(text:string) => setConfirmPassword(text)}  placeholder="Confirm Password" secureTextEntry />
 
                    
                     <MyButton onPress={ signUpTestfn} title={"Sign up"} />

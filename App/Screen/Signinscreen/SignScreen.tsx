@@ -1,11 +1,29 @@
-import { Button, Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Alert, Button, Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
+import React, { useState } from 'react'
 import color from '../../utility/color'
 import MyButton from '../../../src/assets/Component/MyButton'
 import MyTextInput from '../../../src/assets/Component/MyTextInput'
 import Socialmedia from '../../../src/assets/Component/Socialmedia'
+import { useAuth } from '../../Contexts/AuthContext'
 
 export default function SignScreen({ navigation }) {
+  const { login } = useAuth();
+  const [phone,setPhone] = useState("");
+  const [email,setEmail] = useState("");
+  const [userPassword,setUserPassword] = useState("");
+
+  const signInTestfn = async () => {
+    if (email !== "" && userPassword !== ""){
+      try {
+        await login(email,userPassword);
+      }catch {
+        Alert.alert("An error occured!");
+      }
+    }else {
+      Alert.alert("Please Fill in all the details!")
+    }
+    await login(email,userPassword);
+  }
   return (
     <View style={styles.Container}>
       <ImageBackground source={require('./../../../image/OneDrive-2024-02-07/bg.png')}
@@ -21,14 +39,14 @@ export default function SignScreen({ navigation }) {
 
         <View style={styles.innerContainer}>
 
-          <MyTextInput placeholder="Phone Number" />
-          <MyTextInput placeholder="Enter E-Mail or User Name" />
-          <MyTextInput placeholder="Password" secureTextEntry />
+          <MyTextInput value={phone} onChangeText={(text:string) => setPhone(text)}   placeholder="Phone Number" />
+          <MyTextInput value={email} onChangeText={(text:string) => setEmail(text)}  placeholder="Enter E-Mail or User Name" />
+          <MyTextInput value={userPassword} onChangeText={(text:string) => setUserPassword(text)}  placeholder="Password" secureTextEntry />
 
            <Text style={styles.TextAccount}  onPress={() => navigation.navigate("SingupScreen")} > Don"t Have an account yet ?</Text> 
 
       
-          <MyButton title={"LOGIN"} />
+          <MyButton onPress={signInTestfn} title={"LOGIN"} />
           <Text style={styles.Ortext}>OR</Text>
           <Socialmedia />
         </View>
