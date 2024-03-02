@@ -17,6 +17,7 @@ export default function AuthProvider({children}) {
             .set({
                 phoneNum: phone,
                 email: email,
+                accType: 3
             })
             .then(() => {
                 Alert.alert("Account Created Successfully!");
