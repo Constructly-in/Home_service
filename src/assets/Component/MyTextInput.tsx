@@ -26,6 +26,8 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     marginBottom: 20,
     
+    borderRadius:30,
+    // backgroundColor:'rgba(255, 109, 0, 0.6)'
 
   },
 
@@ -35,14 +37,14 @@ const styles = StyleSheet.create({
     fontSize:16,
     paddingBottom:0,
     fontWeight:"500",
-    // color:color.white
+    color:color.white
     
   },
-  Border:{
-    width:"100%",
-    height:1.5,
-    backgroundColor:color.BLACK,
-    alignSelf:"center"
+   Border:{
+     width:"100%",
+     height:1.5,
+     backgroundColor:color.white,
+     alignSelf:"center"
 
-  }
+   }
 })

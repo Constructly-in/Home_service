@@ -5,7 +5,7 @@ const Socialmedia = () => {
   return (
     <View>
         {/* <Text>hisggkhjhjhjhjhjhjhjhjhjhjhjhjh</Text> */}
-        <Image source={require('./../../../image/OneDrive-2024-02-07/facebook.png')}
+        <Image source={require('./../../../image/OneDrive-2024-02-07/googlelogo.png')}
           style={styles.Image}
         />
 

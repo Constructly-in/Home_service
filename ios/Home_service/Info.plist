@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Home_service</string>
+	<string>Constructly.in</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -51,6 +51,10 @@
 	<array>
 		<string>KaushanScript-Regular.ttf</string>
 		<string>Merriweather-Regular.ttf</string>
+		<string>Cardo-Bold.ttf</string>
+		<string>Cardo-Regular.ttf</string>
+		<string>BebasNeue-Regular.ttf</string>
+		<string>Poppins-ExtraBold.ttf</string>
 	</array>
 </dict>
 </plist>

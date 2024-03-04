@@ -1,0 +1,6 @@
+cd android
+ .\gradle\  
+  .\gradlew clean 
+  .\gradlew assembleRelease
+
+  then go to 

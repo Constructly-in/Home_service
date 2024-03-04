@@ -4,6 +4,7 @@ import color from '../../../App/utility/color'
 
 interface Props {
     title: string
+    onPress: any
 }
 const MyButton : FC <Props> = ({title , onPress}) => {
   return (
@@ -22,15 +23,19 @@ const styles = StyleSheet.create({
         width:"100%",
         justifyContent:"center",
         alignItems:"center",
-        backgroundColor: color.white,
+        backgroundColor: color.Offwhite,
         borderRadius: 30,
+        marginBottom:"0.1%",
+        marginTop:"2%",
+
+        elevation:5
         
         
     },
 
     Title:{
         color: color.PRIMARY ,
-        fontSize: 20 ,
+        fontSize: 18 ,
         fontFamily : 'Merriweather-Regulars',
         // fontWeight: '600',
 
