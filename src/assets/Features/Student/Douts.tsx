@@ -15,7 +15,7 @@ const Douts = () => {
 
     <View style={[styles.cards, styles.elevated]}>
       <Image
-      source={require('/Users/prakh/projects/Home_service/image/OneDrive-2024-02-07/Feature.jpg')}
+      source={require('../../../../image/OneDrive-2024-02-07/Feature.jpg')}
         style={styles.CardImage}
       />
 

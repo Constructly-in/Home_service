@@ -54,7 +54,7 @@ export default function Tabnavigation() {
       <View style={{alignItems:'center',justifyContent:'center',top:3
       }}>
         <Image
-        source={require('/Users/prakh/projects/Home_service/image/OneDrive-2024-02-07/HomeIcon.png')}
+        source={require('../../image/OneDrive-2024-02-07/HomeIcon.png')}
         resizeMode="contain"
         style={{
           width:25,
@@ -80,7 +80,7 @@ export default function Tabnavigation() {
 
         {/* <View  style = {{backgroundColor:focused? color.LightOrange : color.PRIMARY , borderRadius:40 , width:60, justifyContent:"center",alignItems:"center"}}> */}
         <Image
-        source={require('/Users/prakh/projects/Home_service/image/OneDrive-2024-02-07/ProfileIcon.png')}
+        source={require('../../image/OneDrive-2024-02-07/ProfileIcon.png')}
         resizeMode="contain"
         style={{
           width:25,
@@ -103,7 +103,7 @@ export default function Tabnavigation() {
       <View style={{alignItems:'center',justifyContent:'center',top:3
       }}>
         <Image
-        source={require('/Users/prakh/projects/Home_service/image/OneDrive-2024-02-07/HomeIcon.png')}
+        source={require('../../image/OneDrive-2024-02-07/HomeIcon.png')}
         resizeMode="contain"
         style={{
           width:25,

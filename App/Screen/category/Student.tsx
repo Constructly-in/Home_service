@@ -12,7 +12,7 @@ export default function Homescreen() {
     <SafeAreaView>
       <View style = {styles.Container}>
         <View style = {styles.subContainer}>
-        <Image source={require('/Users/prakh/projects/Home_service/image/Login_AS/logoNObg.png')}
+        <Image source={require('../../../image/Login_AS/student.png')}
         style={styles.LogoImage} />
 
         </View>

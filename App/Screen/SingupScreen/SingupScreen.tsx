@@ -38,7 +38,7 @@ export default function SingupScreen() {
                 />
 
                 <Text style={styles.Title} >
-                    Constructly.in
+                    Constructly.com
                 </Text>
 
                 <View style={styles.innerContainer}>

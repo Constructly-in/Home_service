@@ -7,6 +7,7 @@ import MyTextInput from '../../../src/assets/Component/MyTextInput';
 import auth from "@react-native-firebase/auth";
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import LinearGradient from 'react-native-linear-gradient';
+import { useAuth } from '../../Contexts/AuthContext';
 
 interface SignScreenProps {
     navigation: any; // Change 'any' to the actual type if possible
@@ -14,6 +15,7 @@ interface SignScreenProps {
 }
 
 export default function SignScreen({ navigation }: SignScreenProps) {
+    const { login } = useAuth();
     const [email, setEmail] = useState("");
     const [password, setPasswword] = useState("");
 
@@ -39,17 +41,17 @@ export default function SignScreen({ navigation }: SignScreenProps) {
         }
     }
 
-    const loginWithEmailAndPassword = () => {
-        auth().signInWithEmailAndPassword(email, password)
-            .then((res) => {
-                console.log(res);
-                // Alert.alert("Logged IN");
-                navigation.navigate("Tabnavigation");
-            })
-            .catch(err => {
-                console.log(err);
-                Alert.alert(err.nativeErrorMesssage);
-            });
+    const loginWithEmailAndPassword = async() => {
+        if (email !== "" && password !== ""){
+            try {
+              await login(email,password);
+              navigation.navigate("Tabnavigation");
+            }catch {
+              Alert.alert("An error occured!");
+            }
+        }else {
+        Alert.alert("Please Fill in all the details!")
+        }
     };
 
     // const NeuMorph = ({children , size , style }) => {
@@ -113,7 +115,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
                         <MyTextInput style={styles.inputText}
                             value={email}
                             onChangeText={(text: string) => setEmail(text)}
-                            placeholder="Enter E-Mail or User Name"
+                            placeholder="Enter E-Mail"
                         />
                     
 
