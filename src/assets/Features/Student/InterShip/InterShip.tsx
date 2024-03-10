@@ -12,7 +12,7 @@ const InterShip = () => {
       <View style={styles.container}>
         <View style={styles.cards}>
           <Image
-            source={require('/Users/prakh/projects/Home_service/image/OneDrive-2024-02-07/Feature.jpg')}
+            source={require('../../../../../image/OneDrive-2024-02-07/Feature.jpg')}
             style={styles.CardImage}
           />
           <LinearGradient

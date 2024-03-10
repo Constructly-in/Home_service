@@ -39,7 +39,7 @@ const Homescreen = ({navigation}:HomescreenProps) => {
                     
                           {/* <Text>student</Text> */}
 
-                          <Image source={require('/Users/prakh/projects/Home_service/image/Login_AS/student.png')}
+                          <Image source={require('../../../image/Login_AS/student.png')}
                           style ={{width:"90%" , height:"90%" }}
                           />
                           <CategoryButton title={'STUDENT  >>'} onPress={() => navigation.navigate("Student")} />
@@ -48,7 +48,7 @@ const Homescreen = ({navigation}:HomescreenProps) => {
                       <View style={ styles.Box}>
                           {/* <Text>Home</Text> */}
 
-                          <Image source={require('/Users/prakh/projects/Home_service/image/Login_AS/contractor.png')}
+                          <Image source={require('../../../image/Login_AS/contractor.png')}
                           style ={{width:"90%" , height:"90%" }}
                           />
                           <CategoryButton title={'STUDENT  >>'} onPress={() => navigation.navigate("Student")} />
@@ -58,7 +58,7 @@ const Homescreen = ({navigation}:HomescreenProps) => {
                       <View style={ styles.Box}>
                           {/* <Text>Home</Text> */}
 
-                          <Image source={require('/Users/prakh/projects/Home_service/image/Login_AS/homeowner.png')}
+                          <Image source={require('../../../image/Login_AS/homeowner.png')}
                           style ={{width:"90%" , height:"90%" }}
                           />
                           <CategoryButton title={'STUDENT  >>'} onPress={() => navigation.navigate("Student")} />
@@ -68,7 +68,7 @@ const Homescreen = ({navigation}:HomescreenProps) => {
                       <View style={styles.Box}>
                           {/* <Text>Home</Text> */}
 
-                          <Image source={require('/Users/prakh/projects/Home_service/image/Login_AS/shopowner.png')}
+                          <Image source={require('../../../image/Login_AS/shopowner.png')}
                           style ={{width:"90%" , height:"90%" }}
                           />
                           <CategoryButton title={'BUyer  >>'} onPress={() => navigation.navigate("Student")} />

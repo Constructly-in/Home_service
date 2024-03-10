@@ -5,6 +5,7 @@ import color from '../../utility/color';
 import MyButton from '../../../src/assets/Component/MyButton';
 import MyTextInput from '../../../src/assets/Component/MyTextInput';
 import auth from "@react-native-firebase/auth";
+import {useAuth}  from '../../Contexts/AuthContext';
 import LinearGradient from 'react-native-linear-gradient';
 
 interface SignupScreenProps {
@@ -13,20 +14,32 @@ interface SignupScreenProps {
 }
 
 export default function SingupScreen({navigation}:SignupScreenProps) {
+    const { signup } = useAuth();
+    const [userName, setUserName] = useState("");
+    const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
-    const signUpTestfn = () => {
-        auth().createUserWithEmailAndPassword(email, password)
-            .then(() => {
-                Alert.alert('User created with this credential ' + email, password);
-                navigation.navigate("Tabnavigation");
-            })
-            .catch(err => {
-                console.log(err.nativeErrorMesssage);
-                Alert.alert(err.nativeErrorMesssage);
-            });
+    const signUpTestfn = async () => {
+        // Alert.alert("user created")
+        if( phone !== "" && email !== "" && password !== "" && confirmPassword !== "" ){
+            if (password !== confirmPassword) {
+                Alert.alert("Password Doesn't match");
+            }
+            else {
+                try{   
+                    await signup(userName,phone,email,password);
+                    navigation.navigate("Tabnavigation");
+                }catch{
+                    Alert.alert("An error occured!");
+                }
+            }
+        }
+        else {
+            Alert.alert("Please Fill in all the details!");
+        }
+        
     };
 
     return (
@@ -57,8 +70,8 @@ export default function SingupScreen({navigation}:SignupScreenProps) {
                                 colors={['#242831', '#414345']} 
                                 style={styles.innerContainer}>
 
-                    <MyTextInput placeholder="Name" />
-                    <MyTextInput placeholder="Phone Number" />
+                    <MyTextInput onChangeText={(text: string) => setUserName(text)} placeholder="Name" />
+                    <MyTextInput onChangeText={(text: string) => setPhone(text)} placeholder="Phone Number" />
                     <MyTextInput
                         value={email}
                         onChangeText={(text: string) => setEmail(text)}
