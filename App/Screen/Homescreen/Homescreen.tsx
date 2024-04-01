@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, ScrollView, ScrollViewComponent, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import MyButton from '../../../src/assets/Component/MyButton'
@@ -13,91 +13,110 @@ const windowHeight = Dimensions.get('window').height;
 
 interface HomescreenProps {
   navigation: any; // Change 'any' to the actual type if possible
-  
+
 }
 
 
-const Homescreen = ({navigation}:HomescreenProps) => {
+const Homescreen = ({ navigation }: HomescreenProps) => {
   return (
     <LinearGradient start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 0 }}
-      colors={['#000000', '#20232C']}
+      colors={[color.gradiant1, color.gradiant]}
       style={styles.Container}>
+       
 
-           <View style={styles.Header}>
-              <Text style={styles.Title}>HYY..</Text>
-              <Text style={styles.SubTitle}>SEE FEATURES OF :-</Text>
-              
-            </View>
+       
 
-            <View style={styles.SubContainer}>
+      <View style={styles.TopContainer}>
+        {/* Left side - Profile Image */}
+        <View style={styles.ProfileContainer}>
+          <Image
+            source={{ uri: 'https://cdn1.iconfinder.com/data/icons/facely-metapeople-3d-avatar-set/512/17._Designer.png' }}
+            style={styles.ProfileImage}
+          />
+        </View>
 
-                {/* <View style={styles.RightContainer}> */}
-                 
+        {/* Center - Logo Image */}
+        <View style={styles.LogoContainer}>
+          <Image
+            source={require('../../../image/Login_AS/app_logo.png')}
+            style={styles.LogoImage}
+          />
+        </View>
 
-                      <View style={styles.Box}>
-                    
-                          {/* <Text>student</Text> */}
+        {/* Right side - Settings */}
+        <View style={styles.SettingsContainer}>
+          {/* Your settings component goes here */}
+          <Image
+            source={{uri:"https://image.similarpng.com/very-thumbnail/2020/08/Notification-bell-icon-new-message-bell-Premium-vector-PNG.png"}}
+            style={styles.notificationImage}
+          />
 
-                          <Image source={require('../../../image/Login_AS/student.png')}
-                          style ={{width:"90%" , height:"90%" }}
-                          />
-                          <CategoryButton title={'STUDENT  >>'} onPress={() => navigation.navigate("Student")} />
-                      </View>
-
-                      <View style={ styles.Box}>
-                          {/* <Text>Home</Text> */}
-
-                          <Image source={require('../../../image/Login_AS/contractor.png')}
-                          style ={{width:"90%" , height:"90%" }}
-                          />
-                          <CategoryButton title={'STUDENT  >>'} onPress={() => navigation.navigate("Student")} />
-
-                      </View>
-
-                      <View style={ styles.Box}>
-                          {/* <Text>Home</Text> */}
-
-                          <Image source={require('../../../image/Login_AS/homeowner.png')}
-                          style ={{width:"90%" , height:"90%" }}
-                          />
-                          <CategoryButton title={'STUDENT  >>'} onPress={() => navigation.navigate("Student")} />
-
-                      </View>
-
-                      <View style={styles.Box}>
-                          {/* <Text>Home</Text> */}
-
-                          <Image source={require('../../../image/Login_AS/shopowner.png')}
-                          style ={{width:"90%" , height:"90%" }}
-                          />
-                          <CategoryButton title={'BUyer  >>'} onPress={() => navigation.navigate("Student")} />
+        </View>
+      </View>
 
 
-                      </View>
+      <ScrollView
+        style= {{flex:1}}
+        >
+      <View style={styles.Header}>
+        <Text style={styles.Title}>HOME SERVICE</Text>
+        <Text style={styles.SubTitle}>FEATURES OF :-</Text>
+      </View>
 
-                {/* </View> */}
+      <View style={styles.SubContainer}>
+      
 
-                {/* <View style={styles.LeftContainer}>
-                  
-                  
-                     <View style={styles.ShopOwnerContainer}>
-                        <Text>shop</Text>
-                     </View>
 
-                     <View style={styles.ShopOwnerContainer}>
-                        <Text>contractor</Text>
-                     </View>
+        {/* <View style={styles.RightContainer}> */}
 
-                </View> */}
 
-               
+        <View style={styles.Box}>
 
-                {/* <View style={styles.ShopOwnerContainer}>
-                  <Text>Homescreen</Text>
-                </View> */}
+          {/* <Text>student</Text> */}
 
-            </View>
+          <Image source={require('../../../image/Login_AS/student.png')}
+            style={{ width: "90%", height: "90%" }}
+          />
+          <CategoryButton title={'STUDENT  >>'} onPress={() => navigation.navigate("Student")} />
+        </View>
+
+        <View style={styles.Box}>
+          {/* <Text>Home</Text> */}
+
+          <Image source={require('../../../image/Login_AS/contractor.png')}
+            style={{ width: "90%", height: "90%" }}
+          />
+          <CategoryButton title={'contactor >>'} onPress={() => navigation.navigate("Student")} />
+
+        </View>
+
+        <View style={styles.Box}>
+          {/* <Text>Home</Text> */}
+
+          <Image source={require('../../../image/Login_AS/homeowner.png')}
+            style={{ width: "90%", height: "90%" }}
+          />
+          <CategoryButton title={'Home-owner >>'} onPress={() => navigation.navigate("Student")} />
+
+        </View>
+
+        <View style={styles.Box}>
+          {/* <Text>Home</Text> */}
+
+          <Image source={require('../../../image/Login_AS/shopowner.png')}
+            style={{ width: "90%", height: "90%" }}
+          />
+          <CategoryButton title={'Retailer  >>'} onPress={() => navigation.navigate("Student")} />
+
+
+        </View>
+
+  
+
+      
+      </View>
+      </ScrollView>
     </LinearGradient>
 
   )
@@ -111,26 +130,86 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  Title: {
-    fontSize: RFValue(25), // Using responsive font size
-    fontFamily: 'Poppins-ExtraBold',
-    color: color.white,
-  },
-  
-  SubTitle: {
-    fontSize: RFValue(30), // Using responsive font size
-    fontFamily: 'Poppins-ExtraBold',
-    color: color.Lightgrey,
+
+
+  TopContainer: {
+    flex: 0.1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: windowWidth * 0.05, // 5% of the screen width
+    paddingTop: windowHeight * 0.01, // 5% of the screen height
+    backgroundColor:color.Offwhite,
+    
+    borderBottomEndRadius: 20,
+    borderBottomLeftRadius: 20
   },
 
+  ProfileContainer: {
+
+    width: 40, // Adjust according to your requirement
+    height: 40, // Adjust according to your requirement
+    borderRadius: 20, // Half of the width and height to make it circular
+    backgroundColor: 'white',
+    overflow: 'hidden',
+
+
+  },
+
+  ProfileImage: {
+    width: '100%',
+    height: '100%',
+  },
+
+  LogoContainer: {
+    width:"20%",
+    height:"70%"
+
+  },
+
+
+  LogoImage: {
+    width:"100%",
+    height:"100%"
+  },
+
+  notificationImage:{
+    width:"100%",
+    height:"100%"
+  },
+
+  SettingsContainer:{
+    width:"10%",
+    height:"60%"
+  },
+
+
+
+
   Header: {
-    height: windowHeight * 0.2, // 20% of the screen height
-    paddingLeft: windowWidth * 0.1, // 10% of the screen width
+    flex: 4,
+    backgroundColor: 'green',
+    height: windowHeight * 0.3, // 20% of the screen height
+    paddingLeft: windowWidth * 0.06, // 10% of the screen width
     paddingTop: windowHeight * 0.07, // 5% of the screen height
     // backgroundColor:"red"
+    flexDirection:'column',
+  },
+
+  Title: {
+    fontSize: RFValue(20), // Using responsive font size
+    fontFamily: 'Poppins-ExtraBold',
+    color: color.circle,
+  },
+
+  SubTitle: {
+    fontSize: RFValue(20), // Using responsive font size
+    fontFamily: 'Poppins-ExtraBold',
+    color: color.circle_light,
   },
 
   SubContainer: {
+    flex: 40,
     marginTop: windowHeight * 0.01, // 1% of the screen height
     height: windowHeight * 0.75, // 75% of the screen height
     flexWrap: 'wrap',

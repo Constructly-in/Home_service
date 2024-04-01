@@ -4,7 +4,7 @@ import Login from './App/Screen/Loginscreen/Login'
 // import { NavigationContainer } from '@react-navigation/native';
 // import Tabnavigation from './App/Navigation/Tabnavigation';
 import SignScreen from './App/Screen/Signinscreen/SignScreen';
-import SingupScreen from './App/Screen/SingupScreen/SingupScreen';
+import SingupScreen from './App/Screen/SingupScreen/Test3';
 
 
 import { NavigationContainer } from '@react-navigation/native';

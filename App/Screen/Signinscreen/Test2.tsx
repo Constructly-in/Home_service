@@ -82,10 +82,10 @@ export default function SignScreen({ navigation }: SignScreenProps) {
         <View style={styles.Container}>
             <LinearGradient start={{x: 0, y: 0}} 
                                 end={{x: 1, y: 0}} 
-                                colors={['#000000', '#20232C']} 
+                                colors={[color.gradiant1, color.gradiant ]} 
                                 style={styles.Container}>
             <ImageBackground
-                source={require('./../../../image/OneDrive-2024-02-07/loginBG.png')}
+                source={require('./../../../image/OneDrive-2024-02-07/circle.png')}
                 style={styles.loginScreen}
             >
                 {/* <Image
@@ -106,7 +106,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
 
                                 // ['#242831', '#414345']
                                 
-                                colors={['#1f222a', '#414345']} 
+                                colors={[color.Offwhite, color.Offwhite]} 
                                 style={styles.innerContainer}>
 
                     
@@ -115,7 +115,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
                         <MyTextInput style={styles.inputText}
                             value={email}
                             onChangeText={(text: string) => setEmail(text)}
-                            placeholder="Enter E-Mail"
+                            placeholder="Enter E-Mail" placeholderTextColor = {color.white}
                         />
                     
 
@@ -125,6 +125,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
                             onChangeText={(text: string) => setPasswword(text)}
                             placeholder="Password"
                             secureTextEntry
+                            placeholderTextColor = {color.white}
                         />
 
                     
@@ -172,7 +173,7 @@ const styles = StyleSheet.create({
     Title: {
         textAlign: 'center',
         fontSize: widthPercentageToDP('7%'),
-        color: color.PRIMARY,
+        color: color.Offwhite,
         marginTop: heightPercentageToDP('10%'),
         fontFamily: "Cardo-Bold"
     },

@@ -14,7 +14,7 @@ import AuthProvider from '../../Contexts/AuthContext';
 const Stack = createStackNavigator();
 
  export default function StackNavigator() {
-  return (
+  return (+
     <AuthProvider>
     <Stack.Navigator screenOptions={{headerShown: false}}>
        <Stack.Screen name="Login" component={Test} />   
