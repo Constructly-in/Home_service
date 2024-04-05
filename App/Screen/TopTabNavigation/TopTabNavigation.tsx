@@ -15,16 +15,14 @@ const TopTabNavigation = () => {
                     tabBarLabelStyle: { fontSize: 14 },
                     tabBarStyle: {
                         backgroundColor: color.cream,
-                        height: "100%",
+                        height: "6%",
                         width: "100%",
                     },
                     tabBarInactiveTintColor: color.Offwhite, // Text color when inactive
                     tabBarActiveTintColor: "white",   // Text color when active
                     
                 }}
-                tabBarOptions={{
-                    inactiveBackgroundColor: color.cream, // Background color when inactive
-                }}
+               
             >
 
                 <Tab.Screen name="Home Service" component={HomeService} />
@@ -40,6 +38,8 @@ export default TopTabNavigation;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        height:"100%"
+        
     },
 });
 

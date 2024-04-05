@@ -8,6 +8,7 @@ import { Dimensions } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import CustomIcon from '../../../src/components/CustomIcon'
 import TopTabNavigation from '../TopTabNavigation/TopTabNavigation'
+import HomeService from '../HomeService/HomeService'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -23,11 +24,12 @@ const Homescreen = ({ navigation }: HomescreenProps) => {
   const [selectedOption, setSelectedOption] = useState<'Home' | 'Property'>('Home');
   
   return (
-    <LinearGradient start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 0 }}
-      colors={[color.gradiant1, color.gradiant]}
-      style={styles.Container}>
+     <LinearGradient start={{ x: 0, y: 0 }}
+       end={{ x: 1, y: 0 }}
+       colors={[color.gradiant1, color.gradiant]}
+       style={styles.Container}>
        
+    
 
        
 
@@ -61,9 +63,7 @@ const Homescreen = ({ navigation }: HomescreenProps) => {
       </View>
 
 
-      <ScrollView
-        style= {{flex:1}}
-        >
+      
 
       {/* <View style={styles.Header}>
 
@@ -76,60 +76,10 @@ const Homescreen = ({ navigation }: HomescreenProps) => {
       </View> */}
 
       <TopTabNavigation />
-
-      <View style={styles.SubContainer}>
       
 
-
-        {/* <View style={styles.RightContainer}> */}
-
-
-        <View style={styles.Box}>
-
-          {/* <Text>student</Text> */}
-
-          <Image source={require('../../../image/Login_AS/student.png')}
-            style={{ width: "90%", height: "90%" }}
-          />
-          <CategoryButton title={'STUDENT  >>'} onPress={() => navigation.navigate("Student")} />
-        </View>
-
-        <View style={styles.Box}>
-          {/* <Text>Home</Text> */}
-
-          <Image source={require('../../../image/Login_AS/contractor.png')}
-            style={{ width: "90%", height: "90%" }}
-          />
-          <CategoryButton title={'contactor >>'} onPress={() => navigation.navigate("Student")} />
-
-        </View>
-
-        <View style={styles.Box}>
-          {/* <Text>Home</Text> */}
-
-          <Image source={require('../../../image/Login_AS/homeowner.png')}
-            style={{ width: "90%", height: "90%" }}
-          />
-          <CategoryButton title={'Home-owner >>'} onPress={() => navigation.navigate("Student")} />
-
-        </View>
-
-        <View style={styles.Box}>
-          {/* <Text>Home</Text> */}
-
-          <Image source={require('../../../image/Login_AS/shopowner.png')}
-            style={{ width: "90%", height: "90%" }}
-          />
-          <CategoryButton title={'Retailer  >>'} onPress={() => navigation.navigate("Student")} />
-
-
-        </View>
-
-  
-
       
-      </View>
-      </ScrollView>
+    
     </LinearGradient>
 
   )
@@ -138,6 +88,9 @@ const Homescreen = ({ navigation }: HomescreenProps) => {
 export default Homescreen
 
 const styles = StyleSheet.create({
+
+
+
   Container: {
     // Remove fixed height and width
     flex: 1,
@@ -253,22 +206,5 @@ const styles = StyleSheet.create({
     color: color.circle_light,
   },
 
-  SubContainer: {
-    flex: 40,
-    marginTop: windowHeight * 0.01, // 1% of the screen height
-    height: windowHeight * 0.75, // 75% of the screen height
-    flexWrap: 'wrap',
-    alignContent: 'space-around',
-    // backgroundColor:'white'
-  },
-
-  Box: {
-    padding: windowWidth * 0.02, // 2% of the screen width
-    height: windowHeight * 0.22, // 20% of the screen height
-    width: windowWidth * 0.45, // 40% of the screen width
-    marginTop: windowHeight * 0.07, // 5% of the screen height
-    justifyContent: 'center',
-    alignItems: 'center',
-    // backgroundColor:'pink'
-  },
+ 
 });
