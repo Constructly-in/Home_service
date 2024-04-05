@@ -1,12 +1,13 @@
-import { Image, ScrollView, ScrollViewComponent, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Image, ScrollView, ScrollViewComponent, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import MyButton from '../../../src/assets/Component/MyButton'
 import CategoryButton from '../../../src/assets/Component/CategoryButton'
 import color from '../../utility/color'
-
 import { Dimensions } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
+import CustomIcon from '../../../src/components/CustomIcon'
+import TopTabNavigation from '../TopTabNavigation/TopTabNavigation'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -18,6 +19,9 @@ interface HomescreenProps {
 
 
 const Homescreen = ({ navigation }: HomescreenProps) => {
+
+  const [selectedOption, setSelectedOption] = useState<'Home' | 'Property'>('Home');
+  
   return (
     <LinearGradient start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 0 }}
@@ -39,18 +43,19 @@ const Homescreen = ({ navigation }: HomescreenProps) => {
         {/* Center - Logo Image */}
         <View style={styles.LogoContainer}>
           <Image
-            source={require('../../../image/Login_AS/app_logo.png')}
+            source={require('../../../image/Login_AS/constructly_logo.png')}
             style={styles.LogoImage}
           />
         </View>
 
         {/* Right side - Settings */}
         <View style={styles.SettingsContainer}>
-          {/* Your settings component goes here */}
-          <Image
+          
+           <Image
             source={{uri:"https://image.similarpng.com/very-thumbnail/2020/08/Notification-bell-icon-new-message-bell-Premium-vector-PNG.png"}}
             style={styles.notificationImage}
-          />
+          /> 
+        
 
         </View>
       </View>
@@ -59,10 +64,18 @@ const Homescreen = ({ navigation }: HomescreenProps) => {
       <ScrollView
         style= {{flex:1}}
         >
-      <View style={styles.Header}>
-        <Text style={styles.Title}>HOME SERVICE</Text>
-        <Text style={styles.SubTitle}>FEATURES OF :-</Text>
-      </View>
+
+      {/* <View style={styles.Header}>
+
+      <TouchableOpacity onPress={() => setSelectedOption('Home')}>
+          <Text style={[styles.Title, selectedOption === 'Home' && styles.selected]}>Home Service</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setSelectedOption('Property')}>
+          <Text style={[styles.Title_2, selectedOption === 'Property' && styles.selected]}>Property</Text>
+        </TouchableOpacity> 
+      </View> */}
+
+      <TopTabNavigation />
 
       <View style={styles.SubContainer}>
       
@@ -133,7 +146,7 @@ const styles = StyleSheet.create({
 
 
   TopContainer: {
-    flex: 0.1,
+    flex: 0.06,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -141,14 +154,14 @@ const styles = StyleSheet.create({
     paddingTop: windowHeight * 0.01, // 5% of the screen height
     backgroundColor:color.Offwhite,
     
-    borderBottomEndRadius: 20,
-    borderBottomLeftRadius: 20
+    // borderBottomEndRadius: 20,
+    // borderBottomLeftRadius: 20
   },
 
   ProfileContainer: {
 
-    width: 40, // Adjust according to your requirement
-    height: 40, // Adjust according to your requirement
+    width: "10%", // Adjust according to your requirement
+    height: "80%", // Adjust according to your requirement
     borderRadius: 20, // Half of the width and height to make it circular
     backgroundColor: 'white',
     overflow: 'hidden',
@@ -163,7 +176,7 @@ const styles = StyleSheet.create({
 
   LogoContainer: {
     width:"20%",
-    height:"70%"
+    height:"100%"
 
   },
 
@@ -180,31 +193,63 @@ const styles = StyleSheet.create({
 
   SettingsContainer:{
     width:"10%",
-    height:"60%"
+    height:"60%",
+    backgroundColor:"black"
   },
 
 
 
 
   Header: {
-    flex: 4,
-    backgroundColor: 'green',
-    height: windowHeight * 0.3, // 20% of the screen height
-    paddingLeft: windowWidth * 0.06, // 10% of the screen width
-    paddingTop: windowHeight * 0.07, // 5% of the screen height
-    // backgroundColor:"red"
-    flexDirection:'column',
+    flex: 1,
+    // backgroundColor: 'green',
+    height: windowHeight * 0.05, // 20% of the screen height
+    
+    // backgroundColor:"red",
+    flexDirection:'row',
+    justifyContent:"space-around",
+
+  },
+
+  homeService:{
+    flex:1,
+    justifyContent:"center",
+    // alignSelf:"center",
+    alignItems:"center",
+    // backgroundColor:"white"
+    
+
+  },
+
+  propertyService:{
+    flex:1,
+    alignItems:"center",
+
+    backgroundColor:"green"
   },
 
   Title: {
-    fontSize: RFValue(20), // Using responsive font size
-    fontFamily: 'Poppins-ExtraBold',
-    color: color.circle,
+    fontSize: RFValue(16), // Using responsive font size
+    fontFamily: 'Poppins-Regular',
+    color: color.BLACK,
+    paddingTop:windowHeight* 0.01
+   
+  },
+
+  Title_2: {
+    fontSize: RFValue(16), // Using responsive font size
+    fontFamily: 'Poppins-Regular',
+    color: color.BLACK,
+    paddingTop:windowHeight* 0.01
+  },
+
+  selected: {
+    color: 'red', // Change to blue for 'Property' option
   },
 
   SubTitle: {
     fontSize: RFValue(20), // Using responsive font size
-    fontFamily: 'Poppins-ExtraBold',
+    fontFamily: 'Poppins-Black',
     color: color.circle_light,
   },
 

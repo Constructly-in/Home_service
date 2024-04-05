@@ -37,11 +37,7 @@ export default function Tabnavigation() {
       },
       shadowColor:color.BLACK,
       elevation: 2,
-      
-      
-      
    }
-
   }}
    >
  

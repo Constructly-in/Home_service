@@ -3,6 +3,7 @@ import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsi
 import React from 'react';
 import color from '../../utility/color';
 import LinearGradient from 'react-native-linear-gradient';
+import CustomIcon from '../../../src/components/CustomIcon';
 
 export default function Login({ navigation }) {
   return (
@@ -29,6 +30,7 @@ export default function Login({ navigation }) {
           <Text style={{ fontSize: widthPercentageToDP('4%'), color: color.Offwhite, textAlign: 'center' }}>
             Let's get started
           </Text>
+          
         </TouchableOpacity>
       </View>
       </LinearGradient>
