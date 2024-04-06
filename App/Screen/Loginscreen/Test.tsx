@@ -3,13 +3,14 @@ import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsi
 import React from 'react';
 import color from '../../utility/color';
 import LinearGradient from 'react-native-linear-gradient';
+import CustomIcon from '../../../src/components/CustomIcon';
 
 export default function Login({ navigation }) {
   return (
     // <View style={{ flex: 1, alignItems: 'center' , backgroundColor:color.BLACK}}>
       <LinearGradient start={{x: 0, y: 0}} 
                                 end={{x: 1, y: 0}} 
-                                colors={['#000000', '#20232C']} 
+                                colors={[color.gradiant1, color.gradiant]} 
                                 style={styles.Container}>
       <Image
         source={require('./../../../image/OneDrive-2024-02-07/frontpage.png')}
@@ -26,9 +27,10 @@ export default function Login({ navigation }) {
         }}>"Building Dreams, One Brick at a Time" </Text>
 
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("SignScreen")}>
-          <Text style={{ fontSize: widthPercentageToDP('4%'), color: color.white, textAlign: 'center' }}>
+          <Text style={{ fontSize: widthPercentageToDP('4%'), color: color.Offwhite, textAlign: 'center' }}>
             Let's get started
           </Text>
+          
         </TouchableOpacity>
       </View>
       </LinearGradient>

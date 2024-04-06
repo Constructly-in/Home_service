@@ -1,4 +1,5 @@
-import { createStackNavigator } from '@react-navigation/stack';
+// import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from '../Loginscreen/Login';
 import SignScreen from '../Signinscreen/SignScreen';
 import SingupScreen from '../SingupScreen/SingupScreen';
@@ -9,20 +10,33 @@ import Test2 from '../Signinscreen/Test2';
 import Test3 from '../SingupScreen/Test3';
 import Student from '../category/Student';
 import AuthProvider from '../../Contexts/AuthContext';
-// import Homescreen from '../Homescreen/Homescreen';
+import Tabnavigation_property from '../../TabNavigation/Tabnavigation_propertyt';
 
-const Stack = createStackNavigator();
+
+const Stack = createNativeStackNavigator();
 
  export default function StackNavigator() {
   return (
     <AuthProvider>
     <Stack.Navigator screenOptions={{headerShown: false}}>
-       <Stack.Screen name="Login" component={Test} />   
-       <Stack.Screen name="SignScreen" component={Test2} /> 
-       <Stack.Screen name="SingupScreen" component={Test3} />              
-       <Stack.Screen name="Tabnavigation" component={Tabnavigation} />               
-       <Stack.Screen name="Homescreen" component={Homescreen} />               
-       <Stack.Screen name="Student" component={Student} />                      
+       <Stack.Screen 
+       name="Login" 
+       component={Test} 
+       options={{animation: 'slide_from_bottom'}}
+       />   
+       <Stack.Screen name="SignScreen" component={Test2} 
+       options={{animation: 'slide_from_bottom'}}
+       /> 
+       <Stack.Screen name="SingupScreen" component={Test3} 
+       options={{animation: 'slide_from_bottom'}}
+       />              
+       <Stack.Screen name="Tabnavigation" component={Tabnavigation} 
+       options={{animation: 'slide_from_bottom'}}
+       />               
+       
+              
+                    
+                         
     </Stack.Navigator>
     </AuthProvider>
   );

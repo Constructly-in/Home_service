@@ -46,10 +46,10 @@ export default function SingupScreen({navigation}:SignupScreenProps) {
         <View style={styles.Container}>
             <LinearGradient start={{x: 0, y: 0}} 
                                 end={{x: 1, y: 0}} 
-                                colors={['#000000', '#20232C']} 
+                                colors={[ color.gradiant1, color.gradiant ]} 
                                 style={styles.Container}>
             <ImageBackground
-                source={require('./../../../image/OneDrive-2024-02-07/realBg2.png')}
+                source={require('./../../../image/OneDrive-2024-02-07/circle.png')}
                 style={styles.loginScreen}
             >
                 {/* <Image
@@ -67,20 +67,20 @@ export default function SingupScreen({navigation}:SignupScreenProps) {
 
                     <LinearGradient start={{x: 0, y: 0}} 
                                 end={{x: 1, y: 0}} 
-                                colors={['#242831', '#414345']} 
+                                colors={[color.Offwhite, color.Offwhite]} 
                                 style={styles.innerContainer}>
 
-                    <MyTextInput onChangeText={(text: string) => setUserName(text)} placeholder="Name" />
-                    <MyTextInput onChangeText={(text: string) => setPhone(text)} placeholder="Phone Number" />
+                    <MyTextInput onChangeText={(text: string) => setUserName(text)} placeholder="Name"  placeholderTextColor = {color.white}/>
+                    <MyTextInput onChangeText={(text: string) => setPhone(text)} placeholder="Phone Number"  placeholderTextColor = {color.white} />
                     <MyTextInput
                         value={email}
                         onChangeText={(text: string) => setEmail(text)}
-                        placeholder="Enter E-Mail or User Name"
+                        placeholder="Enter E-Mail or User Name"  placeholderTextColor = {color.white}
                     />
                     <MyTextInput
                         value={password}
                         onChangeText={(text: string) => setPassword(text)}
-                        placeholder="Password"
+                        placeholder="Password" placeholderTextColor = {color.white}
                         secureTextEntry
                     />
                     <MyTextInput
@@ -88,6 +88,7 @@ export default function SingupScreen({navigation}:SignupScreenProps) {
                         onChangeText={(text: string) => setConfirmPassword(text)}
                         placeholder="Confirm Password"
                         secureTextEntry
+                        placeholderTextColor = {color.white}
                     />
 
                     <MyButton onPress={signUpTestfn} title={"Sign up"} />
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
     Title: {
         textAlign: 'center',
         fontSize: widthPercentageToDP('7%'),
-        color: color.PRIMARY,
+        color: color.Offwhite,
         marginTop: heightPercentageToDP('10%'),
         fontFamily: 'Cardo-Regular',
       
