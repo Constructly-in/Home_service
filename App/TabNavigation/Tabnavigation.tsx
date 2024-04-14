@@ -5,9 +5,10 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Homescreen from '../Screen/Homescreen/Homescreen';
 import Profilescreen from '../Screen/Profile/Profilescreen';
-import Bookingscreen from '../Screen/Booking/Bookingscreen';
+import Bookingscreen from '../Screen/CartScreen/CartScreen';
 import color from '../utility/color';
 import LinearGradient from 'react-native-linear-gradient';
+import CartScreen from '../Screen/CartScreen/CartScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -92,7 +93,7 @@ export default function Tabnavigation() {
     }}
     />
     
-    <Tab.Screen name="Booking" component={Bookingscreen} 
+    <Tab.Screen name="Cart" component={CartScreen} 
      options={{
       
     tabBarIcon:({focused})=>(

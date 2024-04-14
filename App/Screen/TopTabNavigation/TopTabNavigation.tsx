@@ -18,6 +18,7 @@ const TopTabNavigation = () => {
                         height: "6%",
                         width: "100%",
                     },
+                    swipeEnabled:false,
                     tabBarInactiveTintColor: color.Offwhite, // Text color when inactive
                     tabBarActiveTintColor: "white",   // Text color when active
                     

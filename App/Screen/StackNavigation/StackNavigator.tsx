@@ -10,7 +10,8 @@ import Test2 from '../Signinscreen/Test2';
 import Test3 from '../SingupScreen/Test3';
 import Student from '../category/Student';
 import AuthProvider from '../../Contexts/AuthContext';
-import Tabnavigation_property from '../../TabNavigation/Tabnavigation_propertyt';
+// import Tabnavigation_property from '../../TabNavigation/Tabnavigation_propertyt';
+import DetailScreen from '../HomeService/DetailScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -31,6 +32,9 @@ const Stack = createNativeStackNavigator();
        options={{animation: 'slide_from_bottom'}}
        />              
        <Stack.Screen name="Tabnavigation" component={Tabnavigation} 
+       options={{animation: 'slide_from_bottom'}}
+       />               
+       <Stack.Screen name="Details" component={DetailScreen} 
        options={{animation: 'slide_from_bottom'}}
        />               
        

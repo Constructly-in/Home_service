@@ -1,13 +1,13 @@
-const CoffeeData = [
+const homeServiceData = [
     {
       id: 'C1',
-      name: 'Americano',
+      name: 'Plumber',
       description: `The Americano is another popular type of coffee drink, and it's very easy to make! It's just espresso with hot water dripping over it. The name came about during World War II when European baristas added water to their espresso drinks for the American soldiers stationed there. The resulting drink had a smoother, less concentrated flavour than espresso and thus the Americano was born.`,
       roasted: 'Medium Roasted',
-      imagelink_square: require('../assets/coffee_assets/americano/square/americano_pic_1_square.png'),
-      imagelink_portrait: require('../assets/coffee_assets/americano/portrait/americano_pic_1_portrait.png'),
+      imagelink_square: require('../assets/home_service_assets/logo/plumber.png'),
+      imagelink_portrait: require('../assets/home_service_assets/square/plumber.png'),
       ingredients: 'Milk',
-      special_ingredient: 'With Steamed Milk',
+      special_ingredient: 'Fast service',
       prices: [
         {size: 'S', price: '1.38', currency: '$'},
         {size: 'M', price: '3.15', currency: '$'},
@@ -360,5 +360,5 @@ const CoffeeData = [
       index: 17,
     },
   ];
-  export default CoffeeData;
+  export default homeServiceData;
   
