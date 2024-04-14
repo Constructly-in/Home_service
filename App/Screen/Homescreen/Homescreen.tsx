@@ -1,8 +1,8 @@
 import { Image, ScrollView, ScrollViewComponent, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
-import MyButton from '../../../src/assets/Component/MyButton'
-import CategoryButton from '../../../src/assets/Component/CategoryButton'
+import MyButton from '../../../src/assets/Buttons/MyButton'
+import CategoryButton from '../../../src/assets/Buttons/CategoryButton'
 import color from '../../utility/color'
 import { Dimensions } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';

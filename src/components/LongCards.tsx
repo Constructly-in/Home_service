@@ -1,11 +1,14 @@
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import color from '../../App/utility/color'
+import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 
 export default function LongCards() {
+
+  const tabBarHeight = useBottomTabBarHeight();
   return (
-    <View>
-    <Text style = {styles.headingOne}>Register Yourself as Blue-Coller worker </Text>
+    <View style= {{marginBottom:120}}>
+    <Text style = {styles.headingOne}>Our service  </Text>
        
     <ScrollView  horizontal = {false} style = {styles.container}>
 
@@ -17,7 +20,7 @@ export default function LongCards() {
           
            
         </View>
-        <View style = {[styles.cards , styles.csrdElevated]}>
+        {/* <View style = {[styles.cards , styles.csrdElevated]}>
 
                <Image
             source={require("../../image/OneDrive-2024-02-07/homeservice/mop.png")}
@@ -36,7 +39,7 @@ export default function LongCards() {
             <Text>
                 pi
             </Text>
-        </View>
+        </View> */}
   
   
      
@@ -53,7 +56,7 @@ const styles = StyleSheet.create({
     headingOne: {
         fontSize: 26,
         fontWeight: 'bold',
-        paddingHorizontal: 12,
+        paddingHorizontal: 30,
         paddingBottom:8,
         paddingTop:8,
         color:color.circle_light,

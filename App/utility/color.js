@@ -18,7 +18,8 @@ export default{
     gradiant1: '#261203' ,
     cream:'#542c0d',
     circle:"#eebc95",
-    circle_light:"#f9e6d7"
+    circle_light:"#f9e6d7",
+    light_gradient:'#562b06',
 
 
 }

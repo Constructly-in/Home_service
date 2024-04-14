@@ -14,21 +14,25 @@ import Homescreen from './App/Screen/Homescreen/Homescreen';
 import LinearGradient from 'react-native-linear-gradient';
 import StackNavigator from './App/Screen/StackNavigation/StackNavigator';
 
+// import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+
 
 export default function App() {
   return (
 
-    
-     
 
 
-        <NavigationContainer>
-         <StackNavigator /> 
-        </NavigationContainer>
-      
-      
 
     
+      <NavigationContainer>
+        <StackNavigator />
+      </NavigationContainer>
+    
+
+
+
+
 
   )
 }

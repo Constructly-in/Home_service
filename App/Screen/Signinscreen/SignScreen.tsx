@@ -1,9 +1,9 @@
 import { Alert, Button, Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import color from '../../utility/color'
-import MyButton from '../../../src/assets/Component/MyButton'
-import MyTextInput from '../../../src/assets/Component/MyTextInput'
-import Socialmedia from '../../../src/assets/Component/Socialmedia'
+import MyButton from '../../../src/assets/Buttons/MyButton'
+import MyTextInput from '../../../src/assets/Buttons/MyTextInput'
+import Socialmedia from '../../../src/assets/Buttons/Socialmedia'
 import auth from "@react-native-firebase/auth"
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
