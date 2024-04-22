@@ -3,9 +3,20 @@ import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsi
 import React from 'react';
 import color from '../../utility/color';
 import LinearGradient from 'react-native-linear-gradient';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import CustomIcon from '../../../src/components/CustomIcon';
 
 export default function Login({ navigation }) {
+
+  const checkUser = async () => {
+    const storageValue = await AsyncStorage.getItem('userEmail');
+    if(storageValue !== null) {
+      navigation.navigate("Tabnavigation");
+    }
+    else {
+      navigation.navigate("SignScreen");
+    }
+  }
   return (
     // <View style={{ flex: 1, alignItems: 'center' , backgroundColor:color.BLACK}}>
       <LinearGradient start={{x: 0, y: 0}} 
@@ -26,7 +37,7 @@ export default function Login({ navigation }) {
           paddingTop: heightPercentageToDP('1%'),
         }}>"Building Dreams, One Brick at a Time" </Text>
 
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("SignScreen")}>
+        <TouchableOpacity style={styles.button} onPress={() => checkUser() }>
           <Text style={{ fontSize: widthPercentageToDP('4%'), color: color.Offwhite, textAlign: 'center' }}>
             Let's get started
           </Text>

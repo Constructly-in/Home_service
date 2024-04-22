@@ -1,9 +1,24 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient';
 import color from '../../utility/color';
+import firestore from '@react-native-firebase/firestore'  
+import { useAuth } from '../../Contexts/AuthContext';
 
 export default function Profilescreen() {
+  const {currentUser} = useAuth();
+  const [userDetails,setUserDetails] = useState([]);
+
+  const fetchUser = async () => {
+    const user = await firestore().collection('Users').doc(currentUser.uid).get();
+    setUserDetails(user._data);
+  }
+
+  useEffect(()=> {
+    fetchUser();
+  },[])
+
+
   return (
     <LinearGradient start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 0 }}
@@ -15,12 +30,12 @@ export default function Profilescreen() {
     <View style={styles.topContainer}>
       {/* Profile Pic, Name, Phone, Email */}
       <Image
-        source={require('/Users/prakh/projects/Home_service/image/Login_AS/shopowner.png')}
+        source={require('../../../image/Login_AS/shopowner.png')}
         style={styles.profilePic}
       />
-      <Text style={styles.name}>John Doe</Text>
-      <Text style={styles.phoneNumber}>Phone: +1 123-456-7890</Text>
-      <Text style={styles.email}>Email: john.doe@example.com</Text>
+      <Text style={styles.name}>{userDetails.userName ? userDetails.userName : 'loading...'}</Text>
+      <Text style={styles.phoneNumber}>{userDetails.phoneNum}</Text>
+      <Text style={styles.email}>{userDetails.email}</Text>
     </View>
 
     {/* Bottom Container with Horizontal Components */}
