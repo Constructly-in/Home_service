@@ -5,7 +5,7 @@ import color from '../../utility/color';
 import MyButton from '../../../src/assets/Buttons/MyButton';
 import MyTextInput from '../../../src/assets/Buttons/MyTextInput';
 import auth from "@react-native-firebase/auth";
-import AsyncStorage from '@react-native-async-storage/async-storage';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import LinearGradient from 'react-native-linear-gradient';
 import { useAuth } from '../../Contexts/AuthContext';
@@ -18,33 +18,34 @@ interface SignScreenProps {
 export default function SignScreen({ navigation }: SignScreenProps) {
     const { login } = useAuth();
     const [email, setEmail] = useState("");
-    const [userStorage,setUserStorage] = useState('');
+    // const [userStorage,setUserStorage] = useState('');
     const [password, setPasswword] = useState("");
 
-    const getStorage = async () => {
-        const storageValue = await AsyncStorage.getItem('userEmail');
-        setUserStorage(storageValue);
-        // console.log(storageValue);
-    }
+    // const getStorage = async () => {
+    //     const storageValue = await AsyncStorage.getItem('userEmail');
+    //     setUserStorage(storageValue);
+    //     // console.log(storageValue);
+    // }
 
     useEffect(() => {
         GoogleSignin.configure({
             webClientId: '570696891484-6127lf9k6ogrqmioehqi59gd31q803po.apps.googleusercontent.com',
         });
-        getStorage();
+        // getStorage();
     }, []);
 
-    async function onGoogleButtonPress() {
+    const onGoogleButtonPress = async () => {
         try {
             await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
-            const { idToken, user } = await GoogleSignin.signIn();
-            // console.log(user);
-            Alert.alert("Successful login");
-            navigation.navigate("Tabnavigation");
+            const { idToken } = await GoogleSignin.signIn();
+            console.log(idToken);
+            // Alert.alert("Successful login");
+            // navigation.navigate("Tabnavigation");
             
 
             const googleCredential = auth.GoogleAuthProvider.credential(idToken);
             return auth().signInWithCredential(googleCredential);
+
         } catch (error) {
             console.log(error);
         }
@@ -109,7 +110,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
 
                 <View style={{ position: "relative", top: "5%" }} >
                     <Text style={styles.Title} >
-                        Constructly.in {userStorage}
+                        Constructly.in
                     </Text>
                 </View>
 
@@ -158,7 +159,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
 
 
                     <Text style={styles.Ortext}>OR</Text>
-                    <MyButton title={"LOGIN WITH GOOGLE"} onPress={onGoogleButtonPress} />
+                    <MyButton title={"LOGIN WITH GOOGLE"} onPress={() => onGoogleButtonPress().then((userLog) => console.log(userLog) )} />
                     </LinearGradient>
                 {/* </View> */}
                 {/* </NeuMorph> */}
