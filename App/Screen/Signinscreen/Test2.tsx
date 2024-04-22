@@ -24,7 +24,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
     const getStorage = async () => {
         const storageValue = await AsyncStorage.getItem('userEmail');
         setUserStorage(storageValue);
-        console.log(storageValue);
+        // console.log(storageValue);
     }
 
     useEffect(() => {

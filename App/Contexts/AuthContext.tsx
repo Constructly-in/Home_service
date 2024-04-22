@@ -14,21 +14,21 @@ export default function AuthProvider({children}) {
     const [currentUser, setCurrentUser] = useState();
 
     function signup(userName,phone,email,userPassword) {
-        return auth().createUserWithEmailAndPassword(email, userPassword).then((userDoc) => {
-            firestore().collection('Users').doc(userDoc.user.uid)
+        return auth().createUserWithEmailAndPassword(email, userPassword).then( async (signUpDoc) => {
+            firestore().collection('Users').doc(signUpDoc.user.uid)
             .set({
                 userName: userName,
                 phoneNum: phone,
                 email: email,
-                accType: 3
-            })
-            .then(() => {
-                // Alert.alert("Account Created Successfully!");
+                accType: 3,
+                createdAt: new Date()
             })
             .catch(err => {
-                console.log(err);
-                Alert.alert("Some error occured");
-            })
+                Alert.alert(err);
+            });
+
+            await AsyncStorage.setItem('userEmail', signUpDoc.user.email);
+            return signUpDoc
         })
         .catch(err => {
             if (err.code === 'auth/email-already-in-use') {
