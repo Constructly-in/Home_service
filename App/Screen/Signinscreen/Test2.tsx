@@ -5,6 +5,7 @@ import color from '../../utility/color';
 import MyButton from '../../../src/assets/Buttons/MyButton';
 import MyTextInput from '../../../src/assets/Buttons/MyTextInput';
 import auth from "@react-native-firebase/auth";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import LinearGradient from 'react-native-linear-gradient';
 import { useAuth } from '../../Contexts/AuthContext';
@@ -17,19 +18,27 @@ interface SignScreenProps {
 export default function SignScreen({ navigation }: SignScreenProps) {
     const { login } = useAuth();
     const [email, setEmail] = useState("");
+    const [userStorage,setUserStorage] = useState('');
     const [password, setPasswword] = useState("");
+
+    const getStorage = async () => {
+        const storageValue = await AsyncStorage.getItem('userEmail');
+        setUserStorage(storageValue);
+        console.log(storageValue);
+    }
 
     useEffect(() => {
         GoogleSignin.configure({
             webClientId: '570696891484-6127lf9k6ogrqmioehqi59gd31q803po.apps.googleusercontent.com',
         });
+        getStorage();
     }, []);
 
     async function onGoogleButtonPress() {
         try {
             await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
             const { idToken, user } = await GoogleSignin.signIn();
-            console.log(user);
+            // console.log(user);
             Alert.alert("Successful login");
             navigation.navigate("Tabnavigation");
             
@@ -44,8 +53,13 @@ export default function SignScreen({ navigation }: SignScreenProps) {
     const loginWithEmailAndPassword = async() => {
         if (email !== "" && password !== ""){
             try {
-              await login(email,password);
-              navigation.navigate("Tabnavigation");
+                const userDoc = await login(email,password);
+                if(userDoc !== undefined ) {
+                    navigation.navigate("Tabnavigation");
+                }
+
+            //   .then(() => {
+            //   })
             }catch {
               Alert.alert("An error occured!");
             }
@@ -95,7 +109,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
 
                 <View style={{ position: "relative", top: "5%" }} >
                     <Text style={styles.Title} >
-                        Constructly.in
+                        Constructly.in {userStorage}
                     </Text>
                 </View>
 
@@ -133,7 +147,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
                             style={styles.TextAccount}
                             onPress={() => navigation.navigate("SingupScreen")}
                         >
-                            Don't Have an account yet ?
+                            Don't Have an account yet ? Sign Up
                         </Text>
 
 
