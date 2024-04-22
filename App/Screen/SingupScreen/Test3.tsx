@@ -29,8 +29,12 @@ export default function SingupScreen({navigation}:SignupScreenProps) {
             }
             else {
                 try{   
-                    await signup(userName,phone,email,password);
-                    navigation.navigate("Tabnavigation");
+                    const userSignDoc = await signup(userName,phone,email,password);
+                    if(userSignDoc !== undefined ) {
+                        navigation.navigate("Tabnavigation");
+                    }else{
+                        Alert.alert("Some error occured!");
+                    }
                 }catch{
                     Alert.alert("An error occured!");
                 }

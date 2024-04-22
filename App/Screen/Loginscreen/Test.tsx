@@ -16,6 +16,7 @@ export default function Login({ navigation }) {
     else {
       navigation.navigate("SignScreen");
     }
+    // navigation.navigate("SignScreen");
   }
   return (
     // <View style={{ flex: 1, alignItems: 'center' , backgroundColor:color.BLACK}}>
