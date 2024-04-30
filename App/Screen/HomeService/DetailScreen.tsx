@@ -65,7 +65,7 @@ const DetailScreen = ({navigation, route}: any) => {
 
   return (
     <View style={styles.ScreenContainer}>
-      <StatusBar backgroundColor={color.gradiant1} />
+      <StatusBar backgroundColor={color.GREY} />
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.ScrollViewFlex}>
@@ -173,7 +173,7 @@ const DetailScreen = ({navigation, route}: any) => {
 const styles = StyleSheet.create({
   ScreenContainer: {
     flex: 1,
-    backgroundColor: color.gradiant,
+    backgroundColor: color.bg_white,
   },
   ScrollViewFlex: {
     flexGrow: 1,
@@ -185,14 +185,14 @@ const styles = StyleSheet.create({
   InfoTitle: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_16,
-    color: COLORS.primaryWhiteHex,
+    color: color.Obsidian,
     marginBottom: SPACING.space_10,
   },
   DescriptionText: {
     letterSpacing: 0.5,
     fontFamily: FONTFAMILY.poppins_regular,
     fontSize: FONTSIZE.size_14,
-    color: COLORS.primaryWhiteHex,
+    color: color.Night,
     marginBottom: SPACING.space_30,
   },
   SizeOuterContainer: {
@@ -201,18 +201,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     gap: SPACING.space_20,
   },
-  SizeBox: {
-    flex: 1,
-    backgroundColor: COLORS.primaryDarkGreyHex,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: SPACING.space_24 * 2,
-    borderRadius: BORDERRADIUS.radius_10,
-    borderWidth: 2,
-  },
-  SizeText: {
-    fontFamily: FONTFAMILY.poppins_medium,
-  },
+  // SizeBox: {
+  //   flex: 1,
+  //   backgroundColor: COLORS.primaryDarkGreyHex,
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  //   height: SPACING.space_24 * 2,
+  //   borderRadius: BORDERRADIUS.radius_10,
+  //   borderWidth: 2,
+  // },
+  // SizeText: {
+  //   fontFamily: FONTFAMILY.poppins_medium,
+  // },
 });
 
 export default DetailScreen;

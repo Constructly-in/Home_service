@@ -49,10 +49,10 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
 }) => {
   return (
     <LinearGradient
-      start={{x: 0, y: 0}}
-      end={{x: 1, y: 1}}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
       style={styles.CardLinearGradientContainer}
-      colors={[color.light_gradient, color.cream]}>
+      colors={[color.GREY, color.darkgey]}>
       <ImageBackground
         source={imagelink_square}
         style={styles.CardImageBG}
@@ -102,7 +102,12 @@ const styles = StyleSheet.create({
   CardLinearGradientContainer: {
     padding: SPACING.space_15,
     borderRadius: BORDERRADIUS.radius_25,
-    
+    marginHorizontal: SPACING.space_10,
+    shadowOffset: { width: 0, height: 3 },
+    shadowColor: '#171717',
+    shadowOpacity: 0.4,
+    shadowRadius: 2,
+     elevation :3 ,
   },
   CardImageBG: {
     width: CARD_WIDTH,

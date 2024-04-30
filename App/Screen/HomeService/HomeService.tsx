@@ -110,9 +110,9 @@ const HomeService = ({ navigation }: any) => {
         {/* Coffee Flatlist */}
 
         <FlatList
-          ref={ListRef}
-          horizontal
-
+          // ref={ListRef}
+          // horizontal
+          numColumns={2}
           //coffe search
           // ListEmptyComponent={
           //   <View style={styles.EmptyListContainer}>
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
 
     // minHeight:1000,
     // width: "100%",
-    backgroundColor: color.gradiant1,
+    backgroundColor: color.bg_white,
     flex: 1,
     justifyContent: "center",
     // alignItems:"center"

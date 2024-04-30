@@ -22,7 +22,7 @@ export default function Login({ navigation }) {
     // <View style={{ flex: 1, alignItems: 'center' , backgroundColor:color.BLACK}}>
       <LinearGradient start={{x: 0, y: 0}} 
                                 end={{x: 1, y: 0}} 
-                                colors={[color.gradiant1, color.gradiant]} 
+                                colors={[color.bg_white, color.bg_white]} 
                                 style={styles.Container}>
       <Image
         source={require('./../../../image/OneDrive-2024-02-07/frontpage.png')}
@@ -34,7 +34,7 @@ export default function Login({ navigation }) {
         </Text>
 
         <Text style={{
-          fontSize: widthPercentageToDP('4%'), textAlign: 'center', color:color.PRIMARY,
+          fontSize: widthPercentageToDP('4%'), textAlign: 'center', color:color.WHITE,
           paddingTop: heightPercentageToDP('1%'),
         }}>"Building Dreams, One Brick at a Time" </Text>
 
@@ -69,18 +69,18 @@ const styles = StyleSheet.create({
 
   subContainer: {
     width: '100%',
-    backgroundColor: color.Offwhite,
+    backgroundColor: color.GREY,
     height: '55%',
     marginTop: -heightPercentageToDP('2%'),
     borderRadius: 30,
     padding: widthPercentageToDP('5%'),
-    shadowRadius: 2,
-   elevation:10
+    // shadowRadius: 2,
+     elevation:5
   },
 
   heading_1: {
     fontSize: widthPercentageToDP('5%'),
-    color: color.BLACK,
+    color: color.Obsidian,
     textAlign: 'center',
   },
 
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     paddingLeft: widthPercentageToDP('5%'),
     paddingTop: heightPercentageToDP('2%'),
     height: heightPercentageToDP('7%'),
-    backgroundColor:color.BLACK,
+    backgroundColor:color.Obsidian,
     borderRadius: 99,
   },
 });

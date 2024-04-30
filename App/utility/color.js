@@ -20,6 +20,19 @@ export default{
     circle:"#eebc95",
     circle_light:"#f9e6d7",
     light_gradient:'#562b06',
+    cream_bg: 'rgba(84, 44, 13, 0.75)',
+    light_cream:"#9a5118",
+
+    // #F6F7FB bg
+    // #ffffff
+    // Obsidian #0B1215
+    // grey #B2B2B2
+
+    bg_white: "#F6F7FB" ,
+    WHITE: "#ffffff", 
+    Obsidian: "#0B1215" ,
+    GREY: "#B2B2B2" ,
+    gold: "#C8830C"
 
 
 }

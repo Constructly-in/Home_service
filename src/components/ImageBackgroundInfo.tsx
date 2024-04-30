@@ -78,37 +78,8 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
                   {special_ingredient}
                 </Text>
               </View>
+
               <View style={styles.ItemPropertiesContainer}>
-                <View style={styles.ProperFirst}>
-                  <CustomIcon
-                    name={type == 'Bean' ? 'bean' : 'beans'}
-                    size={type == 'Bean' ? FONTSIZE.size_18 : FONTSIZE.size_24}
-                    color={COLORS.primaryOrangeHex}
-                  />
-                  <Text
-                    style={[
-                      styles.PropertyTextFirst,
-                      {
-                        marginTop:
-                          type == 'Bean'
-                            ? SPACING.space_4 + SPACING.space_2
-                            : 0,
-                      },
-                    ]}>
-                    {type}
-                  </Text>
-                </View>
-                <View style={styles.ProperFirst}>
-                  <CustomIcon
-                    name={type == 'Bean' ? 'location' : 'drop'}
-                    size={FONTSIZE.size_16}
-                    color={COLORS.primaryOrangeHex}
-                  />
-                  <Text style={styles.PropertyTextLast}>{ingredients}</Text>
-                </View>
-              </View>
-            </View>
-            <View style={styles.InfoContainerRow}>
               <View style={styles.RatingContainer}>
                 <CustomIcon
                   name={'star'}
@@ -118,10 +89,14 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
                 <Text style={styles.RatingText}>{average_rating}</Text>
                 <Text style={styles.RatingCountText}>({ratings_count})</Text>
               </View>
-              <View style={styles.RoastedContainer}>
+              
+              {/* <View style={styles.RoastedContainer}>
                 <Text style={styles.RoastedText}>{roasted}</Text>
+              </View> */}
+               
               </View>
             </View>
+
           </View>
         </View>
       </ImageBackground>
@@ -177,9 +152,9 @@ const styles = StyleSheet.create({
     color: COLORS.primaryWhiteHex,
   },
   ItemPropertiesContainer: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'center',
-    gap: SPACING.space_20,
+    gap: SPACING.space_10,
   },
   ProperFirst: {
     height: 55,

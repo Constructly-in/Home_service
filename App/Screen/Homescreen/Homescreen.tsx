@@ -19,19 +19,21 @@ interface HomescreenProps {
 }
 
 
+
+
 const Homescreen = ({ navigation }: HomescreenProps) => {
 
   const [selectedOption, setSelectedOption] = useState<'Home' | 'Property'>('Home');
-  
-  return (
-     <LinearGradient start={{ x: 0, y: 0 }}
-       end={{ x: 1, y: 0 }}
-       colors={[color.gradiant1, color.gradiant]}
-       style={styles.Container}>
-       
-    
 
-       
+  return (
+    <LinearGradient start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 0 }}
+      colors={[color.bg_white, color.bg_white]}
+      style={styles.Container}>
+
+
+
+
 
       <View style={styles.TopContainer}>
         {/* Left side - Profile Image */}
@@ -51,19 +53,22 @@ const Homescreen = ({ navigation }: HomescreenProps) => {
         </View>
 
         {/* Right side - Settings */}
-        <View style={styles.SettingsContainer}>
-          
-           <Image
-            source={{uri:"https://image.similarpng.com/very-thumbnail/2020/08/Notification-bell-icon-new-message-bell-Premium-vector-PNG.png"}}
-            style={styles.notificationImage}
-          /> 
-        
+        <TouchableOpacity style={styles.SettingsContainer}
+        onPress={() => navigation.navigate('Order') }
+        >
 
-        </View>
+          {/* <Image
+            source={{ uri: "https://image.similarpng.com/very-thumbnail/2020/08/Notification-bell-icon-new-message-bell-Premium-vector-PNG.png" }}
+            style={styles.notificationImage}
+          /> */}
+
+          <CustomIcon name='bell' size={25} color={color.gold} style ={styles.notificationImage}  />
+        </TouchableOpacity>
+
       </View>
 
 
-      
+
 
       {/* <View style={styles.Header}>
 
@@ -76,10 +81,10 @@ const Homescreen = ({ navigation }: HomescreenProps) => {
       </View> */}
 
       <TopTabNavigation />
-      
 
-      
-    
+
+
+
     </LinearGradient>
 
   )
@@ -105,8 +110,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: windowWidth * 0.05, // 5% of the screen width
     paddingTop: windowHeight * 0.01, // 5% of the screen height
-    backgroundColor:color.Offwhite,
-    
+    backgroundColor: color.GREY,
+
     // borderBottomEndRadius: 20,
     // borderBottomLeftRadius: 20
   },
@@ -128,26 +133,26 @@ const styles = StyleSheet.create({
   },
 
   LogoContainer: {
-    width:"20%",
-    height:"100%"
+    width: "20%",
+    height: "100%"
 
   },
 
 
   LogoImage: {
-    width:"100%",
-    height:"100%"
+    width: "100%",
+    height: "100%"
   },
 
-  notificationImage:{
-    width:"100%",
-    height:"100%"
+  notificationImage: {
+    width: "100%",
+    height: "100%"
   },
 
-  SettingsContainer:{
-    width:"10%",
-    height:"60%",
-    backgroundColor:"black"
+  SettingsContainer: {
+    width: "10%",
+    height: "60%",
+    
   },
 
 
@@ -157,43 +162,43 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: 'green',
     height: windowHeight * 0.05, // 20% of the screen height
-    
+
     // backgroundColor:"red",
-    flexDirection:'row',
-    justifyContent:"space-around",
+    flexDirection: 'row',
+    justifyContent: "space-around",
 
   },
 
-  homeService:{
-    flex:1,
-    justifyContent:"center",
+  homeService: {
+    flex: 1,
+    justifyContent: "center",
     // alignSelf:"center",
-    alignItems:"center",
+    alignItems: "center",
     // backgroundColor:"white"
-    
+
 
   },
 
-  propertyService:{
-    flex:1,
-    alignItems:"center",
+  propertyService: {
+    flex: 1,
+    alignItems: "center",
 
-    backgroundColor:"green"
+    backgroundColor: "green"
   },
 
   Title: {
     fontSize: RFValue(16), // Using responsive font size
     fontFamily: 'Poppins-Regular',
     color: color.BLACK,
-    paddingTop:windowHeight* 0.01
-   
+    paddingTop: windowHeight * 0.01
+
   },
 
   Title_2: {
     fontSize: RFValue(16), // Using responsive font size
     fontFamily: 'Poppins-Regular',
     color: color.BLACK,
-    paddingTop:windowHeight* 0.01
+    paddingTop: windowHeight * 0.01
   },
 
   selected: {
@@ -206,5 +211,5 @@ const styles = StyleSheet.create({
     color: color.circle_light,
   },
 
- 
+
 });

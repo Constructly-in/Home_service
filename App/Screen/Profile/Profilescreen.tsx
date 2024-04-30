@@ -1,65 +1,114 @@
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 import React, { useEffect, useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient';
 import color from '../../utility/color';
-import firestore from '@react-native-firebase/firestore'  
+import firestore from '@react-native-firebase/firestore'
 import { useAuth } from '../../Contexts/AuthContext';
+import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
+import HomeScreenHeader from '../../../src/components/homeScreenHeader';
+import HeaderBar from '../../../src/components/HeaderBar';
+// import { ScrollView } from 'react-native-gesture-handler';
 
 export default function Profilescreen() {
-  const {currentUser} = useAuth();
-  const [userDetails,setUserDetails] = useState([]);
+  const { currentUser } = useAuth();
+  const [userDetails, setUserDetails] = useState([]);
 
   const fetchUser = async () => {
     const user = await firestore().collection('Users').doc(currentUser.uid).get();
     setUserDetails(user._data);
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     fetchUser();
-  },[])
+  }, [])
 
 
   return (
-    <LinearGradient start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 0 }}
-      colors={[color.gradiant1, color.gradiant]}
-      style={styles.container} >
+    <ScrollView style={styles.container} >
+      
+      {/* <HomeScreenHeader /> */}
+      <HeaderBar title="Profile" />
 
-    
-    {/* Top Container */}
-    <View style={styles.topContainer}>
-      {/* Profile Pic, Name, Phone, Email */}
-      <Image
-        source={require('../../../image/Login_AS/shopowner.png')}
-        style={styles.profilePic}
-      />
-      <Text style={styles.name}>{userDetails.userName ? userDetails.userName : 'loading...'}</Text>
-      <Text style={styles.phoneNumber}>{userDetails.phoneNum}</Text>
-      <Text style={styles.email}>{userDetails.email}</Text>
-    </View>
+      {/* Top Container */}
+      <View style={styles.topContainer}>
+        {/* Profile Pic, Name, Phone, Email */}
+        <Image
+          source={require('../../../src/assets/app_images/avatar.png')}
+          style={styles.profilePic}
+        />
 
-    {/* Bottom Container with Horizontal Components */}
-    <View style={styles.bottomContainer}>
-      {/* New Feature Component */}
-      <View style={styles.horizontalComponent}>
-        <Text style={styles.componentTitle}>New Feature</Text>
-        {/* Your new feature content */}
+        <View style={styles.pokemon}>
+          <View style={[styles.subBox, {
+            backgroundColor: color.GREY, borderTopLeftRadius: 10,
+            borderBottomLeftRadius: 10,
+          }]} >
+
+            <Text style={styles.subTitle}>Name</Text>
+          </View>
+          <View style={[styles.subBox, { backgroundColor: color.grey, borderTopRightRadius: 10, borderBottomRightRadius: 10 }]}>
+
+            <Text style={styles.name}>{userDetails.userName ? userDetails.userName : 'loading...'}</Text>
+          </View>
+
+        </View>
+        <View style={styles.pokemon}>
+          <View style={[styles.subBox, {
+            backgroundColor: color.GREY, borderTopLeftRadius: 10,
+            borderBottomLeftRadius: 10,
+          }]} >
+            <Text style={styles.subTitle}>Phone Number</Text>
+          </View>
+          <View style={[styles.subBox, { backgroundColor: color.grey, borderTopRightRadius: 10, borderBottomRightRadius: 10 }]}>
+
+            <Text style={[styles.phoneNumber]}>{userDetails.phoneNum}</Text>
+
+          </View>
+        </View>
+
+        <View style={styles.pokemon}>
+          <View style={[styles.subBox, {
+            backgroundColor: color.GREY, borderTopLeftRadius: 10,
+            borderBottomLeftRadius: 10,
+          }]} >
+            <Text style={styles.subTitle}>Email</Text>
+          </View>
+
+          <View style={[styles.subBox, { backgroundColor: color.grey, borderTopRightRadius: 10, borderBottomRightRadius: 10 }]}>
+
+            <Text style={styles.email}>{userDetails.email}</Text>
+          </View>
+
+        </View>
+
       </View>
 
-      {/* Social Media Handles Component */}
-      <View style={styles.horizontalComponent}>
-        <Text style={styles.componentTitle}>Social Media</Text>
-        {/* Your social media handles content */}
+      {/* Bottom Container with Horizontal Components */}
+      <View style={styles.bottomContainer}>
+        {/* New Feature Component */}
+        <View style={styles.horizontalComponent}>
+          <Text style={styles.componentTitle}>New Feature</Text>
+          {/* Your new feature content */}
+        </View>
+
+        {/* Social Media Handles Component */}
+        <View style={styles.horizontalComponent}>
+          <Text style={styles.componentTitle}>Social Media</Text>
+
+        
+            <Text>Constructly.in</Text>
+          
+          
+        </View>
+
+        {/* Contact Us Component */}
+        <View style={styles.horizontalComponent}>
+
+          <Text style={styles.componentTitle}>Contact Us</Text>
+
+        </View>
       </View>
 
-      {/* Contact Us Component */}
-      <View style={styles.horizontalComponent}>
-        <Text style={styles.componentTitle}>Contact Us</Text>
-        {/* Your contact information content */}
-      </View>
-    </View>
-  
-  </LinearGradient>
+    </ScrollView>
 
   )
 }
@@ -68,43 +117,108 @@ export default function Profilescreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
-    padding: 20,
+    backgroundColor: color.bg_white,
+    // padding: 20,
+    marginBottom: heightPercentageToDP("6%")
   },
+
   topContainer: {
     alignItems: 'center',
     marginTop: 20,
+    backgroundColor: color.WHITE,
+
+    shadowOffset: { width: 0, height: 3 },
+    shadowColor: '#171717',
+    shadowOpacity: 0.4,
+    shadowRadius: 2,
+     elevation :3 ,
+
+     marginHorizontal:20 ,
+     borderRadius:20,
+     paddingVertical:10 ,
+     height:heightPercentageToDP('33%'),
+
   },
+
+  pokemon: {
+    // backgroundColor: color.circle_light,
+    // borderRadius: 20, 
+    height: heightPercentageToDP('3.5%'),
+    flexWrap: "wrap",
+    width: widthPercentageToDP('80%'),
+    alignContent: "space-around",
+    marginBottom: 15
+
+  },
+
+
+  subBox: {
+    flexDirection: 'row',
+    alignItems: "center",
+    // backgroundColor: color.GREY,
+    width: widthPercentageToDP('40%'),
+    height: heightPercentageToDP('3.5%'),
+    paddingHorizontal: 10,
+
+
+  },
+
+
   profilePic: {
     width: 100,
     height: 100,
     borderRadius: 50,
+    marginBottom: 10
   },
+
   name: {
-    color: 'white',
+    color: color.WHITE,
     fontSize: 20,
-    fontWeight: 'bold',
-    marginTop: 10,
+    // fontWeight: 'bold',
+    // marginTop: 10,
   },
   phoneNumber: {
     color: 'white',
-    marginTop: 5,
+    fontSize: 20,
+    // marginTop: 5,
   },
   email: {
     color: 'white',
-    marginTop: 5,
+    fontSize: 20,
+    // marginTop: 5,
   },
   bottomContainer: {
     marginTop: 20,
+    
   },
   horizontalComponent: {
     marginBottom: 20,
+    alignItems: 'center',
+    marginTop: 20,
+    backgroundColor: color.WHITE,
+
+    shadowOffset: { width: 0, height: 3 },
+    shadowColor: '#171717',
+    shadowOpacity: 0.4,
+    shadowRadius: 2,
+     elevation :3 ,
+
+     marginHorizontal:20 ,
+     borderRadius:20,
+     paddingVertical:10 ,
+     height:heightPercentageToDP('20%'),
   },
   componentTitle: {
-    color: 'white',
+    color: color.Obsidian,
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
+  },
+
+  subTitle: {
+    fontSize: 18,
+    color: color.Obsidian
+
   },
 });
 

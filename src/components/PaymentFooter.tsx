@@ -7,6 +7,7 @@ import {
   FONTSIZE,
   SPACING,
 } from '../theme/theme';
+import color from '../../App/utility/color';
 
 interface PriceProps {
   // price: string;
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
     color: COLORS.primaryWhiteHex,
   },
   PayButton: {
-    backgroundColor: COLORS.primaryOrangeHex,
+    backgroundColor: color.Obsidian,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
