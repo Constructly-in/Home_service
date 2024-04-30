@@ -79,9 +79,16 @@ const homeServiceData = [
     },
     {
       id: 'C4',
-      name: 'Black Coffee',
-      description: `Black coffee is arguably the most common type of coffee drink out there. Its popularity can be mainly attributed to how easy it is to make this beverage, be it drip, pour-over, French press, or anything else. Black coffee is usually served with no add-ins.`,
-      roasted: 'Medium Roasted',
+      name: 'Carpenter',
+      description: `Skilled carpenter available at your home/work place instantly!!
+
+Constructs, installs, and repairs structures and fixtures made of wood, plywood, and other materials
+Uses a variety of hand and power tools such as saws, drills, and sanders to cut, shape, and join wood pieces
+Builds and installs cabinets, furniture, doors, windows, and framing for buildings
+Performs tasks such as framing, trimming, molding, and finishing to complete projects
+Ensures accuracy, precision, and structural integrity in all carpentry work
+Works in residential, commercial, and industrial settings to create and maintain wood-based structures and features.`,
+      //roasted: 'Medium Roasted',
       imagelink_square: require('../assets/coffee_assets/black_coffee/square/black_coffee_pic_1_square.png'),
       imagelink_portrait: require('../assets/coffee_assets/black_coffee/portrait/black_coffee_pic_1_portrait.png'),
       ingredients: 'Milk',
@@ -99,9 +106,16 @@ const homeServiceData = [
     },
     {
       id: 'C5',
-      name: 'Black Coffee',
-      description: `Black coffee is arguably the most common type of coffee drink out there. Its popularity can be mainly attributed to how easy it is to make this beverage, be it drip, pour-over, French press, or anything else. Black coffee is usually served with no add-ins.`,
-      roasted: 'Medium Roasted',
+      name: 'Home Cleaner',
+      description: `Skilled home cleaner available at your home/work place instantly!!
+
+Skilled worker specializing in cleaning residential spaces
+Performs tasks such as dusting, vacuuming, sweeping, mopping, and polishing surfaces
+Cleans and sanitizes bathrooms, kitchens, bedrooms, living areas, and other rooms
+Removes trash, debris, and clutter to maintain a tidy and organized environment
+Pays attention to detail to ensure thorough cleaning and customer satisfaction
+Can offer additional services such as laundry, dishwashing, and organizing upon request`,
+      //roasted: 'Medium Roasted',
       imagelink_square: require('../assets/coffee_assets/black_coffee/square/black_coffee_pic_2_square.png'),
       imagelink_portrait: require('../assets/coffee_assets/black_coffee/portrait/black_coffee_pic_2_portrait.png'),
       ingredients: 'Milk',
