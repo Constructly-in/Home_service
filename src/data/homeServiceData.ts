@@ -3,11 +3,10 @@ const homeServiceData = [
     id: 'C1',
     name: 'Plumber',
     description: `Skilled plumbers at your home/work place instantly!!
-
-Installs, repairs, and maintains water distribution and sanitation systems
-Works with piping systems and appliances like sinks, toilets, showers and water heaters.
-Diagnoses and fixes issues such as leaks, clogs, and pipe damage
-Ensures efficient and safe operation of plumbing systems in residential, commercial, and industrial settings`,
+ Installs, repairs, and maintains water distribution and sanitation systems
+ Works with piping systems and appliances like sinks, toilets, showers and water heaters.
+ Diagnoses and fixes issues such as leaks, clogs, and pipe damage
+ Ensures efficient and safe operation of plumbing systems in residential, commercial, and industrial settings`,
     //roasted: 'Medium Roasted',
     imagelink_square: require('../assets/home_service_assets/logo/plumber.png'),
     imagelink_portrait: require('../assets/home_service_assets/square/plumber.png'),
@@ -32,9 +31,7 @@ const homeServiceData = [
 Installs, repairs, and maintains electrical wiring and equipment
 Works with a variety of electrical components such as switches, outlets, circuit breakers, and lighting fixtures
 Diagnoses and resolves electrical issues such as power outages, faulty wiring, and malfunctioning appliances
-Ensures the safe and efficient operation of electrical systems in residential, commercial, and industrial buildings
-
-`,
+Ensures the safe and efficient operation of electrical systems in residential, commercial, and industrial buildings`,
     //roasted: 'Medium Roasted',
     imagelink_square: require('../assets/coffee_assets/americano/square/americano_pic_2_square.png'),
     imagelink_portrait: require('../assets/coffee_assets/americano/portrait/americano_pic_2_portrait.png'),
@@ -55,12 +52,11 @@ const homeServiceData = [
     id: 'C3',
     name: 'Painter',
     description: `Skilled painter at your home/work place instantly!!
-
-Prepares surfaces by cleaning, sanding, and applying primers or sealants
-Selects and mixes paints to achieve desired colors and finishes
-Applies paint using brushes, rollers, or spray equipment
-Works on various surfaces including walls, ceilings, floors, and furniture
-Works in residential, commercial, and industrial settings to enhance and protect surfaces through painting and finishing applications.`,
+Prepares surfaces by cleaning, sanding, and applying primers or sealants
+Selects and mixes paints to achieve desired colors and finishes
+Applies paint using brushes, rollers, or spray equipment
+Works on various surfaces including walls, ceilings, floors, and furniture
+Works in residential, commercial, and industrial settings to enhance and protect surfaces through painting and finishing applications.`,
     //roasted: 'Medium Roasted',
     imagelink_square: require('../assets/coffee_assets/americano/square/americano_pic_3_square.png'),
     imagelink_portrait: require('../assets/coffee_assets/americano/portrait/americano_pic_3_portrait.png'),
@@ -81,13 +77,12 @@ const homeServiceData = [
     id: 'C4',
     name: 'Carpenter',
     description: `Skilled carpenter available at your home/work place instantly!!
-
-Constructs, installs, and repairs structures and fixtures made of wood, plywood, and other materials
-Uses a variety of hand and power tools such as saws, drills, and sanders to cut, shape, and join wood pieces
-Builds and installs cabinets, furniture, doors, windows, and framing for buildings
-Performs tasks such as framing, trimming, molding, and finishing to complete projects
-Ensures accuracy, precision, and structural integrity in all carpentry work
-Works in residential, commercial, and industrial settings to create and maintain wood-based structures and features.`,
+Constructs, installs, and repairs structures and fixtures made of wood, plywood, and other materials
+Uses a variety of hand and power tools such as saws, drills, and sanders to cut, shape, and join wood pieces
+Builds and installs cabinets, furniture, doors, windows, and framing for buildings
+Performs tasks such as framing, trimming, molding, and finishing to complete projects
+Ensures accuracy, precision, and structural integrity in all carpentry work
+Works in residential, commercial, and industrial settings to create and maintain wood-based structures and features.`,
     //roasted: 'Medium Roasted',
     imagelink_square: require('../assets/coffee_assets/black_coffee/square/black_coffee_pic_1_square.png'),
     imagelink_portrait: require('../assets/coffee_assets/black_coffee/portrait/black_coffee_pic_1_portrait.png'),
