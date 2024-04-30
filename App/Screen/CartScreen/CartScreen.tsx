@@ -17,6 +17,7 @@ import HeaderBar from '../../../src/components/HeaderBar';
 import CartItem from '../../../src/components/CartItem';
 import PaymentFooter from '../../../src/components/PaymentFooter';
 import EmptyListAnimation from '../../../src/components/EmptyListAnimation';
+import color from '../../utility/color';
 
 const CartScreen = ({navigation, route}: any) => {
   const CartList = useStore((state: any) => state.CartList);
@@ -31,7 +32,7 @@ const CartScreen = ({navigation, route}: any) => {
   const tabBarHeight = useBottomTabBarHeight();
 
   const buttonPressHandler = () => {
-    navigation.push('Payment', {amount: CartPrice});
+    navigation.push('Order');
   };
 
   const incrementCartItemQuantityHandler = (id: string, size: string) => {
@@ -45,7 +46,7 @@ const CartScreen = ({navigation, route}: any) => {
   };
   return (
     <View style={styles.ScreenContainer}>
-      <StatusBar backgroundColor={COLORS.primaryBlackHex} />
+      <StatusBar backgroundColor={ color.bg_white} />
 
       <ScrollView
         showsVerticalScrollIndicator={false}
@@ -93,8 +94,8 @@ const CartScreen = ({navigation, route}: any) => {
           {CartList.length != 0 ? (
             <PaymentFooter
               buttonPressHandler={buttonPressHandler}
-              buttonTitle="Pay"
-              price={{price: CartPrice, currency: '$'}}
+              buttonTitle="Book NOW"
+              price={{price: CartPrice, currency: '₹'}}
             />
           ) : (
             <></>
@@ -108,7 +109,7 @@ const CartScreen = ({navigation, route}: any) => {
 const styles = StyleSheet.create({
   ScreenContainer: {
     flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: color.bg_white,
   },
   ScrollViewFlex: {
     flexGrow: 1,

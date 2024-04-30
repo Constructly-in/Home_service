@@ -12,6 +12,8 @@ import Student from '../category/Student';
 import AuthProvider from '../../Contexts/AuthContext';
 // import Tabnavigation_property from '../../TabNavigation/Tabnavigation_propertyt';
 import DetailScreen from '../HomeService/DetailScreen';
+import Profilescreen from '../Profile/Profilescreen';
+import OrderHistory from '../OrderHistory';
 
 
 const Stack = createNativeStackNavigator();
@@ -35,6 +37,12 @@ const Stack = createNativeStackNavigator();
        options={{animation: 'slide_from_bottom'}}
        />               
        <Stack.Screen name="Details" component={DetailScreen} 
+       options={{animation: 'slide_from_bottom'}}
+       />               
+       <Stack.Screen name="Profile" component={Profilescreen} 
+       options={{animation: 'slide_from_bottom'}}
+       />               
+       <Stack.Screen name="Order" component={OrderHistory} 
        options={{animation: 'slide_from_bottom'}}
        />               
        

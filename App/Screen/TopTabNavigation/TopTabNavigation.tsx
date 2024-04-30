@@ -14,12 +14,12 @@ const TopTabNavigation = () => {
                 screenOptions={{
                     tabBarLabelStyle: { fontSize: 14 },
                     tabBarStyle: {
-                        backgroundColor: color.cream,
+                        backgroundColor: color.Obsidian,
                         height: "6%",
                         width: "100%",
                     },
                     swipeEnabled:false,
-                    tabBarInactiveTintColor: color.Offwhite, // Text color when inactive
+                    tabBarInactiveTintColor: color.WHITE, // Text color when inactive
                     tabBarActiveTintColor: "white",   // Text color when active
                     
                 }}

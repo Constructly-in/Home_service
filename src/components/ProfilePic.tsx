@@ -1,15 +1,21 @@
 import React from 'react';
-import {StyleSheet, Image, View} from 'react-native';
+import {StyleSheet, Image, View, TouchableOpacity} from 'react-native';
 import {COLORS, SPACING} from '../theme/theme';
+import { useNavigation } from '@react-navigation/native';
 
 const ProfilePic = () => {
+
+  const navigation = useNavigation();
+  
   return (
-    <View style={styles.ImageContainer}>
+    <TouchableOpacity style={styles.ImageContainer}
+    onPress={() => navigation.navigate('Profile')}
+    >
       <Image
         source={require('../assets/app_images/avatar.png')}
         style={styles.Image}
       />
-    </View>
+    </TouchableOpacity>
   );
 };
 

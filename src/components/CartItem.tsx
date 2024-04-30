@@ -16,6 +16,7 @@ import {
   SPACING,
 } from '../theme/theme';
 import CustomIcon from './CustomIcon';
+import color from '../../App/utility/color';
 
 interface CartItemProps {
   id: string;
@@ -46,7 +47,7 @@ const CartItem: React.FC<CartItemProps> = ({
         <LinearGradient
           start={{x: 0, y: 0}}
           end={{x: 1, y: 1}}
-          colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
+          colors={[color.WHITE, color.WHITE]}
           style={styles.CartItemLinearGradient}>
           <View style={styles.CartItemRow}>
             <Image source={imagelink_square} style={styles.CartItemImage} />
@@ -84,7 +85,8 @@ const CartItem: React.FC<CartItemProps> = ({
                   <Text style={styles.SizePrice}> {data.price}</Text>
                 </Text>
               </View>
-              <View style={styles.CartItemSizeValueContainer}>
+
+              {/* <View style={styles.CartItemSizeValueContainer}>
                 <TouchableOpacity
                   style={styles.CartItemIcon}
                   onPress={() => {
@@ -112,15 +114,17 @@ const CartItem: React.FC<CartItemProps> = ({
                     size={FONTSIZE.size_10}
                   />
                 </TouchableOpacity>
-              </View>
+              </View> */}
+
             </View>
+            
           ))}
         </LinearGradient>
       ) : (
         <LinearGradient
           start={{x: 0, y: 0}}
           end={{x: 1, y: 1}}
-          colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
+          colors={[color.GREY, color.darkgey]}
           style={styles.CartItemSingleLinearGradient}>
           <View>
             <Image
@@ -133,7 +137,8 @@ const CartItem: React.FC<CartItemProps> = ({
               <Text style={styles.CartItemTitle}>{name}</Text>
               <Text style={styles.CartItemSubtitle}>{special_ingredient}</Text>
             </View>
-            <View style={styles.CartItemSingleSizeValueContainer}>
+
+             {/* <View style={styles.CartItemSingleSizeValueContainer}>
               <View style={styles.SizeBox}>
                 <Text
                   style={[
@@ -150,8 +155,9 @@ const CartItem: React.FC<CartItemProps> = ({
                 {prices[0].currency}
                 <Text style={styles.SizePrice}> {prices[0].price}</Text>
               </Text>
-            </View>
-            <View style={styles.CartItemSingleQuantityContainer}>
+            </View>  */}
+
+             <View style={styles.CartItemSingleQuantityContainer}>
               <TouchableOpacity
                 style={styles.CartItemIcon}
                 onPress={() => {
@@ -179,7 +185,7 @@ const CartItem: React.FC<CartItemProps> = ({
                   size={FONTSIZE.size_10}
                 />
               </TouchableOpacity>
-            </View>
+            </View> 
           </View>
         </LinearGradient>
       )}
@@ -212,7 +218,7 @@ const styles = StyleSheet.create({
   CartItemTitle: {
     fontFamily: FONTFAMILY.poppins_medium,
     fontSize: FONTSIZE.size_18,
-    color: COLORS.primaryWhiteHex,
+    color: color.Night,
   },
   CartItemSubtitle: {
     fontFamily: FONTFAMILY.poppins_regular,

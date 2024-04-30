@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
         paddingBottom:8,
         paddingTop:8,
-        color:color.circle_light,
+        color:color.Obsidian,
       },
       
       container: {
