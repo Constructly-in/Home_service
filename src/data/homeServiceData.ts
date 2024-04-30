@@ -2,8 +2,13 @@ const homeServiceData = [
     {
       id: 'C1',
       name: 'Plumber',
-      description: `The Americano is another popular type of coffee drink, and it's very easy to make! It's just espresso with hot water dripping over it. The name came about during World War II when European baristas added water to their espresso drinks for the American soldiers stationed there. The resulting drink had a smoother, less concentrated flavour than espresso and thus the Americano was born.`,
-      roasted: 'Medium Roasted',
+      description: `Skilled plumbers at your home/work place instantly!!
+
+Installs, repairs, and maintains water distribution and sanitation systems
+Works with piping systems and appliances like sinks, toilets, showers and water heaters.
+Diagnoses and fixes issues such as leaks, clogs, and pipe damage
+Ensures efficient and safe operation of plumbing systems in residential, commercial, and industrial settings`,
+      //roasted: 'Medium Roasted',
       imagelink_square: require('../assets/home_service_assets/logo/plumber.png'),
       imagelink_portrait: require('../assets/home_service_assets/square/plumber.png'),
       ingredients: 'Milk',
@@ -21,9 +26,16 @@ const homeServiceData = [
     },
     {
       id: 'C2',
-      name: 'Americano',
-      description: `The Americano is another popular type of coffee drink, and it's very easy to make! It's just espresso with hot water dripping over it. The name came about during World War II when European baristas added water to their espresso drinks for the American soldiers stationed there. The resulting drink had a smoother, less concentrated flavour than espresso and thus the Americano was born.`,
-      roasted: 'Medium Roasted',
+      name: 'Electrician',
+      description: `Skilled electrician at your home/work place instantly!!
+
+Installs, repairs, and maintains electrical wiring and equipment
+Works with a variety of electrical components such as switches, outlets, circuit breakers, and lighting fixtures
+Diagnoses and resolves electrical issues such as power outages, faulty wiring, and malfunctioning appliances
+Ensures the safe and efficient operation of electrical systems in residential, commercial, and industrial buildings
+
+`,
+      //roasted: 'Medium Roasted',
       imagelink_square: require('../assets/coffee_assets/americano/square/americano_pic_2_square.png'),
       imagelink_portrait: require('../assets/coffee_assets/americano/portrait/americano_pic_2_portrait.png'),
       ingredients: 'Milk',
@@ -41,9 +53,15 @@ const homeServiceData = [
     },
     {
       id: 'C3',
-      name: 'Americano',
-      description: `The Americano is another popular type of coffee drink, and it's very easy to make! It's just espresso with hot water dripping over it. The name came about during World War II when European baristas added water to their espresso drinks for the American soldiers stationed there. The resulting drink had a smoother, less concentrated flavour than espresso and thus the Americano was born.`,
-      roasted: 'Medium Roasted',
+      name: 'Painter',
+      description: `Skilled painter at your home/work place instantly!!
+
+Prepares surfaces by cleaning, sanding, and applying primers or sealants
+Selects and mixes paints to achieve desired colors and finishes
+Applies paint using brushes, rollers, or spray equipment
+Works on various surfaces including walls, ceilings, floors, and furniture
+Works in residential, commercial, and industrial settings to enhance and protect surfaces through painting and finishing applications.`,
+      //roasted: 'Medium Roasted',
       imagelink_square: require('../assets/coffee_assets/americano/square/americano_pic_3_square.png'),
       imagelink_portrait: require('../assets/coffee_assets/americano/portrait/americano_pic_3_portrait.png'),
       ingredients: 'Milk',
@@ -342,7 +360,7 @@ const homeServiceData = [
     {
       id: 'C18',
       name: 'Macchiato',
-      description: `The word "macchiato" means spotted, so a macchiato espresso is an espresso with a splash of milk. Most coffee shops will top off this type of coffee drink with some foamed milk instead of just steamed milk for what's known as a traditional macchiato. `,
+      description: ` `,
       roasted: 'Medium Roasted',
       imagelink_square: require('../assets/coffee_assets/macchiato/square/macchiato_pic_3_square.png'),
       imagelink_portrait: require('../assets/coffee_assets/macchiato/portrait/macchiato_pic_3_portrait.png'),
