@@ -22,7 +22,7 @@ const OrderHistoryCard: React.FC<OrderHistoryCardProps> = ({
 }) => {
   return (
     <View style={styles.CardContainer}>
-      <View style={styles.CardHeader}>
+      {/* <View style={styles.CardHeader}>
         <View>
           <Text style={styles.HeaderTitle}>Order Time</Text>
           <Text style={styles.HeaderSubtitle}>{OrderDate}</Text>
@@ -31,7 +31,7 @@ const OrderHistoryCard: React.FC<OrderHistoryCardProps> = ({
           <Text style={styles.HeaderTitle}>Total Amount</Text>
           <Text style={styles.HeaderPrice}>$ {CartListPrice}</Text>
         </View>
-      </View>
+      </View> */}
       <View style={styles.ListContainer}>
         {CartList.map((data: any, index: any) => (
           <TouchableOpacity
@@ -71,12 +71,12 @@ const styles = StyleSheet.create({
   HeaderTitle: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_16,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   HeaderSubtitle: {
     fontFamily: FONTFAMILY.poppins_light,
     fontSize: FONTSIZE.size_16,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   PriceContainer: {
     alignItems: 'flex-end',

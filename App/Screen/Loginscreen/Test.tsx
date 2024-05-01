@@ -11,10 +11,10 @@ export default function Login({ navigation }) {
   const checkUser = async () => {
     const storageValue = await AsyncStorage.getItem('userEmail');
     if(storageValue !== null) {
-      navigation.navigate("Tabnavigation");
+      navigation.replace("Tabnavigation");
     }
     else {
-      navigation.navigate("SignScreen");
+      navigation.replace("SignScreen");
     }
     // navigation.navigate("SignScreen");
   }

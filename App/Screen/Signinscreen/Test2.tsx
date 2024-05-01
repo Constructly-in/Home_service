@@ -56,7 +56,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
             try {
                 const userDoc = await login(email,password);
                 if(userDoc !== undefined ) {
-                    navigation.navigate("Tabnavigation");
+                    navigation.replace("Tabnavigation");
                 }
 
             //   .then(() => {

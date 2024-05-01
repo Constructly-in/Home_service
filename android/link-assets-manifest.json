@@ -18,212 +18,24 @@
       "sha1": "039fbff59306d5e4300ef7614d796844345575af"
     },
     {
-      "path": "src/assets/coffee_assets/americano/portrait/americano_pic_1_portrait.png",
-      "sha1": "685f99c5602e8692061e11137b4b0c94b6f92c0c"
+      "path": "src/assets/Buttons/Booknow.tsx",
+      "sha1": "8dbcfa97a16b92a5c152d3404764856b72b07bc8"
     },
     {
-      "path": "src/assets/coffee_assets/americano/portrait/americano_pic_2_portrait.png",
-      "sha1": "3d56d41dc7d42da2f65d38bf3c62b695d35c2ef8"
+      "path": "src/assets/Buttons/CategoryButton.tsx",
+      "sha1": "4b9c9fa644bc65f5a1dcd85185f8c89c38ce51e3"
     },
     {
-      "path": "src/assets/coffee_assets/americano/portrait/americano_pic_3_portrait.png",
-      "sha1": "a1d3f6dff501ff52f96a12f4b76825087c4da4a6"
+      "path": "src/assets/Buttons/MyButton.tsx",
+      "sha1": "2842d3864765f32b1069a6d1e4cc2add0384751b"
     },
     {
-      "path": "src/assets/coffee_assets/americano/square/americano_pic_1_square.png",
-      "sha1": "137ba5cae8d7b77fd97a8eeb6e8c699b4433472d"
+      "path": "src/assets/Buttons/MyTextInput.tsx",
+      "sha1": "2bdd52ad58041ef7942b08d4ffa07402fd47888e"
     },
     {
-      "path": "src/assets/coffee_assets/americano/square/americano_pic_2_square.png",
-      "sha1": "f371d1fa1e462a3e50046465f268342f15b2bd93"
-    },
-    {
-      "path": "src/assets/coffee_assets/americano/square/americano_pic_3_square.png",
-      "sha1": "38d0d2092c97148a973b4a8123cdcfb52eae0b88"
-    },
-    {
-      "path": "src/assets/coffee_assets/arabica_coffee_beans/arabica_coffee_beans_portrait.png",
-      "sha1": "16c9a6b4831083049f7707b8dcc3ca0c7498a691"
-    },
-    {
-      "path": "src/assets/coffee_assets/arabica_coffee_beans/arabica_coffee_beans_square.png",
-      "sha1": "b375405f6f071ffff4e8b605f910c9a596e29912"
-    },
-    {
-      "path": "src/assets/coffee_assets/black_coffee/portrait/black_coffee_pic_1_portrait.png",
-      "sha1": "8ad3aef75b17cfa2cf331c0a2627b6b86fbd7e68"
-    },
-    {
-      "path": "src/assets/coffee_assets/black_coffee/portrait/black_coffee_pic_2_portrait.png",
-      "sha1": "45eca36530211ca5f391959ab78e6a065e9e38c7"
-    },
-    {
-      "path": "src/assets/coffee_assets/black_coffee/portrait/black_coffee_pic_3_portrait.png",
-      "sha1": "80bf34874c6e91beffdf178fd411e4da605c5b1f"
-    },
-    {
-      "path": "src/assets/coffee_assets/black_coffee/square/black_coffee_pic_1_square.png",
-      "sha1": "13962f4de82128e0284fdd4a17f35c26c15bef60"
-    },
-    {
-      "path": "src/assets/coffee_assets/black_coffee/square/black_coffee_pic_2_square.png",
-      "sha1": "1be7ef6985aeff91f4aeadb237b71f1f6c1d4a8f"
-    },
-    {
-      "path": "src/assets/coffee_assets/black_coffee/square/black_coffee_pic_3_square.png",
-      "sha1": "517bd167fa181c73075414bf49a3d74e519d866b"
-    },
-    {
-      "path": "src/assets/coffee_assets/cappuccino/portrait/cappuccino_pic_1_portrait.png",
-      "sha1": "f779a1ae66323767c0c0297f2c6de012cd5c8ea5"
-    },
-    {
-      "path": "src/assets/coffee_assets/cappuccino/portrait/cappuccino_pic_2_portrait.png",
-      "sha1": "b112cd3b97bfb245e384f72992e288091c086cf6"
-    },
-    {
-      "path": "src/assets/coffee_assets/cappuccino/portrait/cappuccino_pic_3_portrait.png",
-      "sha1": "dd8ac758166a523cacc521df589cd580eee249e3"
-    },
-    {
-      "path": "src/assets/coffee_assets/cappuccino/square/cappuccino_pic_1_square.png",
-      "sha1": "c5024b616a95aa2c92e4567c00fa262203bdf537"
-    },
-    {
-      "path": "src/assets/coffee_assets/cappuccino/square/cappuccino_pic_2_square.png",
-      "sha1": "0b6bd08c07938581803903e17a27a9560b844aff"
-    },
-    {
-      "path": "src/assets/coffee_assets/cappuccino/square/cappuccino_pic_3_square.png",
-      "sha1": "7a0435698649161f11e6be91656c7bc3d3f74715"
-    },
-    {
-      "path": "src/assets/coffee_assets/espresso/portrait/espresso_pic_1_portrait.png",
-      "sha1": "61498f6756dc52c8360df69be36a392ccde9e690"
-    },
-    {
-      "path": "src/assets/coffee_assets/espresso/portrait/espresso_pic_2_portrait.png",
-      "sha1": "a7d1cb7128b15df1e3dce4ea81607a37bbb0e1f6"
-    },
-    {
-      "path": "src/assets/coffee_assets/espresso/portrait/espresso_pic_3_portrait.png",
-      "sha1": "436c50c217b2d7739cd6bb5aec54db175b210912"
-    },
-    {
-      "path": "src/assets/coffee_assets/espresso/square/espresso_pic_1_square.png",
-      "sha1": "3d26c8071b1b3121c2502a3dbc421db0e4f2a1f7"
-    },
-    {
-      "path": "src/assets/coffee_assets/espresso/square/espresso_pic_2_square.png",
-      "sha1": "d8ccd27a3d6a1ca845478dfbed70f642f5d1d6bc"
-    },
-    {
-      "path": "src/assets/coffee_assets/espresso/square/espresso_pic_3_square.png",
-      "sha1": "e0e35545410fbb2a19ca0def1fd47dcdd8c3b8a5"
-    },
-    {
-      "path": "src/assets/coffee_assets/excelsa_coffee_beans/excelsa_coffee_beans_portrait.png",
-      "sha1": "bbdb79546f6e3fd8941d259636ad413350ed9ebf"
-    },
-    {
-      "path": "src/assets/coffee_assets/excelsa_coffee_beans/excelsa_coffee_beans_square.png",
-      "sha1": "6937f747f201fa632d3502f76bdff730eb05282a"
-    },
-    {
-      "path": "src/assets/coffee_assets/latte/portrait/latte_pic_1_portrait.png",
-      "sha1": "8ad0a4a284c645b19caa0de63c18c7431489d758"
-    },
-    {
-      "path": "src/assets/coffee_assets/latte/portrait/latte_pic_2_portrait.png",
-      "sha1": "69bd668a78900a5685b593a405bb203645545eaa"
-    },
-    {
-      "path": "src/assets/coffee_assets/latte/portrait/latte_pic_3_portrait.png",
-      "sha1": "91bb2130615b67f126f6892e7557833035f0be2d"
-    },
-    {
-      "path": "src/assets/coffee_assets/latte/square/latte_pic_1_square.png",
-      "sha1": "6328154fafec18dc200dc94d00556b747257e2f2"
-    },
-    {
-      "path": "src/assets/coffee_assets/latte/square/latte_pic_2_square.png",
-      "sha1": "1812c74358047243e3b30925af31b501f0a83e85"
-    },
-    {
-      "path": "src/assets/coffee_assets/latte/square/latte_pic_3_square.png",
-      "sha1": "36a906f3948b945234db478856285a6df602ab17"
-    },
-    {
-      "path": "src/assets/coffee_assets/liberica_coffee_beans/liberica_coffee_beans_portrait.png",
-      "sha1": "91b740580f694387995664be0b31e107e5983032"
-    },
-    {
-      "path": "src/assets/coffee_assets/liberica_coffee_beans/liberica_coffee_beans_square.png",
-      "sha1": "4a8e436c08d3f6b22e7d0216b9767e9a99635e91"
-    },
-    {
-      "path": "src/assets/coffee_assets/macchiato/portrait/macchiato_pic_1_portrait.png",
-      "sha1": "81148b809d3844f7059b53b588cdf1572bc3af00"
-    },
-    {
-      "path": "src/assets/coffee_assets/macchiato/portrait/macchiato_pic_2_portrait.png",
-      "sha1": "9339efb478e7cd44bcff4a507cc10ac378a6aade"
-    },
-    {
-      "path": "src/assets/coffee_assets/macchiato/portrait/macchiato_pic_3_portrait.png",
-      "sha1": "b0322d33abddfe1812c0973ab97b44684159fa25"
-    },
-    {
-      "path": "src/assets/coffee_assets/macchiato/square/macchiato_pic_1_square.png",
-      "sha1": "e8117c34de4c4cc1513e77d34afaf36cfc42f79f"
-    },
-    {
-      "path": "src/assets/coffee_assets/macchiato/square/macchiato_pic_2_square.png",
-      "sha1": "662890a8d53615c452f63db831e569437318af20"
-    },
-    {
-      "path": "src/assets/coffee_assets/macchiato/square/macchiato_pic_3_square.png",
-      "sha1": "1beae6c27840c63e168df79dda3bdc819c593ab7"
-    },
-    {
-      "path": "src/assets/coffee_assets/robusta_coffee_beans/robusta_coffee_beans_portrait.png",
-      "sha1": "9a299174dff0c77f894fc80e9cf5fb7aa347dfad"
-    },
-    {
-      "path": "src/assets/coffee_assets/robusta_coffee_beans/robusta_coffee_beans_square.png",
-      "sha1": "2309066dadc84c09821be71da1a6790792d1a764"
-    },
-    {
-      "path": "src/assets/Component/Booknow.tsx",
-      "sha1": "127fcb56829cf3dd984bfdd8e761a9f445bb80fd"
-    },
-    {
-      "path": "src/assets/Component/CategoryButton.tsx",
-      "sha1": "358e264d258df91eaf9c5e878826898aa2340149"
-    },
-    {
-      "path": "src/assets/Component/MyButton.tsx",
-      "sha1": "238dc69e5f2660c5c5c225a7123fd5f8cf81f2b0"
-    },
-    {
-      "path": "src/assets/Component/MyTextInput.tsx",
-      "sha1": "42f828f889951fe6a22686e22687ba730af1ffa1"
-    },
-    {
-      "path": "src/assets/Component/Socialmedia.tsx",
-      "sha1": "d6130f9cc6c2d4fecf06039d477101cfd4a26057"
-    },
-    {
-      "path": "src/assets/Features/Student/Douts.tsx",
-      "sha1": "3919fffd79ac7489c22341c3988b423751f99a96"
-    },
-    {
-      "path": "src/assets/Features/Student/InterShip/AboutIntership.tsx",
-      "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
-    },
-    {
-      "path": "src/assets/Features/Student/InterShip/InterShip.tsx",
-      "sha1": "6586c5ba33efe3e0a7123ab991209fdb4e2f6412"
+      "path": "src/assets/Buttons/Socialmedia.tsx",
+      "sha1": "4bf4ef763e565f5e0f4143e243f21b8053990c81"
     },
     {
       "path": "src/assets/Fonts/app_icons.ttf",
@@ -284,6 +96,30 @@
     {
       "path": "src/assets/Fonts/Poppins-Thin.ttf",
       "sha1": "09ba4dcd5509c8085bf88c665dcc51cbdfced27b"
+    },
+    {
+      "path": "src/assets/home_service_assets/logo/carpainter.png",
+      "sha1": "1185a891d52e3f30bc4cef23068dd60bdcdabd49"
+    },
+    {
+      "path": "src/assets/home_service_assets/logo/cleaner.png",
+      "sha1": "c326ac5927624d06f557496cd8dfcc5ac45e86e6"
+    },
+    {
+      "path": "src/assets/home_service_assets/logo/electrician.png",
+      "sha1": "b7c6b8caca7900ca92d7df6333a6d9065bec2b08"
+    },
+    {
+      "path": "src/assets/home_service_assets/logo/painter.png",
+      "sha1": "3212d422e1425da04d5bf3960b7844d2acb3f4e5"
+    },
+    {
+      "path": "src/assets/home_service_assets/logo/plumber.png",
+      "sha1": "b3625ab9ac2c46f1886388576afa46c93dc71325"
+    },
+    {
+      "path": "src/assets/home_service_assets/square/carpenter.png",
+      "sha1": "4f26e118262a36f6533a113f10fba0a6c88f6aae"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView, ImageBackground, TouchableOpacity, Linking, Alert } from 'react-native';
 import React, { useEffect, useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient';
 import color from '../../utility/color';
@@ -7,6 +7,8 @@ import { useAuth } from '../../Contexts/AuthContext';
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
 import HomeScreenHeader from '../../../src/components/homeScreenHeader';
 import HeaderBar from '../../../src/components/HeaderBar';
+import { SPACING } from '../../../src/theme/theme';
+// import { TouchableOpacity } from 'react-native-gesture-handler';
 // import { ScrollView } from 'react-native-gesture-handler';
 
 export default function Profilescreen() {
@@ -22,10 +24,25 @@ export default function Profilescreen() {
     fetchUser();
   }, [])
 
+   const url1 = "https://www.instagram.com/constructly.in/" ;
+
+   const openUrl = async (url) => {
+    try {
+      const isSupported = await Linking.canOpenURL(url);
+      if (isSupported) {
+        await Linking.openURL(url);
+      } else {
+        Alert.alert(`Cannot open link ${url}`);
+      }
+    } catch (error) {
+      console.error('Error occurred while opening URL:', error);
+      // Alert.alert('Error', 'Failed to open link. Please try again later.');
+    }
+  };
 
   return (
     <ScrollView style={styles.container} >
-      
+
       {/* <HomeScreenHeader /> */}
       <HeaderBar title="Profile" />
 
@@ -85,27 +102,63 @@ export default function Profilescreen() {
       {/* Bottom Container with Horizontal Components */}
       <View style={styles.bottomContainer}>
         {/* New Feature Component */}
-        <View style={styles.horizontalComponent}>
+        {/* <View style={styles.horizontalComponent}>
           <Text style={styles.componentTitle}>New Feature</Text>
-          {/* Your new feature content */}
-        </View>
+          
+        </View> */}
 
+        <Text style={styles.componentTitle}> OurSocial Media</Text>
         {/* Social Media Handles Component */}
-        <View style={styles.horizontalComponent}>
-          <Text style={styles.componentTitle}>Social Media</Text>
 
-        
-            <Text>Constructly.in</Text>
-          
-          
-        </View>
+        <TouchableOpacity
+        onPress={ () => {
+          openUrl(url1)
+        }}
+        >
+          <View style={{
+            marginBottom: 20,
+            alignItems: 'center',
+            marginTop: SPACING.space_10 * 0.4,
+            marginHorizontal: 20,
+            paddingVertical: 10,
+            height: heightPercentageToDP('20%'),
+          }}>
 
+
+
+            {/* <Text>Constructly.in</Text> */}
+
+            <ImageBackground
+              source={require('../../../image/OneDrive-2024-02-07/yo.png')}
+              style={styles.socialMedia_Image}
+            />
+          </View>
+        </TouchableOpacity>
+
+
+
+        <Text style={styles.componentTitle}>Contact Us</Text>
         {/* Contact Us Component */}
-        <View style={styles.horizontalComponent}>
 
-          <Text style={styles.componentTitle}>Contact Us</Text>
+        <TouchableOpacity
+        >
+        <View style={{
+               marginBottom: 20,
+               alignItems: 'center',
+               marginTop: SPACING.space_10 * 0.4,
+               marginHorizontal: 20,
+               paddingVertical: 10,
+               height: heightPercentageToDP('20%'),
+        }}>
+
+        <ImageBackground
+              source={require('../../../image/OneDrive-2024-02-07/po.png')}
+              style={styles.socialMedia_Image}
+            />
 
         </View>
+        </TouchableOpacity>
+        
       </View>
 
     </ScrollView>
@@ -131,12 +184,12 @@ const styles = StyleSheet.create({
     shadowColor: '#171717',
     shadowOpacity: 0.4,
     shadowRadius: 2,
-     elevation :3 ,
+    elevation: 3,
 
-     marginHorizontal:20 ,
-     borderRadius:20,
-     paddingVertical:10 ,
-     height:heightPercentageToDP('33%'),
+    marginHorizontal: 20,
+    borderRadius: 20,
+    paddingVertical: 10,
+    height: heightPercentageToDP('33%'),
 
   },
 
@@ -189,30 +242,31 @@ const styles = StyleSheet.create({
   },
   bottomContainer: {
     marginTop: 20,
-    
+
   },
   horizontalComponent: {
     marginBottom: 20,
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: SPACING.space_10 * 0.4,
     backgroundColor: color.WHITE,
 
     shadowOffset: { width: 0, height: 3 },
     shadowColor: '#171717',
     shadowOpacity: 0.4,
     shadowRadius: 2,
-     elevation :3 ,
+    elevation: 3,
 
-     marginHorizontal:20 ,
-     borderRadius:20,
-     paddingVertical:10 ,
-     height:heightPercentageToDP('20%'),
+    marginHorizontal: 20,
+    borderRadius: 20,
+    paddingVertical: 10,
+    height: heightPercentageToDP('20%'),
   },
   componentTitle: {
     color: color.Obsidian,
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginTop: SPACING.space_10,
+    paddingHorizontal: SPACING.space_20,
   },
 
   subTitle: {
@@ -220,6 +274,13 @@ const styles = StyleSheet.create({
     color: color.Obsidian
 
   },
+
+  socialMedia_Image: {
+    height: "105%",
+    width: "100%",
+    // borderTopRightRadius:100
+
+  }
 });
 
 // const styles = StyleSheet.create({})

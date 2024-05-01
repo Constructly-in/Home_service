@@ -20,6 +20,7 @@ import EmptyListAnimation from '../../../src/components/EmptyListAnimation';
 import color from '../../utility/color';
 
 const CartScreen = ({navigation, route}: any) => {
+  
   const CartList = useStore((state: any) => state.CartList);
   const CartPrice = useStore((state: any) => state.CartPrice);
   const incrementCartItemQuantity = useStore(
@@ -31,7 +32,12 @@ const CartScreen = ({navigation, route}: any) => {
   const calculateCartPrice = useStore((state: any) => state.calculateCartPrice);
   const tabBarHeight = useBottomTabBarHeight();
 
+  const addToOrderHistoryListFromCart = useStore(
+    (state: any) => state.addToOrderHistoryListFromCart,
+  );
+  
   const buttonPressHandler = () => {
+    addToOrderHistoryListFromCart();
     navigation.push('Order');
   };
 
@@ -46,7 +52,7 @@ const CartScreen = ({navigation, route}: any) => {
   };
   return (
     <View style={styles.ScreenContainer}>
-      <StatusBar backgroundColor={ color.bg_white} />
+      <StatusBar backgroundColor={ color.grey} />
 
       <ScrollView
         showsVerticalScrollIndicator={false}

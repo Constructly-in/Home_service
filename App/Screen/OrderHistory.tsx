@@ -131,18 +131,18 @@ const styles = StyleSheet.create({
         paddingHorizontal: SPACING.space_20,
         gap: SPACING.space_30,
       },
-      DownloadButton: {
-        margin: SPACING.space_20,
-        backgroundColor: COLORS.primaryOrangeHex,
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: SPACING.space_36 * 2,
-        borderRadius: BORDERRADIUS.radius_20,
-      },
+      // DownloadButton: {
+      //   margin: SPACING.space_20,
+      //   backgroundColor: COLORS.primaryOrangeHex,
+      //   alignItems: 'center',
+      //   justifyContent: 'center',
+      //   height: SPACING.space_36 * 2,
+      //   borderRadius: BORDERRADIUS.radius_20,
+      // },
       ButtonText: {
         fontFamily: FONTFAMILY.poppins_semibold,
         fontSize: FONTSIZE.size_18,
-        color: COLORS.primaryWhiteHex,
+        color: COLORS.primaryBlackHex,
       },
 
     

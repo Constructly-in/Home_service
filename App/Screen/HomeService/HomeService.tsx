@@ -110,9 +110,9 @@ const HomeService = ({ navigation }: any) => {
         {/* Coffee Flatlist */}
 
         <FlatList
-          // ref={ListRef}
-          // horizontal
-          numColumns={2}
+          ref={ListRef}
+          horizontal
+          // numColumns={2}
           //coffe search
           // ListEmptyComponent={
           //   <View style={styles.EmptyListContainer}>
@@ -152,8 +152,6 @@ const HomeService = ({ navigation }: any) => {
         />
 
         {/* <Text style={styles.CoffeeBeansTitle}>Coffee Beans</Text> */}
-
-
 
         {/* <ElevatedCards /> */}
         {/* <ElevatedCards /> */}
@@ -217,9 +215,9 @@ const styles = StyleSheet.create({
 
 
   FlatListContainer: {
-    gap: SPACING.space_20,
+    gap: SPACING.space_15*1.1,
     paddingVertical: SPACING.space_20,
-    paddingHorizontal: SPACING.space_30,
+    paddingHorizontal: SPACING.space_20,
   },
   EmptyListContainer: {
     width: Dimensions.get('window').width - SPACING.space_30 * 2,
