@@ -54,12 +54,12 @@ export default function Tabnavigation() {
                     width: 25,
                     height: 25,
 
-                    tintColor: focused ? color.WHITE : color.GREY,
+                    tintColor: focused ? "orange" : color.GREY,
 
                   }}
 
                 />
-                <Text style={{ color: focused ? color.WHITE : color.GREY, fontSize: 12, marginBottom: 2 }}>HOME</Text>
+                <Text style={{ color: focused ? color.gold : color.GREY, fontSize: 12, marginBottom: 2 }}>HOME</Text>
 
               </View>
             )
@@ -80,11 +80,11 @@ export default function Tabnavigation() {
                   style={{
                     width: 25,
                     height: 25,
-                    tintColor: focused ? color.WHITE : color.GREY
+                    tintColor: focused ? "orange"  : color.GREY
                   }}
 
                 />
-                <Text style={{ color: focused ? color.WHITE : color.GREY, fontSize: 12, marginBottom: 2 }}>Profile</Text>
+                <Text style={{ color: focused ? color.gold : color.GREY, fontSize: 12, marginBottom: 2 }}>Profile</Text>
                 {/* </View> */}
               </View>
             )
@@ -103,12 +103,12 @@ export default function Tabnavigation() {
                   name="cart"
                   size={25}
                   color={
-                    focused ? color.WHITE : color.GREY
+                    focused ? "orange"  : color.GREY
                   }
                 />
 
                 
-                <Text style={{ color: focused ? color.WHITE : color.GREY, fontSize: 12, marginBottom: 2 }}>Booking</Text>
+                <Text style={{ color: focused ? color.gold : color.GREY, fontSize: 12, marginBottom: 2 }}>Booking</Text>
 
               </View>
             )

@@ -52,7 +52,7 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}
       style={styles.CardLinearGradientContainer}
-      colors={[color.GREY, color.darkgey]}>
+      colors={[color.GREY, color.grey]}>
       <ImageBackground
         source={imagelink_square}
         style={styles.CardImageBG}
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   CardLinearGradientContainer: {
     padding: SPACING.space_15,
     borderRadius: BORDERRADIUS.radius_25,
-    marginHorizontal: SPACING.space_10,
+    // marginHorizontal: SPACING.space_10,
     shadowOffset: { width: 0, height: 3 },
     shadowColor: '#171717',
     shadowOpacity: 0.4,

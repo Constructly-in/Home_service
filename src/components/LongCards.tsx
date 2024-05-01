@@ -2,6 +2,7 @@ import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import color from '../../App/utility/color'
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
+import { heightPercentageToDP } from 'react-native-responsive-screen';
 
 export default function LongCards() {
 
@@ -15,7 +16,7 @@ export default function LongCards() {
         <View style = {[styles.cards , styles.csrdElevated]}>
           
              <Image
-            source={require("../../image/OneDrive-2024-02-07/homeservice/BlueColler.png")}
+            source={require("../../image/OneDrive-2024-02-07/homeservice/jo.png")}
              style ={styles.elevatedImage} /> 
           
            
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent: 'center',
         width: "100%",
-        height: 170,
+        height: heightPercentageToDP('25%'),
         marginVertical:8,
         borderRadius: 20 ,
         overflow:"hidden"

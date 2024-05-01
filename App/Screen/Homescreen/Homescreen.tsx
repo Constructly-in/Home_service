@@ -36,13 +36,19 @@ const Homescreen = ({ navigation }: HomescreenProps) => {
 
 
       <View style={styles.TopContainer}>
+
         {/* Left side - Profile Image */}
-        <View style={styles.ProfileContainer}>
+        <TouchableOpacity 
+        style={styles.ProfileContainer}
+        onPress={() => navigation.navigate('Profile')}>
+        {/* <View > */}
           <Image
-            source={{ uri: 'https://cdn1.iconfinder.com/data/icons/facely-metapeople-3d-avatar-set/512/17._Designer.png' }}
+            source={require('../../../src/assets/app_images/avatar.png')}
             style={styles.ProfileImage}
           />
-        </View>
+        {/* </View> */}
+
+        </TouchableOpacity>
 
         {/* Center - Logo Image */}
         <View style={styles.LogoContainer}>

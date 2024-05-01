@@ -8,6 +8,7 @@ import {
   FONTSIZE,
   SPACING,
 } from '../theme/theme';
+import color from '../../App/utility/color';
 
 interface OrderItemCardProps {
   type: string;
@@ -30,7 +31,7 @@ const OrderItemCard: React.FC<OrderItemCardProps> = ({
     <LinearGradient
       start={{x: 0, y: 0}}
       end={{x: 1, y: 1}}
-      colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
+      colors={[color.GREY, color.darkgey]}
       style={styles.CardLinearGradient}>
       <View style={styles.CardInfoContainer}>
         <View style={styles.CardImageInfoContainer}>
@@ -40,16 +41,16 @@ const OrderItemCard: React.FC<OrderItemCardProps> = ({
             <Text style={styles.CardSubtitle}>{special_ingredient}</Text>
           </View>
         </View>
-        <View>
+        {/* <View>
           <Text style={styles.CardCurrency}>
             $ <Text style={styles.CardPrice}>{ItemPrice}</Text>
           </Text>
-        </View>
+        </View> */}
       </View>
       {prices.map((data: any, index: any) => (
         <View key={index.toString()} style={styles.CardTableRow}>
           <View style={styles.CardTableRow}>
-            <View style={styles.SizeBoxLeft}>
+            {/* <View style={styles.SizeBoxLeft}>
               <Text
                 style={[
                   styles.SizeText,
@@ -60,23 +61,23 @@ const OrderItemCard: React.FC<OrderItemCardProps> = ({
                 ]}>
                 {data.size}
               </Text>
-            </View>
-            <View style={styles.PriceBoxRight}>
+            </View> */}
+            {/* <View style={styles.PriceBoxRight}>
               <Text style={styles.PriceCurrency}>
                 {data.currency}
                 <Text style={styles.Price}> {data.price}</Text>
               </Text>
-            </View>
+            </View> */}
           </View>
 
-          <View style={styles.CardTableRow}>
+          {/* <View style={styles.CardTableRow}>
             <Text style={styles.CardQuantityPriceText}>
               X <Text style={styles.Price}>{data.quantity}</Text>
             </Text>
             <Text style={styles.CardQuantityPriceText}>
               $ {(data.quantity * data.price).toFixed(2).toString()}
             </Text>
-          </View>
+          </View> */}
         </View>
       ))}
     </LinearGradient>
@@ -88,6 +89,7 @@ const styles = StyleSheet.create({
     gap: SPACING.space_20,
     padding: SPACING.space_20,
     borderRadius: BORDERRADIUS.radius_25,
+    marginVertical: SPACING.space_20
   },
   CardInfoContainer: {
     flexDirection: 'row',
@@ -106,13 +108,13 @@ const styles = StyleSheet.create({
   },
   CardTitle: {
     fontFamily: FONTFAMILY.poppins_medium,
-    fontSize: FONTSIZE.size_18,
-    color: COLORS.primaryWhiteHex,
+    fontSize: FONTSIZE.size_20,
+    color: color.Obsidian,
   },
   CardSubtitle: {
     fontFamily: FONTFAMILY.poppins_regular,
-    fontSize: FONTSIZE.size_12,
-    color: COLORS.secondaryLightGreyHex,
+    fontSize: FONTSIZE.size_15,
+    color: color.WHITE,
   },
   CardCurrency: {
     fontFamily: FONTFAMILY.poppins_semibold,
