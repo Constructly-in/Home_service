@@ -25,10 +25,8 @@ import { firebase } from '@react-native-firebase/auth';
 import { sendEmailVerification } from 'firebase/auth';
 
 const CartScreen = ({navigation, route}: any) => {
-  const { currentUser } = useAuth();
-  const [userDetails,setUserDetails] = useState([]);
+  const { currentUser,currentUserInfo } = useAuth();
   
-  const [updatedCart,setUpdatedCart] = useState();
   const CartList = useStore((state: any) => state.CartList);
   const CartPrice = useStore((state: any) => state.CartPrice);
   const incrementCartItemQuantity = useStore(
@@ -44,10 +42,6 @@ const CartScreen = ({navigation, route}: any) => {
     (state: any) => state.addToOrderHistoryListFromCart,
   );
 
-  const fetchUser = async () => {
-    const user = await firestore().collection('Users').doc(currentUser.uid).get();
-    setUserDetails(user._data);
-  }
   
   const saveOrders = async () => {
     console.log(" ");
@@ -58,7 +52,6 @@ const CartScreen = ({navigation, route}: any) => {
     const orderData = await firestore().collection('Orders').doc(currentUser.uid).get();
     
     if(orderData.exists){
-      console.log("found")
       let cartItems = await orderData.data().CartItems;
       let revData = [...OrderHistoryList[0].CartList].reverse();
       
@@ -68,10 +61,10 @@ const CartScreen = ({navigation, route}: any) => {
       try {
         await firestore().collection('Orders').doc(currentUser.uid)
           .update({
-            CartItems: cartItems
+            CartItems: cartItems,
           });
       } catch (error) {
-        console.log(error);
+        console.log("found error",error);
       }
     }else {
 
@@ -80,28 +73,27 @@ const CartScreen = ({navigation, route}: any) => {
         cartItemsarr.push(datacart);
       });
       try {
-        firestore().collection('Orders').doc(currentUser.uid)
+        await firestore().collection('Orders').doc(currentUser.uid)
           .set({
             CartItems: cartItemsarr,
             userInfo: [{
               userUid: currentUser.uid,
-              userEmail: userDetails.email,
-              userName: userDetails.userName,
-              userPhone: userDetails.phoneNum
+              userEmail: currentUserInfo.email,
+              userName: currentUserInfo.userName,
+              userPhone: currentUserInfo.phoneNum
             }]
           });
       } catch (error) {
-        console.log(error);
+        console.log("not found",error);
       }
     }
   }
   const buttonPressHandler = () => {
     addToOrderHistoryListFromCart();
-    fetchUser();
     saveOrders();
     navigation.push('Order');
   };
-
+  
   const incrementCartItemQuantityHandler = (id: string, size: string) => {
     incrementCartItemQuantity(id, size);
     calculateCartPrice();

@@ -5,13 +5,20 @@ import color from '../../utility/color';
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CustomIcon from '../../../src/components/CustomIcon';
+import firestore from '@react-native-firebase/firestore';
+import { useAuth } from '../../Contexts/AuthContext';
 
 export default function Login({ navigation }) {
-
+  const { currentUser, setUserInfo } = useAuth();
+  
   const checkUser = async () => {
     const storageValue = await AsyncStorage.getItem('userEmail');
+
     if(storageValue !== null) {
+      console.log("checking user")
       navigation.replace("Tabnavigation");
+      const user = await firestore().collection('Users').doc(currentUser.uid).get();
+      setUserInfo(user._data);
     }
     else {
       navigation.replace("SignScreen");
