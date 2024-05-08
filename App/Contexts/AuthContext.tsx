@@ -12,6 +12,7 @@ export function useAuth() {
 
 export default function AuthProvider({children}) {
     const [currentUser, setCurrentUser] = useState();
+    const [currentUserInfo, setCurrentUserInfo] = useState([]);
 
     function signup(userName,phone,email,userPassword) {
         return auth().createUserWithEmailAndPassword(email, userPassword).then( async (signUpDoc) => {
@@ -64,6 +65,10 @@ export default function AuthProvider({children}) {
     function logout() {
         return auth().signOut();
     }
+    function setUserInfo (infoUser) {
+        setCurrentUserInfo(infoUser);
+        console.log("user set");
+    }
 
     useEffect(() => {
         const unsubscribe = auth().onAuthStateChanged((user) => {
@@ -75,6 +80,8 @@ export default function AuthProvider({children}) {
 
     const value = {
         currentUser,
+        currentUserInfo,
+        setUserInfo,
         signup,
         login,
         logout

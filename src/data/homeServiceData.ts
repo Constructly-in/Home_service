@@ -3,7 +3,7 @@ const homeServiceData = [
     id: 'C1',
     name: 'Plumber',
     description: `Skilled plumbers at your home/work place instantly!! Installs, repairs, and maintains water distribution and sanitation systems Works with piping systems and appliances like sinks, toilets, showers and water heaters. Diagnoses and fixes issues such as leaks, clogs, and pipe damage Ensures efficient and safe operation of plumbing systems in residential, commercial, and industrial settings`,
-    //roasted: 'Medium Roasted',
+    roasted: 'Medium Roasted',
     imagelink_square: require('../assets/home_service_assets/logo/plumber.png'),
     imagelink_portrait: require('../assets/home_service_assets/square/plumber.png'),
     ingredients: 'Milk',
