@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ScrollView,
   StatusBar,
@@ -6,6 +6,7 @@ import {
   Text,
   View,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import {useStore} from '../../../src/Store/store';
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
@@ -18,9 +19,16 @@ import CartItem from '../../../src/components/CartItem';
 import PaymentFooter from '../../../src/components/PaymentFooter';
 import EmptyListAnimation from '../../../src/components/EmptyListAnimation';
 import color from '../../utility/color';
+import firestore from '@react-native-firebase/firestore';
+import { useAuth } from '../../Contexts/AuthContext';
+import { firebase } from '@react-native-firebase/auth';
+import { sendEmailVerification } from 'firebase/auth';
 
 const CartScreen = ({navigation, route}: any) => {
+  const { currentUser } = useAuth();
+  const [userDetails,setUserDetails] = useState([]);
   
+  const [updatedCart,setUpdatedCart] = useState();
   const CartList = useStore((state: any) => state.CartList);
   const CartPrice = useStore((state: any) => state.CartPrice);
   const incrementCartItemQuantity = useStore(
@@ -35,9 +43,62 @@ const CartScreen = ({navigation, route}: any) => {
   const addToOrderHistoryListFromCart = useStore(
     (state: any) => state.addToOrderHistoryListFromCart,
   );
+
+  const fetchUser = async () => {
+    const user = await firestore().collection('Users').doc(currentUser.uid).get();
+    setUserDetails(user._data);
+  }
   
+  const saveOrders = async () => {
+    console.log(" ");
+    //Get Data from State
+    let OrderHistoryList = useStore.getState().OrderHistoryList;
+
+    //Get Data From firebase
+    const orderData = await firestore().collection('Orders').doc(currentUser.uid).get();
+    
+    if(orderData.exists){
+      console.log("found")
+      let cartItems = await orderData.data().CartItems;
+      let revData = [...OrderHistoryList[0].CartList].reverse();
+      
+      revData.map((datacart:any)=> {
+        cartItems.push(datacart);
+      });
+      try {
+        await firestore().collection('Orders').doc(currentUser.uid)
+          .update({
+            CartItems: cartItems
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    }else {
+
+      let cartItemsarr:any = [];
+      OrderHistoryList[0].CartList.map((datacart:any, index: number)=> {
+        cartItemsarr.push(datacart);
+      });
+      try {
+        firestore().collection('Orders').doc(currentUser.uid)
+          .set({
+            CartItems: cartItemsarr,
+            userInfo: [{
+              userUid: currentUser.uid,
+              userEmail: userDetails.email,
+              userName: userDetails.userName,
+              userPhone: userDetails.phoneNum
+            }]
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
   const buttonPressHandler = () => {
     addToOrderHistoryListFromCart();
+    fetchUser();
+    saveOrders();
     navigation.push('Order');
   };
 
@@ -100,7 +161,7 @@ const CartScreen = ({navigation, route}: any) => {
           {CartList.length != 0 ? (
             <PaymentFooter
               buttonPressHandler={buttonPressHandler}
-              buttonTitle="Book NOW"
+              buttonTitle="Book Now"
               price={{price: CartPrice, currency: '₹'}}
             />
           ) : (

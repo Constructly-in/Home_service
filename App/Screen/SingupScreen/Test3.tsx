@@ -7,6 +7,7 @@ import MyTextInput from '../../../src/assets/Buttons/MyTextInput';
 import auth from "@react-native-firebase/auth";
 import {useAuth}  from '../../Contexts/AuthContext';
 import LinearGradient from 'react-native-linear-gradient';
+import { updateProfile } from 'firebase/auth';
 
 interface SignupScreenProps {
     navigation: any; // Change 'any' to the actual type if possible
@@ -14,7 +15,7 @@ interface SignupScreenProps {
 }
 
 export default function SingupScreen({navigation}:SignupScreenProps) {
-    const { signup } = useAuth();
+    const { signup,currentUser } = useAuth();
     const [userName, setUserName] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
@@ -31,6 +32,9 @@ export default function SingupScreen({navigation}:SignupScreenProps) {
                 try{   
                     const userSignDoc = await signup(userName,phone,email,password);
                     if(userSignDoc !== undefined ) {
+                        updateProfile(currentUser,{
+                            displayName: userName,
+                        });
                         navigation.replace("Tabnavigation");
                     }else{
                         Alert.alert("Some error occured!");
