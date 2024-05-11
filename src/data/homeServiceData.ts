@@ -5,7 +5,7 @@ const homeServiceData = [
     description: `Skilled plumbers at your home/work place instantly!! Installs, repairs, and maintains water distribution and sanitation systems Works with piping systems and appliances like sinks, toilets, showers and water heaters. Diagnoses and fixes issues such as leaks, clogs, and pipe damage Ensures efficient and safe operation of plumbing systems in residential, commercial, and industrial settings`,
     roasted: 'Medium Roasted',
     imagelink_square: require('../assets/home_service_assets/logo/plumber.png'),
-    imagelink_portrait: require('../assets/home_service_assets/square/plumber.png'),
+    imagelink_portrait: require('../assets/home_service_assets/square/plumberp.png'),
     ingredients: 'Milk',
     special_ingredient: 'Fast service',
     prices: [
@@ -26,7 +26,7 @@ const homeServiceData = [
  Works with a variety of electrical components such as switches, outlets, circuit breakers, and lighting fixtures Diagnoses and resolves electrical issues such as power outages, faulty wiring, and malfunctioning appliances Ensures the safe and efficient operation of electrical systems in residential, commercial, and industrial buildings`,
     roasted: 'Medium Roasted',
     imagelink_square: require('../assets/home_service_assets/logo/electrician.png'),
-    imagelink_portrait: require('../assets/home_service_assets/square/electrician.png'),
+    imagelink_portrait: require('../assets/home_service_assets/square/electricianp.png'),
     ingredients: 'Milk',
     special_ingredient: 'Experience worker',
     prices: [
@@ -46,7 +46,7 @@ const homeServiceData = [
     description: `Skilled painter at your home/work place instantly!! Prepares surfaces by cleaning, sanding, and applying primers or sealants Selects and mixes paints to achieve desired colors and finishes Applies paint using brushes, rollers, or spray equipment Works on various surfaces including walls, ceilings, floors, and furniture Works in residential, commercial, and industrial settings to enhance and protect surfaces through painting and finishing applications.`,
     roasted: 'Medium Roasted',
     imagelink_square: require('../assets/home_service_assets/logo/painter.png'),
-    imagelink_portrait: require('../assets/home_service_assets/square/painter.png'),
+    imagelink_portrait: require('../assets/home_service_assets/square/painterp.png'),
     ingredients: 'Milk',
     special_ingredient: 'Skilled worker',
     prices: [
@@ -66,7 +66,7 @@ const homeServiceData = [
     description: `Skilled carpenter available at your home/work place instantly!! Constructs, installs, and repairs structures and fixtures made of wood, plywood, and other materials Uses a variety of hand and power tools such as saws, drills, and sanders to cut, shape, and join wood pieces Builds and installs cabinets, furniture, doors, windows, and framing for buildings Performs tasks such as framing, trimming, molding, and finishing to complete projects Ensures accuracy, precision, and structural integrity in all carpentry work Works in residential, commercial, and industrial settings to create and maintain wood-based structures and features.`,
     roasted: 'Medium Roasted',
     imagelink_square: require('../assets/home_service_assets/logo/carpainter.png'),
-    imagelink_portrait: require('../assets/home_service_assets/square/carpenter.png'),
+    imagelink_portrait: require('../assets/home_service_assets/square/carpenterp.png'),
     ingredients: 'Milk',
     special_ingredient: 'Best service',
     prices: [
@@ -86,7 +86,7 @@ const homeServiceData = [
     description: `Skilled home cleaner available at your home/work place instantly! Skilled worker specializing in cleaning residential spaces Performs tasks such as dusting, vacuuming, sweeping, mopping, and polishing surfaces Cleans and sanitizes bathrooms, kitchens, bedrooms, living areas, and other rooms Removes trash, debris, and clutter to maintain a tidy and organized environment Pays attention to detail to ensure thorough cleaning and customer satisfaction Can offer additional services such as laundry, dishwashing, and organizing upon request`,
     roasted: 'Medium Roasted',
     imagelink_square: require('../assets/home_service_assets/logo/cleaner.png'),
-    imagelink_portrait: require('../assets/home_service_assets/square/cleaner.png'),
+    imagelink_portrait: require('../assets/home_service_assets/square/cleanerp.png'),
     ingredients: 'Milk',
     special_ingredient: 'High quality service',
     prices: [

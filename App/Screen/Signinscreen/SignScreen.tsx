@@ -1,6 +1,6 @@
 import { Alert, Button, Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import color from '../../utility/color'
+import color from '../../../src/utility/color'
 import MyButton from '../../../src/assets/Buttons/MyButton'
 import MyTextInput from '../../../src/assets/Buttons/MyTextInput'
 import Socialmedia from '../../../src/assets/Buttons/Socialmedia'

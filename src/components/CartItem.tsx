@@ -16,7 +16,7 @@ import {
   SPACING,
 } from '../theme/theme';
 import CustomIcon from './CustomIcon';
-import color from '../../App/utility/color';
+import color from '../utility/color';
 
 interface CartItemProps {
   id: string;
@@ -199,11 +199,14 @@ const styles = StyleSheet.create({
     gap: SPACING.space_12,
     padding: SPACING.space_12,
     borderRadius: BORDERRADIUS.radius_25,
+    marginTop:10
+    // marginVertical: SPACING.space_10
   },
   CartItemRow: {
     flexDirection: 'row',
     gap: SPACING.space_12,
     flex: 1,
+    
   },
   CartItemImage: {
     height: 130,

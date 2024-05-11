@@ -8,7 +8,7 @@ import {
   FONTSIZE,
   SPACING,
 } from '../theme/theme';
-import color from '../../App/utility/color';
+import color from '../utility/color';
 
 interface OrderItemCardProps {
   type: string;
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     gap: SPACING.space_20,
     padding: SPACING.space_20,
     borderRadius: BORDERRADIUS.radius_25,
-    marginVertical: SPACING.space_20
+    // marginVertical: SPACING.space_10
   },
   CardInfoContainer: {
     flexDirection: 'row',

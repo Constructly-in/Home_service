@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Homescreen from '../Screen/Homescreen/Homescreen';
 import Profilescreen from '../Screen/Profile/Profilescreen';
 import Bookingscreen from '../Screen/CartScreen/CartScreen';
-import color from '../utility/color';
+import color from '../../src/utility/color';
 import LinearGradient from 'react-native-linear-gradient';
 import CartScreen from '../Screen/CartScreen/CartScreen';
 import { COLORS } from '../../src/theme/theme';
@@ -45,7 +45,7 @@ export default function Tabnavigation() {
             //tabBarLabel:({color})=>(<Text style = {{color:color,fontSize:10,marginTop:-7,}}>HOME</Text>),
             tabBarIcon: ({ focused }) => (
               <View style={{
-                alignItems: 'center', justifyContent: 'center', top: 3
+                alignItems: 'center', justifyContent: 'center', top: 3 ,
               }}>
                 <Image
                   source={require('../../image/OneDrive-2024-02-07/HomeIcon.png')}
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     // height: 80,
     position: 'absolute',
     height: "6.2%",
-    backgroundColor: "rgba(11, 17, 20, 0.7)",
+    backgroundColor: "rgba(10, 16, 20, 0.8)",
     borderTopWidth: 0,
     elevation: 0,
     borderTopColor: 'transparent',

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import MyButton from '../../../src/assets/Buttons/MyButton'
 import CategoryButton from '../../../src/assets/Buttons/CategoryButton'
-import color from '../../utility/color'
+import color from '../../../src/utility/color'
 import { Dimensions } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import CustomIcon from '../../../src/components/CustomIcon'
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: windowWidth * 0.05, // 5% of the screen width
     paddingTop: windowHeight * 0.01, // 5% of the screen height
-    backgroundColor: color.GREY,
+    backgroundColor: color.white,
 
     // borderBottomEndRadius: 20,
     // borderBottomLeftRadius: 20

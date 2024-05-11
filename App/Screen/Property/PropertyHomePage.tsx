@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import color from '../../utility/color'
+import color from '../../../src/utility/color'
 import { FONTFAMILY } from '../../../src/theme/theme'
 
 const PropertyHomePage = () => {

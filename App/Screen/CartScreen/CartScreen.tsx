@@ -18,7 +18,7 @@ import HeaderBar from '../../../src/components/HeaderBar';
 import CartItem from '../../../src/components/CartItem';
 import PaymentFooter from '../../../src/components/PaymentFooter';
 import EmptyListAnimation from '../../../src/components/EmptyListAnimation';
-import color from '../../utility/color';
+import color from '../../../src/utility/color';
 import firestore from '@react-native-firebase/firestore';
 import { useAuth } from '../../Contexts/AuthContext';
 import { firebase } from '@react-native-firebase/auth';

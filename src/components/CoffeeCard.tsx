@@ -18,7 +18,7 @@ import {
 } from '../theme/theme';
 import CustomIcon from './CustomIcon';
 import BGIcon from './BGIcon';
-import color from '../../App/utility/color';
+import color from '../utility/color';
 
 const CARD_WIDTH = Dimensions.get('window').width * 0.32;
 
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   CardLinearGradientContainer: {
     padding: SPACING.space_15,
     borderRadius: BORDERRADIUS.radius_25,
-    // marginHorizontal: SPACING.space_10,
+    marginHorizontal: SPACING.space_10,
     shadowOffset: { width: 0, height: 3 },
     shadowColor: '#171717',
     shadowOpacity: 0.4,

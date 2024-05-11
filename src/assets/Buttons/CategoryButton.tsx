@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React , {FC} from 'react'
-import color from '../../../App/utility/color'
+import color from '../../utility/color'
 
 interface Props {
     title: string

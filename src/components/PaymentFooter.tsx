@@ -7,7 +7,7 @@ import {
   FONTSIZE,
   SPACING,
 } from '../theme/theme';
-import color from '../../App/utility/color';
+import color from '../utility/color';
 
 interface PriceProps {
   // price: string;

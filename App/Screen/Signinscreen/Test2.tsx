@@ -1,7 +1,7 @@
 import { View, Text, Image, ImageBackground, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsive-screen';
 import React, { useEffect, useState } from 'react';
-import color from '../../utility/color';
+import color from '../../../src/utility/color';
 import MyButton from '../../../src/assets/Buttons/MyButton';
 import MyTextInput from '../../../src/assets/Buttons/MyTextInput';
 import auth from "@react-native-firebase/auth";

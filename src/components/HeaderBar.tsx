@@ -3,7 +3,7 @@ import React from 'react';
 import {COLORS, FONTFAMILY, FONTSIZE, SPACING} from '../theme/theme';
 import GradientBGIcon from './GradientBGIcon';
 import ProfilePic from './ProfilePic';
-import color from '../../App/utility/color';
+import color from '../utility/color';
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
 
 interface HeaderBarProps {
@@ -37,13 +37,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor:color.GREY,
+    backgroundColor:color.Obsidian,
     marginBottom:heightPercentageToDP('2%')
   },
   HeaderText: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_20,
-    color: color.white,
+    color: color.WHITE,
   },
 
   LogoContainer: {

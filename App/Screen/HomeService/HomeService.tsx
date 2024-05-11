@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, FlatList, Dimensions } from 'react-native'
-import React, { useRef, useState } from 'react'
-import color from '../../utility/color'
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, FlatList, Dimensions, LogBox } from 'react-native'
+import React, { useEffect, useRef, useState } from 'react'
+import color from '../../../src/utility/color'
 import ElevatedCards from '../../../src/components/ElevatedCards'
 import LongCards from '../../../src/components/LongCards'
 // import React, {useRef, useState} from 'react';
@@ -10,6 +10,10 @@ import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../../sr
 import CoffeeCard from '../../../src/components/CoffeeCard'
 import Offer from '../../../src/components/Offer'
 // import category from '../../../src/components/category'
+
+
+
+
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -56,6 +60,11 @@ const HomeService = ({ navigation }: any) => {
   const tabBarHeight = useBottomTabBarHeight();
 
 
+
+  useEffect(() => {
+    LogBox.ignoreLogs(["VirtualizedLists should never be nested"])
+  }, [])
+  
   // console.log('category=', categories);
   return (
     <ScrollView style={{ flexGrow: 1 }}>
@@ -110,9 +119,9 @@ const HomeService = ({ navigation }: any) => {
         {/* Coffee Flatlist */}
 
         <FlatList
-          ref={ListRef}
-          horizontal
-          // numColumns={2}
+          // ref={ListRef}
+          // horizontal
+          numColumns={2}
           //coffe search
           // ListEmptyComponent={
           //   <View style={styles.EmptyListContainer}>
@@ -122,7 +131,7 @@ const HomeService = ({ navigation }: any) => {
 
           showsHorizontalScrollIndicator={false}
           data={sortedCoffee}
-          contentContainerStyle={styles.FlatListContainer}
+          contentContainerStyle={[styles.FlatListContainer , {marginBottom:tabBarHeight}]}
           keyExtractor={item => item.id}
           renderItem={({ item }) => {
             return (
@@ -151,11 +160,8 @@ const HomeService = ({ navigation }: any) => {
           }}
         />
 
-        {/* <Text style={styles.CoffeeBeansTitle}>Coffee Beans</Text> */}
-
-        {/* <ElevatedCards /> */}
-        {/* <ElevatedCards /> */}
-        <LongCards />
+      
+        {/* <LongCards /> */}
 
 
 
@@ -164,6 +170,8 @@ const HomeService = ({ navigation }: any) => {
 
 
     </ScrollView>
+
+    // {/* </View> */}
 
 
   )
@@ -218,6 +226,8 @@ const styles = StyleSheet.create({
     gap: SPACING.space_15*1.1,
     paddingVertical: SPACING.space_20,
     paddingHorizontal: SPACING.space_20,
+    // marginBottom: tab
+    // backgroundColor:"green"
   },
   EmptyListContainer: {
     width: Dimensions.get('window').width - SPACING.space_30 * 2,

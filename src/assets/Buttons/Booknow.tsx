@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React , {FC} from 'react'
-import color from '../../../App/utility/color'
+import color from '../../utility/color'
 import LinearGradient from 'react-native-linear-gradient'
 
 import {

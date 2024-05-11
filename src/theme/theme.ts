@@ -72,6 +72,8 @@ interface FontFamily {
   poppins_regular: string;
   poppins_semibold: string;
   poppins_thin: string;
+  app_icons: string;
+  
 }
 
 export const FONTFAMILY: FontFamily = {
@@ -84,6 +86,8 @@ export const FONTFAMILY: FontFamily = {
   poppins_regular: 'Poppins-Regular',
   poppins_semibold: 'Poppins-SemiBold',
   poppins_thin: 'Poppins-Thin',
+  app_icons: 'app_icons',
+
 };
 
 interface FontSize {

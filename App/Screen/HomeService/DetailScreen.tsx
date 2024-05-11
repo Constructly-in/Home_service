@@ -14,7 +14,7 @@ import {useStore} from '../../../src/Store/store';
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../../src/theme/theme';
 import PaymentFooter from '../../../src/components/PaymentFooter';
 import ImageBackgroundInfo from '../../../src/components/ImageBackgroundInfo';
-import color from '../../utility/color';
+import color from '../../../src/utility/color';
 import Booknow from '../../../src/assets/Buttons/Booknow';
 
 const DetailScreen = ({navigation, route}: any) => {
