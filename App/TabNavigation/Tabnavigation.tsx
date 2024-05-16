@@ -54,7 +54,7 @@ export default function Tabnavigation() {
                     width: 25,
                     height: 25,
 
-                    tintColor: focused ? "orange" : color.GREY,
+                    tintColor: focused ? color.gold : color.GREY,
 
                   }}
 
@@ -80,7 +80,7 @@ export default function Tabnavigation() {
                   style={{
                     width: 25,
                     height: 25,
-                    tintColor: focused ? "orange"  : color.GREY
+                    tintColor: focused ? color.gold  : color.GREY
                   }}
 
                 />
@@ -103,7 +103,7 @@ export default function Tabnavigation() {
                   name="cart"
                   size={25}
                   color={
-                    focused ? "orange"  : color.GREY
+                    focused ? color.gold  : color.GREY
                   }
                 />
 
@@ -115,19 +115,6 @@ export default function Tabnavigation() {
           }}
         />
 
-        {/* <Tab.Screen
-        name="History"
-        component={OrderHistoryScreen}
-        options={{
-          tabBarIcon: ({focused, color, size}) => (
-            <CustomIcon
-              name="bell"
-              size={25}
-              color={
-                focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
-              }
-            /> */}
-
       </Tab.Navigator>
 
 
@@ -137,34 +124,15 @@ export default function Tabnavigation() {
 const styles = StyleSheet.create({
 
   conatiner: {
-    flex: 1,
-    // paddingHorizontal:10  
+    flex: 1,  
   },
 
   color: {},
 
   tabBarStyle: {
-    //   backgroundColor:color.Offwhite ,
-    //   width:"96%",
-    //   height:"6.2%",
-    //   position:"absolute",
-    //   bottom:15,
-    //   borderRadius:40,
-    //   alignItems:"center",
-    //   marginHorizontal:"1.5%",
-    //   shadowRadius: 2,
-    //   shadowOffset: {
-    //     width: 0,
-    //     height: -3,
-    //   },
-    //   shadowColor:color.BLACK,
-    //   elevation: 2,
-    // }
-
-    // height: 80,
     position: 'absolute',
     height: "6.2%",
-    backgroundColor: "rgba(10, 16, 20, 0.8)",
+    backgroundColor: color.yoyo,
     borderTopWidth: 0,
     elevation: 0,
     borderTopColor: 'transparent',
@@ -178,7 +146,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    
   }
 
 

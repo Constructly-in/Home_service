@@ -33,7 +33,13 @@ export default{
     Obsidian: "#0B1215" ,
     GREY: "#B2B2B2" ,
     gold: "#C8830C" ,
-    purple: "#330072"
+    purple: "#2D006B" ,
+    dark_purple : "#19003d" ,
+    dark_gold: "#da9410",
+    gold: "#fbc35b" ,
+    light_purple : "#4600a8",
+    light_gold:"#fcd183" ,
+    yoyo: "rgba(45, 0, 107, 0.79)"
 
 
 }

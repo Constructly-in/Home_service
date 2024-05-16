@@ -26,16 +26,17 @@ const Homescreen = ({ navigation }: HomescreenProps) => {
   const [selectedOption, setSelectedOption] = useState<'Home' | 'Property'>('Home');
 
   return (
+
+
+    <View style={styles.Container} >
+
+
     <LinearGradient start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 0 }}
-      colors={[color.bg_white, color.bg_white]}
-      style={styles.Container}>
+      colors={[color.dark_purple, color.purple]}
+      style={styles.TopContainer}>
 
-
-
-
-
-      <View style={styles.TopContainer}>
+      
 
         {/* Left side - Profile Image */}
         <TouchableOpacity 
@@ -63,35 +64,15 @@ const Homescreen = ({ navigation }: HomescreenProps) => {
         onPress={() => navigation.navigate('Order') }
         >
 
-          {/* <Image
-            source={{ uri: "https://image.similarpng.com/very-thumbnail/2020/08/Notification-bell-icon-new-message-bell-Premium-vector-PNG.png" }}
-            style={styles.notificationImage}
-          /> */}
-
           <CustomIcon name='bell' size={25} color={color.gold} style ={styles.notificationImage}  />
+          
         </TouchableOpacity>
 
-      </View>
-
-
-
-
-      {/* <View style={styles.Header}>
-
-      <TouchableOpacity onPress={() => setSelectedOption('Home')}>
-          <Text style={[styles.Title, selectedOption === 'Home' && styles.selected]}>Home Service</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => setSelectedOption('Property')}>
-          <Text style={[styles.Title_2, selectedOption === 'Property' && styles.selected]}>Property</Text>
-        </TouchableOpacity> 
-      </View> */}
-
+      
+      </LinearGradient>
       <TopTabNavigation />
 
-
-
-
-    </LinearGradient>
+      </View>
 
   )
 }
@@ -110,16 +91,15 @@ const styles = StyleSheet.create({
 
 
   TopContainer: {
-    flex: 0.06,
+    flex: 0.07,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: windowWidth * 0.05, // 5% of the screen width
-    paddingTop: windowHeight * 0.01, // 5% of the screen height
+    paddingVertical: windowHeight * 0.01, // 5% of the screen height
     backgroundColor: color.white,
-
-    // borderBottomEndRadius: 20,
-    // borderBottomLeftRadius: 20
+    borderBottomLeftRadius: 20 ,
+    borderBottomRightRadius: 20 ,
   },
 
   ProfileContainer: {

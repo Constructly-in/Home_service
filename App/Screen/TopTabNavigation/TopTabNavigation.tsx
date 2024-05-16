@@ -17,14 +17,19 @@ const TopTabNavigation = () => {
                 screenOptions={{
                     
                     tabBarStyle: {
-                        backgroundColor: color.bg_white,
+                        backgroundColor: 'transparent',
                         height: heightPercentageToDP('5%'),
                         width: widthPercentageToDP('80%'),
                         marginTop:"2%" ,
                         // borderRadius:50,
-                        marginHorizontal:"10%"
+                        marginHorizontal:"10%" ,
+                        elevation: 0, // Remove elevation/shadow on Android
+                        shadowOpacity: 0,
                         
                     },
+                    tabBarIndicatorStyle: {
+                      height: 0, // Hide the indicator line
+                  },
                     swipeEnabled:true,
                     tabBarShowLabel: false,
                     
@@ -38,7 +43,7 @@ const TopTabNavigation = () => {
                     tabBarIcon: ({ focused }) => (
                       <View style=
                         {{
-                         backgroundColor: focused? "gold" : color.darkgey, height:40 ,
+                         backgroundColor: focused? color.light_purple : color.darkgey, height:40 ,
                          width:160 ,
                          position:"absolute",
                          top:-10 ,
@@ -47,7 +52,7 @@ const TopTabNavigation = () => {
                          borderRadius:50
                         }}>
                            <Text 
-                           style={{ color: focused ? color.Obsidian : color.WHITE, fontSize: 17, top:6.5 ,
+                           style={{ color: focused ? color.gold : color.Offwhite, fontSize: 17, top:6.5 ,
                              fontFamily: focused? FONTFAMILY.poppins_medium  : FONTFAMILY.poppins_light}}>
                             Home Service
                            </Text>
@@ -60,7 +65,7 @@ const TopTabNavigation = () => {
                     tabBarIcon: ({ focused }) => (
                       <View style=
                         {{
-                         backgroundColor: focused? "gold" : color.darkgey, height:40 ,
+                         backgroundColor: focused? color.light_purple : color.darkgey, height:40 ,
                          width:160 ,
                          position:"absolute",
                          top:-10 ,
@@ -69,7 +74,7 @@ const TopTabNavigation = () => {
                          borderRadius:50
                         }}>
                            <Text 
-                           style={{ color: focused ? color.Night : color.WHITE, fontSize: 17, top:6 ,
+                           style={{ color: focused ? color.gold : color.Offwhite, fontSize: 17, top:6 ,
                             fontFamily: focused? FONTFAMILY.poppins_medium  : FONTFAMILY.poppins_light
                            }}>
                             Property service 

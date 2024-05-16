@@ -46,7 +46,7 @@ export default function Login({ navigation }) {
         }}>"Building Dreams, One Brick at a Time" </Text>
 
         <TouchableOpacity style={styles.button} onPress={() => checkUser() }>
-          <Text style={{ fontSize: widthPercentageToDP('4%'), color: color.Offwhite, textAlign: 'center' }}>
+          <Text style={{ fontSize: widthPercentageToDP('4.2%'), color: color.Night, textAlign: 'center' }}>
             Let's get started
           </Text>
           
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
 
   subContainer: {
     width: '100%',
-    backgroundColor: color.GREY,
+    backgroundColor: color.purple,
     height: '55%',
     marginTop: -heightPercentageToDP('2%'),
     borderRadius: 30,
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
 
   heading_1: {
     fontSize: widthPercentageToDP('5%'),
-    color: color.Obsidian,
+    color: color.gold,
     textAlign: 'center',
   },
 
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     paddingLeft: widthPercentageToDP('5%'),
     paddingTop: heightPercentageToDP('2%'),
     height: heightPercentageToDP('7%'),
-    backgroundColor:color.Obsidian,
+    backgroundColor:color.gold,
     borderRadius: 99,
   },
 });

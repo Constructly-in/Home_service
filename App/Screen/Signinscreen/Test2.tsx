@@ -97,7 +97,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
         <View style={styles.Container}>
             <LinearGradient start={{x: 0, y: 0}} 
                                 end={{x: 1, y: 0}} 
-                                colors={[color.gradiant1, color.gradiant ]} 
+                                colors={[color.purple, color.dark_purple]}
                                 style={styles.Container}>
             <ImageBackground
                 source={require('./../../../image/OneDrive-2024-02-07/circle.png')}
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     Title: {
         textAlign: 'center',
         fontSize: widthPercentageToDP('7%'),
-        color: color.Offwhite,
+        color: color.gold,
         marginTop: heightPercentageToDP('10%'),
         fontFamily: "Cardo-Bold"
     },

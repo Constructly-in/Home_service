@@ -5,6 +5,7 @@ import GradientBGIcon from './GradientBGIcon';
 import ProfilePic from './ProfilePic';
 import color from '../utility/color';
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
+import LinearGradient from 'react-native-linear-gradient';
 
 interface HeaderBarProps {
   title?: string;
@@ -12,7 +13,14 @@ interface HeaderBarProps {
 
 const HeaderBar: React.FC<HeaderBarProps> = ({title}) => {
   return (
-    <View style={styles.HeaderContainer}>
+
+    <LinearGradient
+    start={{x: 0, y: 0}}
+    end={{x: 1, y: 1}}
+    colors={[color.dark_purple, color.purple]}
+    style={styles.HeaderContainer}>
+
+   
       {/* <GradientBGIcon
         name="menu"
         color={COLORS.primaryLightGreyHex}
@@ -27,7 +35,9 @@ const HeaderBar: React.FC<HeaderBarProps> = ({title}) => {
 
       <Text style={styles.HeaderText}>{title}</Text>
       <ProfilePic />
-    </View>
+
+      </LinearGradient>
+    
   );
 };
 
@@ -37,8 +47,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor:color.Obsidian,
-    marginBottom:heightPercentageToDP('2%')
+    backgroundColor:color.purple,
+    marginBottom:heightPercentageToDP('2%') ,
+    borderBottomLeftRadius:30 ,
+    borderBottomRightRadius: 30
   },
   HeaderText: {
     fontFamily: FONTFAMILY.poppins_semibold,

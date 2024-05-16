@@ -58,61 +58,59 @@ export default function Profilescreen() {
       <HeaderBar title="Profile" />
 
       {/* Top Container */}
-      <View style={styles.topContainer}>
-        {/* Profile Pic, Name, Phone, Email */}
-        <Image
-          source={require('../../../src/assets/app_images/avatar.png')}
-          style={styles.profilePic}
-        />
+      {/* <View style={styles.topContainer}> */}
+        <LinearGradient
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          colors={[color.purple, color.dark_purple]}
+          style={styles.topContainer}>
 
-        {/* <View style={styles.pokemon}> */}
-        {/* <View style={[styles.subBox, {
-            backgroundColor: color.GREY, borderTopLeftRadius: 10,
-            borderBottomLeftRadius: 10,
-          }]} >
+         
+          <Image
+            source={require('../../../src/assets/app_images/avatar.png')}
+            style={styles.profilePic}
+          />
+          <View style={{
+            flexDirection: 'row',
+            alignItems: "center",
+            marginBottom: 10,
+          }}>
 
-            <Text style={styles.subTitle}>Name</Text>
-          </View> */}
-        <View style={{
-          flexDirection: 'row',
-          alignItems: "center",
-          marginBottom: 10 ,
-        }}>
-
-          <Text style={styles.name}>{userDetails.userName ? userDetails.userName : 'loading...'}</Text>
-        </View>
-
-        {/* </View> */}
-        <View style={styles.pokemon}>
-          <View style={[styles.subBox, {
-            backgroundColor: color.GREY, borderTopLeftRadius: 10,
-            borderBottomLeftRadius: 10,
-          }]} >
-            <Text style={styles.subTitle}>Phone Number</Text>
-          </View>
-          <View style={[styles.infobox, styles.subBox]}>
-
-            <Text style={[styles.phoneNumber]}>{userDetails.phoneNum}</Text>
-
-          </View>
-        </View>
-
-        <View style={styles.pokemon}>
-          <View style={[styles.subBox, {
-            backgroundColor: color.GREY, borderTopLeftRadius: 10,
-            borderBottomLeftRadius: 10,
-          }]} >
-            <Text style={styles.subTitle}>Email</Text>
+            <Text style={styles.name}>{userDetails.userName ? userDetails.userName : 'loading...'}</Text>
           </View>
 
-          <View style={[styles.infobox, styles.subBox]}>
+          {/* </View> */}
+          <View style={styles.pokemon}>
+            <View style={[styles.subBox, {
+              backgroundColor: color.GREY, borderTopLeftRadius: 10,
+              borderBottomLeftRadius: 10,
+            }]} >
+              <Text style={styles.subTitle}>Phone Number</Text>
+            </View>
+            <View style={[styles.infobox, styles.subBox]}>
 
-            <Text style={styles.email}>{userDetails.email}</Text>
+              <Text style={[styles.phoneNumber]}>{userDetails.phoneNum}</Text>
+
+            </View>
           </View>
 
-        </View>
+          <View style={styles.pokemon}>
+            <View style={[styles.subBox, {
+              backgroundColor: color.GREY, borderTopLeftRadius: 10,
+              borderBottomLeftRadius: 10,
+            }]} >
+              <Text style={styles.subTitle}>Email</Text>
+            </View>
 
-      </View>
+            <View style={[styles.infobox, styles.subBox]}>
+
+              <Text style={styles.email}>{userDetails.email}</Text>
+            </View>
+
+          </View>
+
+      {/* </View> */}
+      </LinearGradient>
 
       <View style={styles.bottomContainer}>
         <Text style={styles.componentTitle}>Our Social Media</Text>
@@ -175,7 +173,7 @@ const styles = StyleSheet.create({
   topContainer: {
     alignItems: 'center',
     marginTop: 20,
-    backgroundColor: color.grey,
+    backgroundColor: color.dark_purple,
 
     shadowOffset: { width: 0, height: 3 },
     shadowColor: '#171717',
@@ -224,7 +222,7 @@ const styles = StyleSheet.create({
   name: {
     color: color.WHITE,
     fontSize: 20,
-    textTransform: "uppercase" ,
+    textTransform: "uppercase",
     fontFamily: FONTFAMILY.poppins_medium
     // fontWeight: 'bold',
     // marginTop: 10,
@@ -282,7 +280,9 @@ const styles = StyleSheet.create({
   },
 
   infobox: {
-    backgroundColor: color.cream, borderTopRightRadius: 10, borderBottomRightRadius: 10
+    backgroundColor: color.light_purple,
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10
   }
 });
 

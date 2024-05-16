@@ -8,6 +8,7 @@ import auth from "@react-native-firebase/auth";
 import {useAuth}  from '../../Contexts/AuthContext';
 import LinearGradient from 'react-native-linear-gradient';
 import { updateProfile } from 'firebase/auth';
+import { FONTSIZE } from '../../../src/theme/theme';
 
 interface SignupScreenProps {
     navigation: any; // Change 'any' to the actual type if possible
@@ -54,7 +55,7 @@ export default function SingupScreen({navigation}:SignupScreenProps) {
         <View style={styles.Container}>
             <LinearGradient start={{x: 0, y: 0}} 
                                 end={{x: 1, y: 0}} 
-                                colors={[ color.gradiant1, color.gradiant ]} 
+                                colors={[ color.purple, color.dark_purple ]} 
                                 style={styles.Container}>
             <ImageBackground
                 source={require('./../../../image/OneDrive-2024-02-07/circle.png')}
@@ -83,14 +84,20 @@ export default function SingupScreen({navigation}:SignupScreenProps) {
                     <MyTextInput
                         value={email}
                         onChangeText={(text: string) => setEmail(text)}
-                        placeholder="Enter E-Mail or User Name"  placeholderTextColor = {color.white}
+                        placeholder="Enter E-Mail "  placeholderTextColor = {color.white}
                     />
+                      <Text style = {{fontSize: FONTSIZE.size_10*1.3 , position:"relative" , top: heightPercentageToDP('-1.6%') , left: widthPercentageToDP('-14%'), }}>
+                        Eg:- abc@gmail.com
+                    </Text>
                     <MyTextInput
                         value={password}
                         onChangeText={(text: string) => setPassword(text)}
                         placeholder="Password" placeholderTextColor = {color.white}
                         secureTextEntry
                     />
+                    <Text style = {{fontSize: FONTSIZE.size_10*1.3 , position:"relative" , top: heightPercentageToDP('-1.6%') , left: widthPercentageToDP('-4%'), color: "red"}}>
+                        Password should be atleast 8 letter *
+                    </Text>
                     <MyTextInput
                         value={confirmPassword}
                         onChangeText={(text: string) => setConfirmPassword(text)}
@@ -122,7 +129,7 @@ const styles = StyleSheet.create({
     Title: {
         textAlign: 'center',
         fontSize: widthPercentageToDP('7%'),
-        color: color.Offwhite,
+        color: color.gold,
         marginTop: heightPercentageToDP('10%'),
         fontFamily: 'Cardo-Regular',
       

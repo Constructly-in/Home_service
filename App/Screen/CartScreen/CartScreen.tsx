@@ -105,7 +105,7 @@ const CartScreen = ({navigation, route}: any) => {
   };
   return (
     <View style={styles.ScreenContainer}>
-      <StatusBar backgroundColor={ color.grey} />
+      <StatusBar backgroundColor={ color.Night} />
 
       <ScrollView
         showsVerticalScrollIndicator={false}
