@@ -21,20 +21,41 @@ const EmptyListAnimation: React.FC<EmptyListAnimationProps> = ({title}) => {
   );
 };
 
+// const styles = StyleSheet.create({
+//   EmptyCartContainer: {
+//     flex: 1,
+//     justifyContent: 'center',
+//   },
+//   LottieStyle: {
+//     // height: 200,
+//     // backgroundColor:"blue"
+//   },
+//   LottieText: {
+//     fontFamily: FONTFAMILY.poppins_medium,
+//     fontSize: FONTSIZE.size_16,
+//     color: COLORS.primaryOrangeHex,
+//     textAlign: 'center',
+//   },
+// });
+
 const styles = StyleSheet.create({
   EmptyCartContainer: {
     flex: 1,
     justifyContent: 'center',
+    alignItems: 'center',  // Added to center the animation horizontally
   },
   LottieStyle: {
-    // height: 200,
-    // backgroundColor:"blue"
+    width: 250,  // Set explicit width
+    height: 250, // Set explicit height
+    // backgroundColor: "blue", // Uncomment for debugging purposes
   },
   LottieText: {
     fontFamily: FONTFAMILY.poppins_medium,
     fontSize: FONTSIZE.size_16,
     color: COLORS.primaryOrangeHex,
     textAlign: 'center',
+    // marginTop: 20, // Add some margin to separate text from animationa
+    alignSelf:"center",
   },
 });
 
