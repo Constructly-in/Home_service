@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React , {FC} from 'react'
-import color from '../../../App/utility/color'
+import color from '../../utility/color'
 import LinearGradient from 'react-native-linear-gradient'
 
 import {
@@ -18,8 +18,13 @@ interface Props {
 const Booknow : FC <Props> = ({title , onPress}) => {
   return (
 
-                               
-   <View style = {{justifyContent:"center",alignItems:"center" , marginBottom:20}}>
+    <LinearGradient
+    start={{ x: 0, y: 0 }}
+    end={{ x: 1, y: 1 }}
+    style={{justifyContent:"center",alignItems:"center" , marginBottom:20}}
+    colors={[color.gold, color.dark_gold]}>
+    
+  {/* <View style = {{justifyContent:"center",alignItems:"center" , marginBottom:20}}> */}
   <TouchableOpacity  onPress={onPress} style = {styles.Container}>
     
     <View >
@@ -30,7 +35,8 @@ const Booknow : FC <Props> = ({title , onPress}) => {
     </View>   
 
     </TouchableOpacity>                         
-    </View>
+    {/* </View> */}
+    </LinearGradient>
     
   )
 }
@@ -40,7 +46,7 @@ export default Booknow
 const styles = StyleSheet.create({
 
     Container:{
-        height:60,
+        height:50,
         width:"85%",
         justifyContent:"center",
         alignItems:"center",

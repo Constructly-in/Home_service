@@ -16,6 +16,7 @@ import {
   SPACING,
 } from '../theme/theme';
 import CustomIcon from './CustomIcon';
+import color from '../utility/color';
 
 interface ImageBackgroundInfoProps {
   EnableBackHandler: boolean;
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
   ImageInfoOuterContainer: {
     paddingVertical: SPACING.space_24,
     paddingHorizontal: SPACING.space_30,
-    backgroundColor: COLORS.primaryBlackRGBA,
+    backgroundColor: "rgba(218, 148, 16, 0.64)",
     borderTopLeftRadius: BORDERRADIUS.radius_20 * 2,
     borderTopRightRadius: BORDERRADIUS.radius_20 * 2,
   },

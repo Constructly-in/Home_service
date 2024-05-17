@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   CardHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    gap: SPACING.space_20,
+    gap: SPACING.space_10,
     alignItems: 'center',
   },
   HeaderTitle: {

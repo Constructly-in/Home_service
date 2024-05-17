@@ -1,7 +1,7 @@
 import { View, Text, Image, ImageBackground, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsive-screen';
 import React, { useEffect, useState } from 'react';
-import color from '../../utility/color';
+import color from '../../../src/utility/color';
 import MyButton from '../../../src/assets/Buttons/MyButton';
 import MyTextInput from '../../../src/assets/Buttons/MyTextInput';
 import auth from "@react-native-firebase/auth";
@@ -97,7 +97,7 @@ export default function SignScreen({ navigation }: SignScreenProps) {
         <View style={styles.Container}>
             <LinearGradient start={{x: 0, y: 0}} 
                                 end={{x: 1, y: 0}} 
-                                colors={[color.gradiant1, color.gradiant ]} 
+                                colors={[color.purple, color.dark_purple]}
                                 style={styles.Container}>
             <ImageBackground
                 source={require('./../../../image/OneDrive-2024-02-07/circle.png')}
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     Title: {
         textAlign: 'center',
         fontSize: widthPercentageToDP('7%'),
-        color: color.Offwhite,
+        color: color.gold,
         marginTop: heightPercentageToDP('10%'),
         fontFamily: "Cardo-Bold"
     },

@@ -3,7 +3,7 @@ import React from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
 import InterShip from '../../../src/assets/Features/Student/InterShip/InterShip'
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen'
-import color from '../../utility/color'
+import color from '../../../src/utility/color'
 import Douts from '../../../src/assets/Features/Student/Douts'
 import LinearGradient from 'react-native-linear-gradient'
 

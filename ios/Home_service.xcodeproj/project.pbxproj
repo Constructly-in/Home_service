@@ -43,7 +43,11 @@
 		1EDE426EBC65451AA50EC32A /* electrician.png in Resources */ = {isa = PBXBuildFile; fileRef = 5432F7B44FD244B4BC544CBE /* electrician.png */; };
 		A636177B539B4A379CAD47C3 /* painter.png in Resources */ = {isa = PBXBuildFile; fileRef = 908556976B984D3482935E36 /* painter.png */; };
 		55C752B0C1F54C3EA5B34686 /* plumber.png in Resources */ = {isa = PBXBuildFile; fileRef = 2930799F1B854EEF8DDB966A /* plumber.png */; };
-		4AEF478C5F084E18824EF586 /* carpenter.png in Resources */ = {isa = PBXBuildFile; fileRef = D9EDB5EBA38F4B4AB8A8DBDC /* carpenter.png */; };
+		74C9DA7A2E1C4CC9A3501CAA /* carpenterp.png in Resources */ = {isa = PBXBuildFile; fileRef = 73482C1D065540269132E62C /* carpenterp.png */; };
+		96E221078DAF46B5B36EB17F /* cleanerp.png in Resources */ = {isa = PBXBuildFile; fileRef = 71C5236C76A246C6A813C337 /* cleanerp.png */; };
+		E7832C198E9C41089D4E0110 /* electricianp.png in Resources */ = {isa = PBXBuildFile; fileRef = 59A7A8DF5D624482824050AB /* electricianp.png */; };
+		CDF9C957155F471BB88A2014 /* painterp.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2DD1AA3C244784B6D1B134 /* painterp.png */; };
+		9106BD37E3444523A90940F5 /* plumberp.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA2A4B271AA4ABCBA37B713 /* plumberp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +107,11 @@
 		5432F7B44FD244B4BC544CBE /* electrician.png */ = {isa = PBXFileReference; name = "electrician.png"; path = "../src/assets/home_service_assets/logo/electrician.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		908556976B984D3482935E36 /* painter.png */ = {isa = PBXFileReference; name = "painter.png"; path = "../src/assets/home_service_assets/logo/painter.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		2930799F1B854EEF8DDB966A /* plumber.png */ = {isa = PBXFileReference; name = "plumber.png"; path = "../src/assets/home_service_assets/logo/plumber.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D9EDB5EBA38F4B4AB8A8DBDC /* carpenter.png */ = {isa = PBXFileReference; name = "carpenter.png"; path = "../src/assets/home_service_assets/square/carpenter.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		73482C1D065540269132E62C /* carpenterp.png */ = {isa = PBXFileReference; name = "carpenterp.png"; path = "../src/assets/home_service_assets/square/carpenterp.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		71C5236C76A246C6A813C337 /* cleanerp.png */ = {isa = PBXFileReference; name = "cleanerp.png"; path = "../src/assets/home_service_assets/square/cleanerp.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		59A7A8DF5D624482824050AB /* electricianp.png */ = {isa = PBXFileReference; name = "electricianp.png"; path = "../src/assets/home_service_assets/square/electricianp.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CE2DD1AA3C244784B6D1B134 /* painterp.png */ = {isa = PBXFileReference; name = "painterp.png"; path = "../src/assets/home_service_assets/square/painterp.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6EA2A4B271AA4ABCBA37B713 /* plumberp.png */ = {isa = PBXFileReference; name = "plumberp.png"; path = "../src/assets/home_service_assets/square/plumberp.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +249,11 @@
 				5432F7B44FD244B4BC544CBE /* electrician.png */,
 				908556976B984D3482935E36 /* painter.png */,
 				2930799F1B854EEF8DDB966A /* plumber.png */,
-				D9EDB5EBA38F4B4AB8A8DBDC /* carpenter.png */,
+				73482C1D065540269132E62C /* carpenterp.png */,
+				71C5236C76A246C6A813C337 /* cleanerp.png */,
+				59A7A8DF5D624482824050AB /* electricianp.png */,
+				CE2DD1AA3C244784B6D1B134 /* painterp.png */,
+				6EA2A4B271AA4ABCBA37B713 /* plumberp.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -371,7 +383,11 @@
 				1EDE426EBC65451AA50EC32A /* electrician.png in Resources */,
 				A636177B539B4A379CAD47C3 /* painter.png in Resources */,
 				55C752B0C1F54C3EA5B34686 /* plumber.png in Resources */,
-				4AEF478C5F084E18824EF586 /* carpenter.png in Resources */,
+				74C9DA7A2E1C4CC9A3501CAA /* carpenterp.png in Resources */,
+				96E221078DAF46B5B36EB17F /* cleanerp.png in Resources */,
+				E7832C198E9C41089D4E0110 /* electricianp.png in Resources */,
+				CDF9C957155F471BB88A2014 /* painterp.png in Resources */,
+				9106BD37E3444523A90940F5 /* plumberp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

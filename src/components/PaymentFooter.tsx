@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
 import {
   BORDERRADIUS,
@@ -7,7 +7,9 @@ import {
   FONTSIZE,
   SPACING,
 } from '../theme/theme';
-import color from '../../App/utility/color';
+import color from '../utility/color';
+import LinearGradient from 'react-native-linear-gradient';
+import { widthPercentageToDP } from 'react-native-responsive-screen';
 
 interface PriceProps {
   // price: string;
@@ -27,17 +29,20 @@ const PaymentFooter: React.FC<PaymentFooterProps> = ({
 }) => {
   return (
     <View style={styles.PriceFooter}>
-      {/* <View style={styles.PriceContainer}>
-        <Text style={styles.PriceTitle}>Price</Text>
-        <Text style={styles.PriceText}>
-          {price.currency} <Text style={styles.Price}>{price.price}</Text>
-        </Text>
-      </View> */}
+
       <TouchableOpacity
-        style={styles.PayButton}
         onPress={() => buttonPressHandler()}>
-        <Text style={styles.ButtonText}>{buttonTitle}</Text>
+        <LinearGradient
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={styles.PayButton}
+          colors={[color.gold, color.dark_gold]}>
+
+          <Text style={styles.ButtonText}>{buttonTitle}</Text>
+        </LinearGradient>
+
       </TouchableOpacity>
+
     </View>
   );
 };
@@ -50,6 +55,7 @@ const styles = StyleSheet.create({
     gap: SPACING.space_20,
     padding: SPACING.space_20,
   },
+
   PriceContainer: {
     alignItems: 'center',
     width: 100,
@@ -64,20 +70,19 @@ const styles = StyleSheet.create({
     fontSize: FONTSIZE.size_24,
     color: COLORS.primaryOrangeHex,
   },
-  Price: {
-    color: COLORS.primaryWhiteHex,
-  },
+
   PayButton: {
-    backgroundColor: color.Obsidian,
+    backgroundColor: color.dark_gold,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    height: SPACING.space_36 * 2,
+    height: SPACING.space_36 * 1.7,
     borderRadius: BORDERRADIUS.radius_20,
+    width: widthPercentageToDP('80%')
   },
   ButtonText: {
     fontFamily: FONTFAMILY.poppins_semibold,
-    fontSize: FONTSIZE.size_18,
+    fontSize: FONTSIZE.size_20*0.99,
     color: COLORS.primaryWhiteHex,
   },
 });

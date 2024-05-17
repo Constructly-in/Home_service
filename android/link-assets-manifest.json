@@ -118,8 +118,24 @@
       "sha1": "b3625ab9ac2c46f1886388576afa46c93dc71325"
     },
     {
-      "path": "src/assets/home_service_assets/square/carpenter.png",
-      "sha1": "4f26e118262a36f6533a113f10fba0a6c88f6aae"
+      "path": "src/assets/home_service_assets/square/carpenterp.png",
+      "sha1": "5b8df51bac43ca9e32ac8e64a0933d02f6d10ce9"
+    },
+    {
+      "path": "src/assets/home_service_assets/square/cleanerp.png",
+      "sha1": "e15571c8b86172caa7c13ebfdc82b4ff9a15b09d"
+    },
+    {
+      "path": "src/assets/home_service_assets/square/electricianp.png",
+      "sha1": "f3c28ffbfb351c94fc7a158976c995284c254fe5"
+    },
+    {
+      "path": "src/assets/home_service_assets/square/painterp.png",
+      "sha1": "e90ba70ac639804d25363140bc15e9621fe1052a"
+    },
+    {
+      "path": "src/assets/home_service_assets/square/plumberp.png",
+      "sha1": "cf562545c2431d4c38011dc07bd73dc97a8b693e"
     }
   ]
 }
