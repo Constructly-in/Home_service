@@ -8,12 +8,14 @@ import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsi
 import HomeScreenHeader from '../../../src/components/homeScreenHeader';
 import HeaderBar from '../../../src/components/HeaderBar';
 import { FONTFAMILY, SPACING } from '../../../src/theme/theme';
+import MyButton from '../../../src/assets/Buttons/MyButton';
+// import MyButton from '../../../android/app/src/main/assets/custom/MyButton';
 // import { TouchableOpacity } from 'react-native-gesture-handler';
 // import { ScrollView } from 'react-native-gesture-handler';
 
 type OpenURLButtonProps = {
   url: string;
-  children: string;
+  children: React.ReactNode;
 };
 
 export default function Profilescreen() {
@@ -29,21 +31,26 @@ export default function Profilescreen() {
     fetchUser();
   }, [])
 
-  const url1 = "https://www.instagram.com/constructly.in/";
+  const url1 = "https://www.instagram.com/constructly.india/";
 
 
 
 
-  const OpenURLButton = ({ url, children }) => {
+  const OpenURLButton = ({ url, children }: OpenURLButtonProps) => {
     const handlePress = async () => {
-      const supported = await Linking.canOpenURL(url);
-      if (supported) {
-        await Linking.openURL(url);
-      } else {
-        Alert.alert(`Don't know how to open this URL: ${url}`);
+      try {
+        const supported = await Linking.canOpenURL(url);
+        if (supported) {
+          await Linking.openURL(url);
+        }
+        else {
+          Alert.alert(`Don't know how to open this URL: ${url}`);
+        }
+      } catch (error) {
+        Alert.alert(`An error occurred: ${error.message}`);
       }
     };
-
+  
     return (
       <TouchableOpacity onPress={handlePress}>
         {children}
@@ -82,7 +89,7 @@ export default function Profilescreen() {
           {/* </View> */}
           <View style={styles.pokemon}>
             <View style={[styles.subBox, {
-              backgroundColor: color.GREY, borderTopLeftRadius: 10,
+              backgroundColor: color.WHITE, borderTopLeftRadius: 10,
               borderBottomLeftRadius: 10,
             }]} >
               <Text style={styles.subTitle}>Phone Number</Text>
@@ -96,7 +103,7 @@ export default function Profilescreen() {
 
           <View style={styles.pokemon}>
             <View style={[styles.subBox, {
-              backgroundColor: color.GREY, borderTopLeftRadius: 10,
+              backgroundColor: color.WHITE, borderTopLeftRadius: 10,
               borderBottomLeftRadius: 10,
             }]} >
               <Text style={styles.subTitle}>Email</Text>
@@ -108,6 +115,20 @@ export default function Profilescreen() {
             </View>
 
           </View>
+
+          <TouchableOpacity style = {{backgroundColor:"red", height: heightPercentageToDP('4%'), width:widthPercentageToDP('20%'),
+            flexDirection:"row" , alignItems:"center", justifyContent:"center" ,
+            borderRadius:10
+          }}
+          onPress={{}}>
+            <Text style ={{fontSize:15,
+              color:color.WHITE
+            }}>
+              Log out
+            </Text>
+          </TouchableOpacity>
+
+       
 
       {/* </View> */}
       </LinearGradient>
@@ -184,7 +205,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     borderRadius: 20,
     paddingVertical: 10,
-    height: heightPercentageToDP('33%'),
+    height: heightPercentageToDP('35%'),
 
   },
 

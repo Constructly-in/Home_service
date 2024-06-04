@@ -61,7 +61,7 @@ const Homescreen = ({ navigation }: HomescreenProps) => {
 
         {/* Right side - Settings */}
         <TouchableOpacity style={styles.SettingsContainer}
-        onPress={() => navigation.navigate('Order') }
+        onPress={() => navigation.navigate('Notification') }
         >
 
           <CustomIcon name='bell' size={25} color={color.gold} style ={styles.notificationImage}  />
