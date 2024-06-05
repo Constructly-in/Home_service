@@ -32,7 +32,7 @@ export default{
     WHITE: "#ffffff", 
     Obsidian: "#0B1215" ,
     GREY: "#B2B2B2" ,
-    gold: "#C8830C" ,
+    dark_gold: "#C8830C" ,
     purple: "#2D006B" ,
     dark_purple : "#19003d" ,
     dark_gold: "#da9410",

@@ -7,7 +7,7 @@ const PropertyHomePage = () => {
   return (
     <View style = {styles.container}>
       <Text style = {{color: color.Obsidian , fontSize:25 , fontFamily:FONTFAMILY.poppins_regular}}>This Service is </Text>
-      <Text style = {{color: color.Night , fontSize:18 , fontFamily:FONTFAMILY.poppins_light}}>Comming soon...</Text>
+      <Text style = {{color: color.Night , fontSize:18 , fontFamily:FONTFAMILY.poppins_light}}>Coming soon...</Text>
     </View>
   )
 }

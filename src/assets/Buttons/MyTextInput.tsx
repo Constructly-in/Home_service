@@ -1,50 +1,67 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
-import React from 'react'
-import color from '../../utility/color'
+import React, { useState } from 'react';
+import { StyleSheet, Text, TextInput, View, Dimensions, TouchableOpacity } from 'react-native';
+import color from '../../utility/color';
 
-const MyTextInput = ({...props}) => {
+const { width, height } = Dimensions.get('window');
+
+const MyTextInput = ({ ...props }) => {
+  const [secureTextEntry, setSecureTextEntry] = useState(props.secureTextEntry);
+
+  const onPressShow = () => {
+    console.log("press");
+    setSecureTextEntry(!secureTextEntry);
+  };
+
   return (
-    <View style = {styles.Container}>
+    <View style={styles.container}>
       <TextInput
-      style = {styles.InputText}
-      {...props}
+        style={styles.inputText}
+        {...props}
+        secureTextEntry={secureTextEntry}
       />
-      <View style = {styles.Border}></View>
-
+      {props.secureTextEntry ? (
+        <TouchableOpacity onPress={onPressShow} activeOpacity={0.4}>
+          <Text style={styles.hide}>{secureTextEntry ? "Show" : "Hide"}</Text>
+        </TouchableOpacity>
+      ) : null}
     </View>
-  )
-}
+  );
+};
 
-export default MyTextInput
+export default MyTextInput;
 
 const styles = StyleSheet.create({
+  container: {
+    height: height * 0.06, // 6% of screen height
+    width: '90%', // 90% of screen width
+    paddingHorizontal: width * 0.05, // 5% of screen width
+    justifyContent: 'space-between',
+    marginBottom: height * 0.02, // 2% of screen height
+    backgroundColor: "#feebc8",
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'center', // Center the container horizontally
 
-  Container:{
-    height:50,
-    width:"100%",
-    paddingHorizontal:20,
-    justifyContent:"center",
-    marginBottom: 20,
-    
-    borderRadius:30,
-    // backgroundColor:'rgba(255, 109, 0, 0.6)'
-
+    shadowColor: color.white,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.55,
+    shadowRadius: 2.54,
+    elevation: 5,
   },
 
-  InputText:{
-    width:"100%",
-    height:50,
-    fontSize:16,
-    paddingBottom:0,
-    fontWeight:"500",
-    color:color.white
-    
+  inputText: {
+    flex: 1, // Takes up available space in the row
+    height: '100%',
+    fontSize: width * 0.04, // Font size relative to screen width
+    fontWeight: '500',
+    color: color.white,
   },
-   Border:{
-     width:"100%",
-     height:1.5,
-     backgroundColor:color.white,
-     alignSelf:"center"
-
-   }
-})
+  
+  hide: {
+    fontSize: width * 0.035, // Font size relative to screen width
+    color: color.white,
+  },
+});
