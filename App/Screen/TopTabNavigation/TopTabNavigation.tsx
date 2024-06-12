@@ -17,10 +17,10 @@ const TopTabNavigation = () => {
                 screenOptions={{
                     
                     tabBarStyle: {
-                        backgroundColor: 'transparent',
-                        height: heightPercentageToDP('5%'),
+                        backgroundColor: color.bg_white,
+                        height: heightPercentageToDP('6%'),
                         width: widthPercentageToDP('80%'),
-                        marginTop:"2%" ,
+                        marginTop:"1%" ,
                         // borderRadius:50,
                         marginHorizontal:"10%" ,
                         elevation: 0, // Remove elevation/shadow on Android
@@ -94,6 +94,7 @@ export default TopTabNavigation;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: color.bg_white
         // alignItems:"center"
         
     },

@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, FlatList, Dimensions, LogBox } from 'react-native'
 import React, { useEffect, useRef, useState } from 'react'
 import color from '../../../src/utility/color'
-import ElevatedCards from '../../../src/components/ElevatedCards'
-import LongCards from '../../../src/components/LongCards'
+
+
 // import React, {useRef, useState} from 'react';
 import { useStore } from '../../../src/Store/store'
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
@@ -128,7 +128,6 @@ const HomeService = ({ navigation }: any) => {
           //     <Text style={styles.CategoryText}>No Coffee Available</Text>
           //   </View>
           // }
-
           showsHorizontalScrollIndicator={false}
           data={sortedCoffee}
           contentContainerStyle={[styles.FlatListContainer , {marginBottom:tabBarHeight}]}

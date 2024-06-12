@@ -13,6 +13,7 @@ import DetailScreen from '../HomeService/DetailScreen';
 import Profilescreen from '../Profile/Profilescreen';
 import OrderHistory from '../OrderHistory';
 import Notification from '../Notification/Notification';
+import RentBuy from '../Property/RentBuy';
 
 
 const Stack = createNativeStackNavigator();
@@ -46,6 +47,9 @@ const Stack = createNativeStackNavigator();
        />               
        <Stack.Screen name="Notification" component={Notification} 
        options={{animation: 'slide_from_bottom'}}
+       />               
+       <Stack.Screen name="RentBuy" component={RentBuy} 
+       options={{animation: "default"}}
        />               
        
               
