@@ -5,13 +5,10 @@ import color from '../../../src/utility/color';
 import firestore from '@react-native-firebase/firestore'
 import { useAuth } from '../../Contexts/AuthContext';
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
-import HomeScreenHeader from '../../../src/components/homeScreenHeader';
+
 import HeaderBar from '../../../src/components/HeaderBar';
 import { FONTFAMILY, SPACING } from '../../../src/theme/theme';
-import MyButton from '../../../src/assets/Buttons/MyButton';
-// import MyButton from '../../../android/app/src/main/assets/custom/MyButton';
-// import { TouchableOpacity } from 'react-native-gesture-handler';
-// import { ScrollView } from 'react-native-gesture-handler';
+
 
 type OpenURLButtonProps = {
   url: string;
@@ -31,32 +28,33 @@ export default function Profilescreen() {
     fetchUser();
   }, [])
 
-  const url1 = "https://www.instagram.com/constructly.india/";
+  // const url1 = "https://www.instagram.com/constructly.india/";
 
-
-
-
-  const OpenURLButton = ({ url, children }: OpenURLButtonProps) => {
-    const handlePress = async () => {
-      try {
-        const supported = await Linking.canOpenURL(url);
-        if (supported) {
-          await Linking.openURL(url);
-        }
-        else {
-          Alert.alert(`Don't know how to open this URL: ${url}`);
-        }
-      } catch (error) {
-        Alert.alert(`An error occurred: ${error.message}`);
-      }
-    };
+  // const OpenURLButton = ({ url, children }: OpenURLButtonProps) => {
+  //   const handlePress = async () => {
+  //     try {
+  //       const supported = await Linking.canOpenURL(url);
+  //       if (supported) {
+  //         await Linking.openURL(url);
+  //       }
+  //       else {
+  //         Alert.alert(`Don't know how to open this URL: ${url}`);
+  //       }
+  //     } catch (error) {
+  //       Alert.alert(`An error occurred: ${error.message}`);
+  //     }
+  //   };
   
-    return (
-      <TouchableOpacity onPress={handlePress}>
-        {children}
-      </TouchableOpacity>
-    );
-  };
+  //   return (
+  //     <TouchableOpacity onPress={handlePress}>
+  //       {children}
+  //     </TouchableOpacity>
+  //   );
+  // };
+
+  function openWebsite(websiteLink: string){
+    Linking.openURL(websiteLink)
+    }
 
   return (
     <ScrollView style={styles.container} >
@@ -135,7 +133,13 @@ export default function Profilescreen() {
 
       <View style={styles.bottomContainer}>
         <Text style={styles.componentTitle}>Our Social Media</Text>
-        <OpenURLButton url={url1}>
+        {/* <OpenURLButton url={url1}> */}
+        <TouchableOpacity 
+               onPress={ 
+                ()=> openWebsite('https://www.instagram.com/constructly.pro?igsh=cWl3bDY3YzZwNG01')
+              }
+       >
+           
           <View style={{
             marginBottom: 20,
             alignItems: 'center',
@@ -149,7 +153,8 @@ export default function Profilescreen() {
               style={styles.socialMedia_Image}
             />
           </View>
-        </OpenURLButton>
+          </TouchableOpacity> 
+        {/* </OpenURLButton> */}
 
 
 

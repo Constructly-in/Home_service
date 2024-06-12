@@ -84,7 +84,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               <View style={styles.RatingContainer}>
                 <CustomIcon
                   name={'star'}
-                  color={COLORS.primaryOrangeHex}
+                  color={color.light_purple}
                   size={FONTSIZE.size_20}
                 />
                 <Text style={styles.RatingText}>{average_rating}</Text>

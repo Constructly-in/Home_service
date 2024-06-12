@@ -6,6 +6,7 @@ import Profilescreen from '../Screen/Profile/Profilescreen';
 import CartScreen from '../Screen/CartScreen/CartScreen';
 import color from '../../src/utility/color';
 import CustomIcon from '../../src/components/CustomIcon';
+import OrderHistory from '../Screen/OrderHistory';
 
 const Tab = createBottomTabNavigator();
 
@@ -31,10 +32,10 @@ export default function Tabnavigation() {
                   resizeMode="contain"
                   style={[
                     styles.icon,
-                    { tintColor: focused ? color.purple : color.GREY }
+                    { tintColor: focused ? color.purple : color.grey }
                   ]}
                 />
-                <Text style={[styles.label, { color: focused ? color.purple : color.GREY }]}>HOME</Text>
+                <Text style={[styles.label, { color: focused ? color.purple : color.grey }]}>HOME</Text>
               </View>
             )
           }}
@@ -52,10 +53,10 @@ export default function Tabnavigation() {
                   resizeMode="contain"
                   style={[
                     styles.icon,
-                    { tintColor: focused ? color.purple : color.GREY }
+                    { tintColor: focused ? color.purple : color.grey }
                   ]}
                 />
-                <Text style={[styles.label, { color: focused ? color.purple : color.GREY }]}>Cart</Text>
+                <Text style={[styles.label, { color: focused ? color.purple : color.grey }]}>Cart</Text>
               </View>
             )
           }}
@@ -63,7 +64,7 @@ export default function Tabnavigation() {
 
         <Tab.Screen
           name="Order History"
-          component={CartScreen}
+          component={OrderHistory}
           options={{
             tabBarIcon: ({ focused }) => (
               <View style={styles.iconContainer}>
@@ -71,9 +72,9 @@ export default function Tabnavigation() {
                 <CustomIcon
                   name="cart"
                   size={25}
-                  color={focused ? color.purple : color.GREY}
+                  color={focused ? color.purple : color.grey}
                 />
-                <Text style={[styles.label, { color: focused ? color.purple : color.GREY }]}>Order History</Text>
+                <Text style={[styles.label, { color: focused ? color.purple : color.grey }]}>Order History</Text>
               </View>
             )
           }}
@@ -91,10 +92,10 @@ export default function Tabnavigation() {
                   resizeMode="contain"
                   style={[
                     styles.icon,
-                    { tintColor: focused ? color.purple : color.GREY }
+                    { tintColor: focused ? color.purple : color.grey }
                   ]}
                 />
-                <Text style={[styles.label, { color: focused ? color.purple : color.GREY }]}>Profile</Text>
+                <Text style={[styles.label, { color: focused ? color.purple : color.grey }]}>Profile</Text>
               </View>
             )
           }}
@@ -113,24 +114,33 @@ const styles = StyleSheet.create({
     height: "6.5%",
     backgroundColor: color.WHITE,
     borderTopWidth: 0,
-    elevation: 5,
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
   },
   iconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
     top: 3,
     //  backgroundColor:"red"
-    
+
   },
   icon: {
     width: 25,
     height: 25,
-   
+
   },
   label: {
     fontSize: 12,
     marginBottom: 2,
-    
+
   },
   activeIndicator: {
     position: 'absolute',
@@ -138,6 +148,6 @@ const styles = StyleSheet.create({
     width: '80%',
     height: 3,
     backgroundColor: color.purple,
-    
+
   },
 });

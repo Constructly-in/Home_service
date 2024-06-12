@@ -28,7 +28,7 @@ export default{
     // Obsidian #0B1215
     // grey #B2B2B2
 
-    bg_white: "#F6F7FB" ,
+    bg_white: "#dedede" ,
     WHITE: "#ffffff", 
     Obsidian: "#0B1215" ,
     GREY: "#B2B2B2" ,
