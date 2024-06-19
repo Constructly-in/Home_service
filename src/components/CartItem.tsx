@@ -157,7 +157,7 @@ const CartItem: React.FC<CartItemProps> = ({
               </Text>
             </View>  */}
 
-             <View style={styles.CartItemSingleQuantityContainer}>
+             {/* <View style={styles.CartItemSingleQuantityContainer}>
               <TouchableOpacity
                 style={styles.CartItemIcon}
                 onPress={() => {
@@ -185,7 +185,9 @@ const CartItem: React.FC<CartItemProps> = ({
                   size={FONTSIZE.size_10}
                 />
               </TouchableOpacity>
-            </View> 
+            </View>  */}
+
+            {/* //input text */}
           </View>
         </LinearGradient>
       )}

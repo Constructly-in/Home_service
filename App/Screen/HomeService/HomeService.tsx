@@ -9,6 +9,7 @@ import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../../src/theme/theme'
 import CoffeeCard from '../../../src/components/CoffeeCard'
 import Offer from '../../../src/components/Offer'
+import homeServiceData from '../../../src/data/homeServiceData'
 // import category from '../../../src/components/category'
 
 
@@ -51,9 +52,9 @@ const HomeService = ({ navigation }: any) => {
     index: 0,
     category: categories[0],
   });
-  const [sortedCoffee, setSortedCoffee] = useState(
-    getHomeServiceList(categoryIndex.category, HomeServiceList),
-  );
+  // const [sortedCoffee, setSortedCoffee] = useState(
+  //   getHomeServiceList(categoryIndex.category, HomeServiceList),
+  // );
 
 
   const ListRef: any = useRef<FlatList>();
@@ -61,9 +62,9 @@ const HomeService = ({ navigation }: any) => {
 
 
 
-  useEffect(() => {
-    LogBox.ignoreLogs(["VirtualizedLists should never be nested"])
-  }, [])
+  // useEffect(() => {
+  //   LogBox.ignoreLogs(["VirtualizedLists should never be nested"])
+  // }, [])
   
   // console.log('category=', categories);
   return (
@@ -128,8 +129,9 @@ const HomeService = ({ navigation }: any) => {
           //     <Text style={styles.CategoryText}>No Coffee Available</Text>
           //   </View>
           // }
+          scrollEnabled={false}
           showsHorizontalScrollIndicator={false}
-          data={sortedCoffee}
+          data={HomeServiceList}
           contentContainerStyle={[styles.FlatListContainer , {marginBottom:tabBarHeight}]}
           keyExtractor={item => item.id}
           renderItem={({ item }) => {
