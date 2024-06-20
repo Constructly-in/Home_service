@@ -93,12 +93,11 @@ const styles = StyleSheet.create({
 
   button: {
     marginTop: heightPercentageToDP('4%'),
-    marginLeft: widthPercentageToDP('2%'),
-    marginRight: widthPercentageToDP('2%'),
-    paddingLeft: widthPercentageToDP('5%'),
-    paddingTop: heightPercentageToDP('2%'),
+   
     height: heightPercentageToDP('7%'),
     backgroundColor:color.gold,
     borderRadius: 99,
+    alignItems:"center",
+    justifyContent:"center"
   },
 });

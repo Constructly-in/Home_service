@@ -30,7 +30,7 @@ const TopTabNavigation = () => {
                     tabBarIndicatorStyle: {
                       height: 0, // Hide the indicator line
                   },
-                    swipeEnabled:true,
+                    swipeEnabled:false,
                     tabBarShowLabel: false,
                     
                     

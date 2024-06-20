@@ -6,10 +6,16 @@ import { TouchableOpacity } from 'react-native'
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
 import { heightPercentageToDP } from 'react-native-responsive-screen'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
-
+// import firestore from '@react-native-firebase/firestore';
 // const tabBarHeight = useBottomTabBarHeight();
 
 const Rent = () => {
+
+
+  // const getData =async () => {
+  //   const PgCollection = await firestore().collection("PG's").get() ;
+  // }
+
   return (
     <View style={{ backgroundColor: "transparent", flex: 1 }}>
       
@@ -17,6 +23,7 @@ const Rent = () => {
 
       
       <FlatList
+      scrollEnabled={false}
         data={propertyData}
         keyExtractor={item => item.id}
         contentContainerStyle ={{marginBottom:heightPercentageToDP('4%'), padding: wp('4%')}}
