@@ -18,7 +18,7 @@ const PropertyHomePage = () => {
   const renderCategoryList = () => {
     switch (selectedCategory) {
       case 'Rent':
-        return <Text>zhfahoi</Text>;
+        return <Rent />;
       case 'Buy':
         return <Text>List of Buy Properties</Text>;
       case 'Plot':

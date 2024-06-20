@@ -1,17 +1,15 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
-
+import React from 'react';
+import { Image, ImageProps, StyleSheet, Text, View } from 'react-native';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
-import { ImageSourcePropType } from 'react-native';
+import SlideImage from './SlideImage';
 import color from '../../utility/color';
-
 
 interface PropertyCardProps {
   id: string;
   name: string;
   index: number;
   location: string;
-  photo: ImageSourcePropType[];
+  photo: any; // Updated to any[] to match the source type
   price: any;
   description: any;
 }
@@ -25,43 +23,37 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   price,
   description,
 }) => {
-  
-
-
-
-
   return (
-    // <ScrollView ref={scrollViewRef} style={styles.scrollView}>
-      <View style={styles.container}>
-        <View style={styles.imageContainer}>
-        
-    
-        </View>
-        <View style={styles.bottomContainer}>
-          <Text style={styles.price}>
-            ₹ {price}/Month
-          </Text>
-          <Text style={styles.basicDetails}>
-            {name}
-          </Text>
-          <Text style={styles.location}>
-            {location}
-          </Text>
-          <Text numberOfLines={1} style={styles.details}>
-            {description}
-          </Text>
-        </View>
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        {/* <SlideImage images={photo} /> */}
+
+            <Image
+          source={photo}
+          style={styles.image}
+        />
       </View>
-    // </ScrollView>
+      <View style={styles.bottomContainer}>
+        <Text style={styles.price}>
+          ₹ {price}/Month
+        </Text>
+        <Text style={styles.basicDetails}>
+          {name}
+        </Text>
+        <Text style={styles.location}>
+          {location}
+        </Text>
+        <Text numberOfLines={1} style={styles.details}>
+          {description}
+        </Text>
+      </View>
+    </View>
   );
 };
 
 export default PropertyCard;
 
 const styles = StyleSheet.create({
-  scrollView: {
-    flex: 1,
-  },
   container: {
     flex: 1,
     width: wp('92%'),
@@ -89,6 +81,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+   
   },
   paginationContainer: {
     paddingVertical: 8,
