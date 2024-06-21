@@ -215,7 +215,7 @@ export const useStore = create(
         ),
     }),
     {
-      name: 'Home_service',
+      name: 'Constructly',
       storage: createJSONStorage(() => AsyncStorage),
     },
   ),
