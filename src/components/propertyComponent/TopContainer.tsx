@@ -5,7 +5,7 @@ import color from '../../utility/color'
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen'
 import DropDownBox from '../DropDownBox'
 
-const TopContainer = () => {
+const TopContainer = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.Topcontainer}>
@@ -22,7 +22,7 @@ const TopContainer = () => {
 
                 <View style = {styles.addButton}>
                   
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => navigation.navigate('ADD')}>
                      <View style ={{borderColor:color.purple, borderWidth:2 , height:heightPercentageToDP("4%"), width:widthPercentageToDP("17%") , borderRadius:20 , alignItems:"center" , justifyContent:"center"}}>
                        <Text style = {{alignSelf:"center"  , fontSize:17 , color:color.purple}}>Add+</Text>
                      </View>
@@ -31,9 +31,9 @@ const TopContainer = () => {
 
             </View>
 
-            <View style={styles.searchBAr}>
+            {/* <View style={styles.searchBAr}>
 
-            </View>
+            </View> */}
 
         </View>
     )

@@ -15,13 +15,21 @@ import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../../sr
 import PaymentFooter from '../../../src/components/PaymentFooter';
 import ImageBackgroundInfo from '../../../src/components/ImageBackgroundInfo';
 import color from '../../../src/utility/color';
-import Booknow from '../../../src/assets/Buttons/Booknow';
+import Booknow from '../../../src/components/Buttons/Booknow';
 import LinearGradient from 'react-native-linear-gradient';
 
-const DetailScreen = ({navigation, route}: any) => {
-  const ItemOfIndex = useStore((state: any) =>
-    route.params.type == 'Coffee' ? state.HomeServiceList : state.BeanList,
-  )[route.params.index];
+// const DetailScreen = ({navigation, route}: any) => {
+//   const ItemOfIndex = useStore((state: any) =>
+//     route.params.index ==  state.HomeServiceList ,
+//   )[route.params.index];
+const DetailScreen = ({ navigation, route }: any) => {
+  const { index, id, type , imagelink_portrait } = route.params;
+  console.log("Received params:", index, id, type , imagelink_portrait);
+
+  const HomeServiceList = useStore((state: any) => state.HomeServiceList);
+  const ItemOfIndex = HomeServiceList[index];
+  console.log("ItemOfIndex after useStore:", ItemOfIndex.name, ItemOfIndex.imagelink_portrait);
+
   // const addToFavoriteList = useStore((state: any) => state.addToFavoriteList);
   // const deleteFromFavoriteList = useStore(
   //   (state: any) => state.deleteFromFavoriteList,

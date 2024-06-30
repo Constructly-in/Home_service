@@ -47,14 +47,14 @@ const HomeService = ({ navigation }: any) => {
   const [categories, setCategories] = useState(
     getCategoriesFromData(HomeServiceList),
   );
-  const [searchText, setSearchText] = useState('');
+  // const [searchText, setSearchText] = useState('');
   const [categoryIndex, setCategoryIndex] = useState({
-    index: 0,
+    index: 0,    
     category: categories[0],
   });
-  // const [sortedCoffee, setSortedCoffee] = useState(
-  //   getHomeServiceList(categoryIndex.category, HomeServiceList),
-  // );
+  const [sortedHomeService, setSortedHomeService] = useState(
+    getHomeServiceList(categoryIndex.category, HomeServiceList),
+  );
 
 
   const ListRef: any = useRef<FlatList>();
@@ -62,11 +62,7 @@ const HomeService = ({ navigation }: any) => {
 
 
 
-  // useEffect(() => {
-  //   LogBox.ignoreLogs(["VirtualizedLists should never be nested"])
-  // }, [])
   
-  // console.log('category=', categories);
   return (
     <ScrollView style={{ flexGrow: 1 }}>
 
@@ -94,7 +90,7 @@ const HomeService = ({ navigation }: any) => {
                     offset: 0,
                   });
                   setCategoryIndex({ index: index, category: categories[index] });
-                  setSortedCoffee([
+                  setSortedHomeService([
                     ...getHomeServiceList(categories[index], HomeServiceList),
                   ]);
                 }}>
@@ -117,10 +113,10 @@ const HomeService = ({ navigation }: any) => {
           ))}
         </ScrollView>
 
-        {/* Coffee Flatlist */}
+        {/* home service Flatlist */}
 
         <FlatList
-          // ref={ListRef}
+          ref={ListRef}
           // horizontal
           numColumns={2}
           //coffe search
@@ -131,30 +127,31 @@ const HomeService = ({ navigation }: any) => {
           // }
           scrollEnabled={false}
           showsHorizontalScrollIndicator={false}
-          data={HomeServiceList}
+          data={sortedHomeService}
           contentContainerStyle={[styles.FlatListContainer , {marginBottom:tabBarHeight}]}
           keyExtractor={item => item.id}
           renderItem={({ item }) => {
             return (
               <TouchableOpacity
+              activeOpacity={0.8}
                 onPress={() => {
+                  console.log("Navigating to Details with index:", item.index, "id:", item.id, "type:", item.type , "image:" , item.imagelink_portrait , );
                   navigation.push('Details', {
                     index: item.index,
                     id: item.id,
                     type: item.type,
+                    imagelink_portrait: item.imagelink_portrait,
                   });
                 }}>
                 <CoffeeCard
                   id={item.id}
                   index={item.index}
                   type={item.type}
-                  roasted={item.roasted}
+                  imagelink_portrait={item.imagelink_portrait}
                   imagelink_square={item.imagelink_square}
                   name={item.name}
                   special_ingredient={item.special_ingredient}
-                  average_rating={item.average_rating}
-                  // price={item.prices[2]}
-                  buttonPressHandler={() => { }}
+                 
                 />
               </TouchableOpacity>
             );

@@ -25,7 +25,14 @@ const DropDownBox = () => {
           value: city.id,
           label: city.name
         }));
+        console.log(cityArray); // Log the city data
         setCityData(cityArray);
+
+        // Find and set the default city (Bhilai)
+        const defaultCity = cityArray.find(city => city.label === "Bhilai");
+        if (defaultCity) {
+          setCity(defaultCity.value);
+        }
       } catch (error) {
         console.error(error);
       }
@@ -41,7 +48,7 @@ const DropDownBox = () => {
         placeholderStyle={styles.placeholderStyle}
         selectedTextStyle={styles.selectedTextStyle}
         inputSearchStyle={styles.inputSearchStyle}
-        iconStyle={styles.iconStyle}
+        iconStyle={styles.iconStyle} // Add iconStyle here
         data={cityData}
         search
         maxHeight={300}
@@ -55,6 +62,7 @@ const DropDownBox = () => {
         onChange={item => {
           setCity(item.value);
           setIsFocus(false);
+          
         }}
       />
     </View>
@@ -86,5 +94,10 @@ const styles = StyleSheet.create({
   inputSearchStyle: {
     height: 40,
     fontSize: 16,
+  },
+  iconStyle: {
+    width: 20,
+    height: 20,
+    tintColor:color.purple
   },
 });

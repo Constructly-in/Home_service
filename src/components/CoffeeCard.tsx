@@ -26,26 +26,22 @@ interface CoffeeCardProps {
   id: string;
   index: number;
   type: string;
-  roasted: string;
   imagelink_square: ImageProps;
+  imagelink_portrait: ImageProps;
   name: string;
   special_ingredient: string;
-  average_rating: number;
-  // price: any;
-  buttonPressHandler: any;
+ 
 }
 
 const CoffeeCard: React.FC<CoffeeCardProps> = ({
   id,
   index,
   type,
-  roasted,
   imagelink_square,
   name,
   special_ingredient,
-  average_rating,
-  // price,
-  buttonPressHandler,
+  imagelink_portrait,
+  
 }) => {
   return (
     <LinearGradient

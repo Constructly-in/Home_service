@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: height * 0.02, // 2% of screen height
     backgroundColor: "#feebc8",
+    
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'center', // Center the container horizontally
@@ -50,6 +51,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.55,
     shadowRadius: 2.54,
     elevation: 5,
+    
   },
 
   inputText: {
@@ -58,10 +60,13 @@ const styles = StyleSheet.create({
     fontSize: width * 0.04, // Font size relative to screen width
     fontWeight: '500',
     color: color.white,
+    backgroundColor:"red",
+    // width:"80%"
   },
   
   hide: {
     fontSize: width * 0.035, // Font size relative to screen width
     color: color.white,
+    // backgroundColor:"green"
   },
 });

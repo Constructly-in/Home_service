@@ -10,6 +10,7 @@ const propertyData = [
     prominence: 'High',
     description: 'Charming one-bedroom cottage with a private backyard and a cozy living room. Perfect for a quiet retreat.',
     index: 0,
+    type: 'PG' ,
 
   },
   {
@@ -23,6 +24,7 @@ const propertyData = [
     prominence: 'Medium',
     description: 'Spacious one-bedroom apartment with a modern kitchen and a large balcony. Close to public transportation.',
     index: 1,
+    type: 'Plot'
   },
   {
     id: 'P3',
@@ -34,6 +36,7 @@ const propertyData = [
     prominence: 'High',
     description: 'Stunning luxury mansion with five bedrooms, a private pool, and a movie theater. Perfect for a large family or corporate retreat.',
     index: 3,
+    type: 'Flat',
   },
   {
     id: 'P4',
@@ -45,6 +48,7 @@ const propertyData = [
     prominence: 'Medium',
     description: 'Cozy one-bedroom condo with a modern kitchen and a private balcony. Close to downtown Anytown.',
     index: 4,
+    type:'PG'
   },
   {
     id: 'P5',
@@ -57,6 +61,7 @@ const propertyData = [
     prominence: 'High',
     description: 'Rustic cabin with a private hot tub and a beautiful view of the surrounding woods. Perfect for a relaxing getaway.',
     index: 5,
+    type: 'PG'
   },
 ];
 
