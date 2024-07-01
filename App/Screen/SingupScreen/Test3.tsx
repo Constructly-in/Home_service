@@ -2,8 +2,8 @@ import { View, Text, Image, ImageBackground, StyleSheet, Alert } from 'react-nat
 import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsive-screen';
 import React, { useState } from 'react';
 import color from '../../../src/utility/color';
-import MyButton from '../../../src/assets/Buttons/MyButton';
-import MyTextInput from '../../../src/assets/Buttons/MyTextInput';
+import MyButton from '../../../src/components/Buttons/MyButton';
+import MyTextInput from '../../../src/components/Buttons/MyTextInput';
 import auth from "@react-native-firebase/auth";
 import {useAuth}  from '../../Contexts/AuthContext';
 import LinearGradient from 'react-native-linear-gradient';

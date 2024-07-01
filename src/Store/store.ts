@@ -4,15 +4,17 @@ import {persist, createJSONStorage} from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import homeServiceData from '../data/homeServiceData';
+import propertyData from '../data/propertyData';
 // import BeansData from '../data/BeansData';
 
 export const useStore = create(
   persist(
     (set, get) => ({
       HomeServiceList: homeServiceData,
-      // BeanList: BeansData,
+      PropertyList: propertyData,
+
       CartPrice: 0,
-      FavoritesList: [],
+      // FavoritesList: [],
       CartList: [],
       OrderHistoryList: [],
       addToCart: (cartItem: any) =>
@@ -215,7 +217,7 @@ export const useStore = create(
         ),
     }),
     {
-      name: 'Home_service',
+      name: 'Constructly',
       storage: createJSONStorage(() => AsyncStorage),
     },
   ),

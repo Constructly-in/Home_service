@@ -14,6 +14,8 @@ import Profilescreen from '../Profile/Profilescreen';
 import OrderHistory from '../OrderHistory';
 import Notification from '../Notification/Notification';
 import RentBuy from '../Property/RentBuy';
+import React from 'react';
+import AddPG from '../Property/AddPG';
 
 
 const Stack = createNativeStackNavigator();
@@ -49,6 +51,10 @@ const Stack = createNativeStackNavigator();
        options={{animation: 'slide_from_bottom'}}
        />               
        <Stack.Screen name="RentBuy" component={RentBuy} 
+       options={{animation: "default"}}
+       />               
+       
+       <Stack.Screen name="ADD" component={AddPG} 
        options={{animation: "default"}}
        />               
        
