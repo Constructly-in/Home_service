@@ -16,6 +16,7 @@ import Notification from '../Notification/Notification';
 import RentBuy from '../Property/RentBuy';
 import React from 'react';
 import AddPG from '../Property/AddPG';
+import PropertDetails from '../Property/PropertDetails';
 
 
 const Stack = createNativeStackNavigator();
@@ -56,6 +57,9 @@ const Stack = createNativeStackNavigator();
        
        <Stack.Screen name="ADD" component={AddPG} 
        options={{animation: "default"}}
+       />               
+       <Stack.Screen name="PropertDetails" component={PropertDetails} 
+       options={{animation: 'fade'}}
        />               
        
               

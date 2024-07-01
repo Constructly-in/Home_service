@@ -135,7 +135,7 @@ const HomeService = ({ navigation }: any) => {
               <TouchableOpacity
               activeOpacity={0.8}
                 onPress={() => {
-                  console.log("Navigating to Details with index:", item.index, "id:", item.id, "type:", item.type , "image:" , item.imagelink_portrait , );
+                  // console.log("Navigating to Details with index:", item.index, "id:", item.id, "type:", item.type , "image:" , item.imagelink_portrait , );
                   navigation.push('Details', {
                     index: item.index,
                     id: item.id,
