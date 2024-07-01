@@ -25,7 +25,7 @@ const DropDownBox = () => {
           value: city.id,
           label: city.name
         }));
-        console.log(cityArray); // Log the city data
+        // console.log(cityArray); // Log the city data
         setCityData(cityArray);
 
         // Find and set the default city (Bhilai)

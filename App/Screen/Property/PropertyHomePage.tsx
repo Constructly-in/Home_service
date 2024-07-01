@@ -52,7 +52,6 @@ const PropertyHomePage = ({ navigation }: any) => {
   );
   const [searchText, setSearchText] = useState('');
 
-
   const [scrollEnabled, setScrollEnabled] = useState(true);
 
   // const categories = ['Rent', 'Buy', 'Plot', 'PG'];
@@ -81,7 +80,7 @@ const PropertyHomePage = ({ navigation }: any) => {
     setSortedPropertyList(getPropertyList(categoryIndex.category, PropertyList));
   }, [categoryIndex, PropertyList]);
 
-  // const ListRef = useRef(null);
+  
   const ListRef = useRef<FlatList<any>>(null);
 
   const searchProperty = (search: string) => {
@@ -236,7 +235,17 @@ const PropertyHomePage = ({ navigation }: any) => {
 
             return (
 
-              <TouchableOpacity activeOpacity={1}>
+              <TouchableOpacity 
+              onPress={() => 
+                navigation.push('PropertDetails',
+                  {
+                    index: item.index,
+                    id: item.id,
+                    type: item.type,
+                    
+                  }
+                )}
+              activeOpacity={1}>
 
 
                 <PropertyCard
@@ -293,15 +302,14 @@ const styles = StyleSheet.create({
     backgroundColor: color.purple,
   },
   categoryText: {
-    color: color.grey,
+    color: color.white,
   },
   selectedCategoryText: {
-    color: color.WHITE,
+    color: color.light_gold,
   },
   listContainer: {
     flex: 1,
   },
-
   InputContainerComponent: {
     flexDirection: 'row',
     // margin: SPACING.space_30,
@@ -310,6 +318,14 @@ const styles = StyleSheet.create({
     borderRadius: BORDERRADIUS.radius_20,
     backgroundColor: color.WHITE,
     alignItems: 'center',
+    shadowColor: color.white,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.16,
+    shadowRadius: 1.51,
+    elevation: 2,
     
   },
   InputIcon: {

@@ -24,11 +24,11 @@ import LinearGradient from 'react-native-linear-gradient';
 //   )[route.params.index];
 const DetailScreen = ({ navigation, route }: any) => {
   const { index, id, type , imagelink_portrait } = route.params;
-  console.log("Received params:", index, id, type , imagelink_portrait);
+  // console.log("Received params:", index, id, type , imagelink_portrait);
 
   const HomeServiceList = useStore((state: any) => state.HomeServiceList);
   const ItemOfIndex = HomeServiceList[index];
-  console.log("ItemOfIndex after useStore:", ItemOfIndex.name, ItemOfIndex.imagelink_portrait);
+  // console.log("ItemOfIndex after useStore:", ItemOfIndex.name, ItemOfIndex.imagelink_portrait);
 
   // const addToFavoriteList = useStore((state: any) => state.addToFavoriteList);
   // const deleteFromFavoriteList = useStore(
