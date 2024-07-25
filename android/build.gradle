@@ -1,22 +1,28 @@
 buildscript {
     ext {
         buildToolsVersion = "34.0.0"
-        minSdkVersion = 21
+        minSdkVersion = 23
         compileSdkVersion = 34
         targetSdkVersion = 34
         ndkVersion = "25.1.8937393"
-        kotlinVersion = "1.8.0"
+        kotlinVersion = "1.9.0"
         googlePlayServicesAuthVersion = "20.7.0"
+        agp_version = '8.4.1'
+        agp_version1 = '8.4.1'
+        agp_version2 = '8.3.0'
+        agp_version3 = '8.4.0'
     }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle")
+        classpath("com.android.tools.build:gradle:8.4.1")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
-        classpath 'com.google.gms:google-services:4.4.0'
+        classpath 'com.google.gms:google-services:4.3.3'
+        // id 'com.google.gms.google-services' version '4.4.2' apply false
+       
     }
 }
 

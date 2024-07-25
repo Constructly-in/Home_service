@@ -2,7 +2,7 @@ import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-nati
 import React, { useState } from 'react'
 import HeaderBar from '../../src/components/HeaderBar'
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen'
-import color from '../utility/color'
+import color from '../../src/utility/color'
 import { useStore } from '../../src/Store/store'
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../src/theme/theme'
@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
         alignItems:"center", 
         justifyContent:"center" ,
         paddingHorizontal: widthPercentageToDP('5%'),
+        marginBottom:20
         // paddingVertical,: heightPercentageToDP('2%')
     },
 

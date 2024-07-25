@@ -16,7 +16,7 @@ import {
   SPACING,
 } from '../theme/theme';
 import CustomIcon from './CustomIcon';
-import color from '../../App/utility/color';
+import color from '../utility/color';
 
 interface CartItemProps {
   id: string;
@@ -124,7 +124,7 @@ const CartItem: React.FC<CartItemProps> = ({
         <LinearGradient
           start={{x: 0, y: 0}}
           end={{x: 1, y: 1}}
-          colors={[color.GREY, color.darkgey]}
+          colors={[color.light_gold, color.gold]}
           style={styles.CartItemSingleLinearGradient}>
           <View>
             <Image
@@ -157,7 +157,7 @@ const CartItem: React.FC<CartItemProps> = ({
               </Text>
             </View>  */}
 
-             <View style={styles.CartItemSingleQuantityContainer}>
+             {/* <View style={styles.CartItemSingleQuantityContainer}>
               <TouchableOpacity
                 style={styles.CartItemIcon}
                 onPress={() => {
@@ -185,7 +185,9 @@ const CartItem: React.FC<CartItemProps> = ({
                   size={FONTSIZE.size_10}
                 />
               </TouchableOpacity>
-            </View> 
+            </View>  */}
+
+            {/* //input text */}
           </View>
         </LinearGradient>
       )}
@@ -199,11 +201,14 @@ const styles = StyleSheet.create({
     gap: SPACING.space_12,
     padding: SPACING.space_12,
     borderRadius: BORDERRADIUS.radius_25,
+    marginTop:10
+    // marginVertical: SPACING.space_10
   },
   CartItemRow: {
     flexDirection: 'row',
     gap: SPACING.space_12,
     flex: 1,
+    
   },
   CartItemImage: {
     height: 130,
@@ -218,12 +223,12 @@ const styles = StyleSheet.create({
   CartItemTitle: {
     fontFamily: FONTFAMILY.poppins_medium,
     fontSize: FONTSIZE.size_18,
-    color: color.Night,
+    color: color.purple,
   },
   CartItemSubtitle: {
     fontFamily: FONTFAMILY.poppins_regular,
     fontSize: FONTSIZE.size_12,
-    color: COLORS.secondaryLightGreyHex,
+    color:color.darkgey,
   },
   CartItemRoastedContainer: {
     height: 50,

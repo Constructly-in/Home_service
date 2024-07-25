@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import MyButton from '../../../src/assets/Buttons/MyButton'
 import CategoryButton from '../../../src/assets/Buttons/CategoryButton'
-import color from '../../utility/color'
+import color from '../../../src/utility/color'
 import { Dimensions } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import CustomIcon from '../../../src/components/CustomIcon'
@@ -26,16 +26,17 @@ const Homescreen = ({ navigation }: HomescreenProps) => {
   const [selectedOption, setSelectedOption] = useState<'Home' | 'Property'>('Home');
 
   return (
+
+
+    <View style={styles.Container} >
+
+
     <LinearGradient start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 0 }}
-      colors={[color.bg_white, color.bg_white]}
-      style={styles.Container}>
+      colors={[color.dark_purple, color.purple]}
+      style={styles.TopContainer}>
 
-
-
-
-
-      <View style={styles.TopContainer}>
+      
 
         {/* Left side - Profile Image */}
         <TouchableOpacity 
@@ -60,38 +61,18 @@ const Homescreen = ({ navigation }: HomescreenProps) => {
 
         {/* Right side - Settings */}
         <TouchableOpacity style={styles.SettingsContainer}
-        onPress={() => navigation.navigate('Order') }
+        onPress={() => navigation.navigate('Notification') }
         >
 
-          {/* <Image
-            source={{ uri: "https://image.similarpng.com/very-thumbnail/2020/08/Notification-bell-icon-new-message-bell-Premium-vector-PNG.png" }}
-            style={styles.notificationImage}
-          /> */}
-
           <CustomIcon name='bell' size={25} color={color.gold} style ={styles.notificationImage}  />
+          
         </TouchableOpacity>
 
-      </View>
-
-
-
-
-      {/* <View style={styles.Header}>
-
-      <TouchableOpacity onPress={() => setSelectedOption('Home')}>
-          <Text style={[styles.Title, selectedOption === 'Home' && styles.selected]}>Home Service</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => setSelectedOption('Property')}>
-          <Text style={[styles.Title_2, selectedOption === 'Property' && styles.selected]}>Property</Text>
-        </TouchableOpacity> 
-      </View> */}
-
+      
+      </LinearGradient>
       <TopTabNavigation />
 
-
-
-
-    </LinearGradient>
+      </View>
 
   )
 }
@@ -110,16 +91,15 @@ const styles = StyleSheet.create({
 
 
   TopContainer: {
-    flex: 0.06,
+    flex: 0.07,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: windowWidth * 0.05, // 5% of the screen width
-    paddingTop: windowHeight * 0.01, // 5% of the screen height
-    backgroundColor: color.GREY,
-
-    // borderBottomEndRadius: 20,
-    // borderBottomLeftRadius: 20
+    paddingVertical: windowHeight * 0.01, // 5% of the screen height
+    backgroundColor: color.white,
+    borderBottomLeftRadius: 20 ,
+    borderBottomRightRadius: 20 ,
   },
 
   ProfileContainer: {

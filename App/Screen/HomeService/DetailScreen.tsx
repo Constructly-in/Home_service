@@ -14,13 +14,22 @@ import {useStore} from '../../../src/Store/store';
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../../src/theme/theme';
 import PaymentFooter from '../../../src/components/PaymentFooter';
 import ImageBackgroundInfo from '../../../src/components/ImageBackgroundInfo';
-import color from '../../utility/color';
-import Booknow from '../../../src/assets/Buttons/Booknow';
+import color from '../../../src/utility/color';
+import Booknow from '../../../src/components/Buttons/Booknow';
+import LinearGradient from 'react-native-linear-gradient';
 
-const DetailScreen = ({navigation, route}: any) => {
-  const ItemOfIndex = useStore((state: any) =>
-    route.params.type == 'Coffee' ? state.HomeServiceList : state.BeanList,
-  )[route.params.index];
+// const DetailScreen = ({navigation, route}: any) => {
+//   const ItemOfIndex = useStore((state: any) =>
+//     route.params.index ==  state.HomeServiceList ,
+//   )[route.params.index];
+const DetailScreen = ({ navigation, route }: any) => {
+  const { index, id, type , imagelink_portrait } = route.params;
+  // console.log("Received params:", index, id, type , imagelink_portrait);
+
+  const HomeServiceList = useStore((state: any) => state.HomeServiceList);
+  const ItemOfIndex = HomeServiceList[index];
+  // console.log("ItemOfIndex after useStore:", ItemOfIndex.name, ItemOfIndex.imagelink_portrait);
+
   // const addToFavoriteList = useStore((state: any) => state.addToFavoriteList);
   // const deleteFromFavoriteList = useStore(
   //   (state: any) => state.deleteFromFavoriteList,
@@ -84,6 +93,13 @@ const DetailScreen = ({navigation, route}: any) => {
           BackHandler={BackHandler}
           // ToggleFavourite={ToggleFavourite}
         />
+ 
+        
+ <LinearGradient
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+      style={styles.CardLinearGradientContainer}
+      colors={[color.purple, color.dark_purple]}>
 
         <View style={styles.FooterInfoArea}>
           <Text style={styles.InfoTitle}>Description</Text>
@@ -107,46 +123,7 @@ const DetailScreen = ({navigation, route}: any) => {
             </TouchableWithoutFeedback>
           )}
 
-          {/* <Text style={styles.InfoTitle}>Size</Text>
-          <View style={styles.SizeOuterContainer}>
-            {ItemOfIndex.prices.map((data: any) => (
-              <TouchableOpacity
-                key={data.size}
-                onPress={() => {
-                  setPrice(data);
-                }}
-                style={[
-                  styles.SizeBox,
-                  {
-                    borderColor:
-                      data.size == price.size
-                        ? COLORS.primaryOrangeHex
-                        : COLORS.primaryDarkGreyHex,
-                  },
-                ]}>
-                <Text
-                  style={[
-                    styles.SizeText,
-                    {
-                      fontSize:
-                        ItemOfIndex.type == 'Bean'
-                          ? FONTSIZE.size_14
-                          : FONTSIZE.size_16,
-                      color:
-                        data.size == price.size
-                          ? COLORS.primaryOrangeHex
-                          : COLORS.secondaryLightGreyHex,
-                    },
-                  ]}>
-                  {data.size}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </View> */}
-
         </View>
-
-        {/* <Booknow title={'Book now'} onPress={undefined} /> */}
 
         <PaymentFooter
           // price={price}
@@ -164,6 +141,7 @@ const DetailScreen = ({navigation, route}: any) => {
             });
           }}
         />
+        </LinearGradient>
 
       </ScrollView>
     </View>
@@ -181,18 +159,19 @@ const styles = StyleSheet.create({
   },
   FooterInfoArea: {
     padding: SPACING.space_20,
+    // backgroundColor: color.purple
   },
   InfoTitle: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_16,
-    color: color.Obsidian,
+    color: color.gold,
     marginBottom: SPACING.space_10,
   },
   DescriptionText: {
     letterSpacing: 0.5,
     fontFamily: FONTFAMILY.poppins_regular,
     fontSize: FONTSIZE.size_14,
-    color: color.Night,
+    color: color.WHITE,
     marginBottom: SPACING.space_30,
   },
   SizeOuterContainer: {
@@ -213,6 +192,10 @@ const styles = StyleSheet.create({
   // SizeText: {
   //   fontFamily: FONTFAMILY.poppins_medium,
   // },
+
+  CardLinearGradientContainer:{
+    flex: 1 ,
+  }
 });
 
 export default DetailScreen;

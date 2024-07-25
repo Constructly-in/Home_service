@@ -29,21 +29,6 @@
 		07146942A55043F4983CD323 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97BDDFC635CA4A25851B985C /* Poppins-Regular.ttf */; };
 		838EA160FDF9422D836A6D89 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF83ED34965A480D862F7418 /* Poppins-SemiBold.ttf */; };
 		C245105370794336B69F85FC /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E74CFB3E88B44EB290F4FF05 /* Poppins-Thin.ttf */; };
-		E088D38E52624BE2AA660BCD /* amazonpay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BCC93C7A64B44BD6B93E3 /* amazonpay.png */; };
-		23FEC9E0761841679646B951 /* applepay.png in Resources */ = {isa = PBXBuildFile; fileRef = B0B8D2EFB09C4DB2951AE4B3 /* applepay.png */; };
-		CDDA6544D5944A35B2A9DB66 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = B21367BCB4084128A623CB5D /* avatar.png */; };
-		0C01480D910C41898D63BF18 /* gpay.png in Resources */ = {isa = PBXBuildFile; fileRef = DD95DAF612A640DA9FCB5550 /* gpay.png */; };
-		BC905F33F0ED4008A477899A /* Booknow.tsx in Resources */ = {isa = PBXBuildFile; fileRef = E309A0A71B9948AC9DA4CC19 /* Booknow.tsx */; };
-		6FC93B0379764C70BA597CBA /* CategoryButton.tsx in Resources */ = {isa = PBXBuildFile; fileRef = 259F8814DA2C476E9A1FC994 /* CategoryButton.tsx */; };
-		5813F93247814EBA84F2AB66 /* MyButton.tsx in Resources */ = {isa = PBXBuildFile; fileRef = FE5CB8140B6E4C46A6E22A35 /* MyButton.tsx */; };
-		38DB1810F7C64399991B64CC /* MyTextInput.tsx in Resources */ = {isa = PBXBuildFile; fileRef = 7F7B85A13FA1421CA38B79C7 /* MyTextInput.tsx */; };
-		1D946A6DB40A437195AB201F /* Socialmedia.tsx in Resources */ = {isa = PBXBuildFile; fileRef = 6CA45C1D4F96449D891B8DC0 /* Socialmedia.tsx */; };
-		F0EE4D48231D47EDA19D58F7 /* carpainter.png in Resources */ = {isa = PBXBuildFile; fileRef = DB2874164B50460997388D5A /* carpainter.png */; };
-		C36D343852404AFAB9681795 /* cleaner.png in Resources */ = {isa = PBXBuildFile; fileRef = E0416FF09828472EB387B67E /* cleaner.png */; };
-		1EDE426EBC65451AA50EC32A /* electrician.png in Resources */ = {isa = PBXBuildFile; fileRef = 5432F7B44FD244B4BC544CBE /* electrician.png */; };
-		A636177B539B4A379CAD47C3 /* painter.png in Resources */ = {isa = PBXBuildFile; fileRef = 908556976B984D3482935E36 /* painter.png */; };
-		55C752B0C1F54C3EA5B34686 /* plumber.png in Resources */ = {isa = PBXBuildFile; fileRef = 2930799F1B854EEF8DDB966A /* plumber.png */; };
-		4AEF478C5F084E18824EF586 /* carpenter.png in Resources */ = {isa = PBXBuildFile; fileRef = D9EDB5EBA38F4B4AB8A8DBDC /* carpenter.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,21 +74,6 @@
 		97BDDFC635CA4A25851B985C /* Poppins-Regular.ttf */ = {isa = PBXFileReference; name = "Poppins-Regular.ttf"; path = "../src/assets/Fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		AF83ED34965A480D862F7418 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; name = "Poppins-SemiBold.ttf"; path = "../src/assets/Fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		E74CFB3E88B44EB290F4FF05 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; name = "Poppins-Thin.ttf"; path = "../src/assets/Fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9B2BCC93C7A64B44BD6B93E3 /* amazonpay.png */ = {isa = PBXFileReference; name = "amazonpay.png"; path = "../src/assets/app_images/amazonpay.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B0B8D2EFB09C4DB2951AE4B3 /* applepay.png */ = {isa = PBXFileReference; name = "applepay.png"; path = "../src/assets/app_images/applepay.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B21367BCB4084128A623CB5D /* avatar.png */ = {isa = PBXFileReference; name = "avatar.png"; path = "../src/assets/app_images/avatar.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DD95DAF612A640DA9FCB5550 /* gpay.png */ = {isa = PBXFileReference; name = "gpay.png"; path = "../src/assets/app_images/gpay.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E309A0A71B9948AC9DA4CC19 /* Booknow.tsx */ = {isa = PBXFileReference; name = "Booknow.tsx"; path = "../src/assets/Buttons/Booknow.tsx"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		259F8814DA2C476E9A1FC994 /* CategoryButton.tsx */ = {isa = PBXFileReference; name = "CategoryButton.tsx"; path = "../src/assets/Buttons/CategoryButton.tsx"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		FE5CB8140B6E4C46A6E22A35 /* MyButton.tsx */ = {isa = PBXFileReference; name = "MyButton.tsx"; path = "../src/assets/Buttons/MyButton.tsx"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7F7B85A13FA1421CA38B79C7 /* MyTextInput.tsx */ = {isa = PBXFileReference; name = "MyTextInput.tsx"; path = "../src/assets/Buttons/MyTextInput.tsx"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6CA45C1D4F96449D891B8DC0 /* Socialmedia.tsx */ = {isa = PBXFileReference; name = "Socialmedia.tsx"; path = "../src/assets/Buttons/Socialmedia.tsx"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DB2874164B50460997388D5A /* carpainter.png */ = {isa = PBXFileReference; name = "carpainter.png"; path = "../src/assets/home_service_assets/logo/carpainter.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E0416FF09828472EB387B67E /* cleaner.png */ = {isa = PBXFileReference; name = "cleaner.png"; path = "../src/assets/home_service_assets/logo/cleaner.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5432F7B44FD244B4BC544CBE /* electrician.png */ = {isa = PBXFileReference; name = "electrician.png"; path = "../src/assets/home_service_assets/logo/electrician.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		908556976B984D3482935E36 /* painter.png */ = {isa = PBXFileReference; name = "painter.png"; path = "../src/assets/home_service_assets/logo/painter.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2930799F1B854EEF8DDB966A /* plumber.png */ = {isa = PBXFileReference; name = "plumber.png"; path = "../src/assets/home_service_assets/logo/plumber.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D9EDB5EBA38F4B4AB8A8DBDC /* carpenter.png */ = {isa = PBXFileReference; name = "carpenter.png"; path = "../src/assets/home_service_assets/square/carpenter.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,21 +197,6 @@
 				97BDDFC635CA4A25851B985C /* Poppins-Regular.ttf */,
 				AF83ED34965A480D862F7418 /* Poppins-SemiBold.ttf */,
 				E74CFB3E88B44EB290F4FF05 /* Poppins-Thin.ttf */,
-				9B2BCC93C7A64B44BD6B93E3 /* amazonpay.png */,
-				B0B8D2EFB09C4DB2951AE4B3 /* applepay.png */,
-				B21367BCB4084128A623CB5D /* avatar.png */,
-				DD95DAF612A640DA9FCB5550 /* gpay.png */,
-				E309A0A71B9948AC9DA4CC19 /* Booknow.tsx */,
-				259F8814DA2C476E9A1FC994 /* CategoryButton.tsx */,
-				FE5CB8140B6E4C46A6E22A35 /* MyButton.tsx */,
-				7F7B85A13FA1421CA38B79C7 /* MyTextInput.tsx */,
-				6CA45C1D4F96449D891B8DC0 /* Socialmedia.tsx */,
-				DB2874164B50460997388D5A /* carpainter.png */,
-				E0416FF09828472EB387B67E /* cleaner.png */,
-				5432F7B44FD244B4BC544CBE /* electrician.png */,
-				908556976B984D3482935E36 /* painter.png */,
-				2930799F1B854EEF8DDB966A /* plumber.png */,
-				D9EDB5EBA38F4B4AB8A8DBDC /* carpenter.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -357,21 +312,6 @@
 				07146942A55043F4983CD323 /* Poppins-Regular.ttf in Resources */,
 				838EA160FDF9422D836A6D89 /* Poppins-SemiBold.ttf in Resources */,
 				C245105370794336B69F85FC /* Poppins-Thin.ttf in Resources */,
-				E088D38E52624BE2AA660BCD /* amazonpay.png in Resources */,
-				23FEC9E0761841679646B951 /* applepay.png in Resources */,
-				CDDA6544D5944A35B2A9DB66 /* avatar.png in Resources */,
-				0C01480D910C41898D63BF18 /* gpay.png in Resources */,
-				BC905F33F0ED4008A477899A /* Booknow.tsx in Resources */,
-				6FC93B0379764C70BA597CBA /* CategoryButton.tsx in Resources */,
-				5813F93247814EBA84F2AB66 /* MyButton.tsx in Resources */,
-				38DB1810F7C64399991B64CC /* MyTextInput.tsx in Resources */,
-				1D946A6DB40A437195AB201F /* Socialmedia.tsx in Resources */,
-				F0EE4D48231D47EDA19D58F7 /* carpainter.png in Resources */,
-				C36D343852404AFAB9681795 /* cleaner.png in Resources */,
-				1EDE426EBC65451AA50EC32A /* electrician.png in Resources */,
-				A636177B539B4A379CAD47C3 /* painter.png in Resources */,
-				55C752B0C1F54C3EA5B34686 /* plumber.png in Resources */,
-				4AEF478C5F084E18824EF586 /* carpenter.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

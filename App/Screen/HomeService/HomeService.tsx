@@ -1,15 +1,20 @@
-import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, FlatList, Dimensions } from 'react-native'
-import React, { useRef, useState } from 'react'
-import color from '../../utility/color'
-import ElevatedCards from '../../../src/components/ElevatedCards'
-import LongCards from '../../../src/components/LongCards'
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, FlatList, Dimensions, LogBox } from 'react-native'
+import React, { useEffect, useRef, useState } from 'react'
+import color from '../../../src/utility/color'
+
+
 // import React, {useRef, useState} from 'react';
 import { useStore } from '../../../src/Store/store'
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../../src/theme/theme'
 import CoffeeCard from '../../../src/components/CoffeeCard'
 import Offer from '../../../src/components/Offer'
+import homeServiceData from '../../../src/data/homeServiceData'
 // import category from '../../../src/components/category'
+
+
+
+
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -42,12 +47,12 @@ const HomeService = ({ navigation }: any) => {
   const [categories, setCategories] = useState(
     getCategoriesFromData(HomeServiceList),
   );
-  const [searchText, setSearchText] = useState('');
+  // const [searchText, setSearchText] = useState('');
   const [categoryIndex, setCategoryIndex] = useState({
-    index: 0,
+    index: 0,    
     category: categories[0],
   });
-  const [sortedCoffee, setSortedCoffee] = useState(
+  const [sortedHomeService, setSortedHomeService] = useState(
     getHomeServiceList(categoryIndex.category, HomeServiceList),
   );
 
@@ -56,7 +61,8 @@ const HomeService = ({ navigation }: any) => {
   const tabBarHeight = useBottomTabBarHeight();
 
 
-  // console.log('category=', categories);
+
+  
   return (
     <ScrollView style={{ flexGrow: 1 }}>
 
@@ -84,7 +90,7 @@ const HomeService = ({ navigation }: any) => {
                     offset: 0,
                   });
                   setCategoryIndex({ index: index, category: categories[index] });
-                  setSortedCoffee([
+                  setSortedHomeService([
                     ...getHomeServiceList(categories[index], HomeServiceList),
                   ]);
                 }}>
@@ -107,55 +113,53 @@ const HomeService = ({ navigation }: any) => {
           ))}
         </ScrollView>
 
-        {/* Coffee Flatlist */}
+        {/* home service Flatlist */}
 
         <FlatList
           ref={ListRef}
-          horizontal
-          // numColumns={2}
+          // horizontal
+          numColumns={2}
           //coffe search
           // ListEmptyComponent={
           //   <View style={styles.EmptyListContainer}>
           //     <Text style={styles.CategoryText}>No Coffee Available</Text>
           //   </View>
           // }
-
+          scrollEnabled={false}
           showsHorizontalScrollIndicator={false}
-          data={sortedCoffee}
-          contentContainerStyle={styles.FlatListContainer}
+          data={sortedHomeService}
+          contentContainerStyle={[styles.FlatListContainer , {marginBottom:tabBarHeight}]}
           keyExtractor={item => item.id}
           renderItem={({ item }) => {
             return (
               <TouchableOpacity
+              activeOpacity={0.8}
                 onPress={() => {
+                  // console.log("Navigating to Details with index:", item.index, "id:", item.id, "type:", item.type , "image:" , item.imagelink_portrait , );
                   navigation.push('Details', {
                     index: item.index,
                     id: item.id,
                     type: item.type,
+                    imagelink_portrait: item.imagelink_portrait,
                   });
                 }}>
                 <CoffeeCard
                   id={item.id}
                   index={item.index}
                   type={item.type}
-                  roasted={item.roasted}
+                  imagelink_portrait={item.imagelink_portrait}
                   imagelink_square={item.imagelink_square}
                   name={item.name}
                   special_ingredient={item.special_ingredient}
-                  average_rating={item.average_rating}
-                  // price={item.prices[2]}
-                  buttonPressHandler={() => { }}
+                 
                 />
               </TouchableOpacity>
             );
           }}
         />
 
-        {/* <Text style={styles.CoffeeBeansTitle}>Coffee Beans</Text> */}
-
-        {/* <ElevatedCards /> */}
-        {/* <ElevatedCards /> */}
-        <LongCards />
+      
+        {/* <LongCards /> */}
 
 
 
@@ -164,6 +168,8 @@ const HomeService = ({ navigation }: any) => {
 
 
     </ScrollView>
+
+    // {/* </View> */}
 
 
   )
@@ -218,6 +224,8 @@ const styles = StyleSheet.create({
     gap: SPACING.space_15*1.1,
     paddingVertical: SPACING.space_20,
     paddingHorizontal: SPACING.space_20,
+    // marginBottom: tab
+    // backgroundColor:"green"
   },
   EmptyListContainer: {
     width: Dimensions.get('window').width - SPACING.space_30 * 2,

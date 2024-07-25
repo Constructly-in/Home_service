@@ -8,7 +8,7 @@ import {
   FONTSIZE,
   SPACING,
 } from '../theme/theme';
-import color from '../../App/utility/color';
+import color from '../utility/color';
 
 interface OrderItemCardProps {
   type: string;
@@ -31,7 +31,7 @@ const OrderItemCard: React.FC<OrderItemCardProps> = ({
     <LinearGradient
       start={{x: 0, y: 0}}
       end={{x: 1, y: 1}}
-      colors={[color.GREY, color.darkgey]}
+      colors={[color.light_gold, color.gold]}
       style={styles.CardLinearGradient}>
       <View style={styles.CardInfoContainer}>
         <View style={styles.CardImageInfoContainer}>
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     gap: SPACING.space_20,
     padding: SPACING.space_20,
     borderRadius: BORDERRADIUS.radius_25,
-    marginVertical: SPACING.space_20
+    // marginVertical: SPACING.space_10
   },
   CardInfoContainer: {
     flexDirection: 'row',
@@ -109,11 +109,11 @@ const styles = StyleSheet.create({
   CardTitle: {
     fontFamily: FONTFAMILY.poppins_medium,
     fontSize: FONTSIZE.size_20,
-    color: color.Obsidian,
+    color: color.purple,
   },
   CardSubtitle: {
     fontFamily: FONTFAMILY.poppins_regular,
-    fontSize: FONTSIZE.size_15,
+    fontSize: FONTSIZE.size_12,
     color: color.WHITE,
   },
   CardCurrency: {

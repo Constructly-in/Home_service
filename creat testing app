@@ -6,3 +6,9 @@ cd android
   then go to 
 
   C:\Users\prakh\projects\Home_service\android\app\build\outputs\apk\release
+
+
+  //
+  cd android
+>> ./gradlew clean
+>> .\gradlew assembleRelease

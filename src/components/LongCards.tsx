@@ -1,6 +1,6 @@
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import color from '../../App/utility/color'
+import color from '../utility/color'
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { heightPercentageToDP } from 'react-native-responsive-screen';
 

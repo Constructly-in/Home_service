@@ -1,37 +1,27 @@
-import { View, Text, Image, ImageBackground, StyleSheet, TouchableOpacity, Alert } from 'react-native';
-import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsive-screen';
+import { View, Text, ImageBackground, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import React, { useEffect, useState } from 'react';
-import color from '../../utility/color';
-import MyButton from '../../../src/assets/Buttons/MyButton';
-import MyTextInput from '../../../src/assets/Buttons/MyTextInput';
+import color from '../../../src/utility/color';
+import MyButton from '../../../src/components/Buttons/MyButton';
+import MyTextInput from '../../../src/components/Buttons/MyTextInput';
 import auth from "@react-native-firebase/auth";
-// import AsyncStorage from '@react-native-async-storage/async-storage';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import LinearGradient from 'react-native-linear-gradient';
 import { useAuth } from '../../Contexts/AuthContext';
 
 interface SignScreenProps {
-    navigation: any; // Change 'any' to the actual type if possible
-    
+    navigation: any;
 }
 
 export default function SignScreen({ navigation }: SignScreenProps) {
     const { login } = useAuth();
     const [email, setEmail] = useState("");
-    // const [userStorage,setUserStorage] = useState('');
-    const [password, setPasswword] = useState("");
-
-    // const getStorage = async () => {
-    //     const storageValue = await AsyncStorage.getItem('userEmail');
-    //     setUserStorage(storageValue);
-    //     // console.log(storageValue);
-    // }
+    const [password, setPassword] = useState("");
 
     useEffect(() => {
         GoogleSignin.configure({
             webClientId: '570696891484-6127lf9k6ogrqmioehqi59gd31q803po.apps.googleusercontent.com',
         });
-        // getStorage();
     }, []);
 
     const onGoogleButtonPress = async () => {
@@ -39,236 +29,174 @@ export default function SignScreen({ navigation }: SignScreenProps) {
             await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
             const { idToken } = await GoogleSignin.signIn();
             console.log(idToken);
-            // Alert.alert("Successful login");
-            // navigation.navigate("Tabnavigation");
-            
 
             const googleCredential = auth.GoogleAuthProvider.credential(idToken);
             return auth().signInWithCredential(googleCredential);
-
         } catch (error) {
             console.log(error);
         }
     }
 
-    const loginWithEmailAndPassword = async() => {
-        if (email !== "" && password !== ""){
+    const loginWithEmailAndPassword = async () => {
+        if (email !== "" && password !== "") {
             try {
-                const userDoc = await login(email,password);
-                if(userDoc !== undefined ) {
+                const userDoc = await login(email, password);
+                if (userDoc !== undefined) {
                     navigation.replace("Tabnavigation");
                 }
-
-            //   .then(() => {
-            //   })
-            }catch {
-              Alert.alert("An error occured!");
+            } catch {
+                Alert.alert("An error occurred!");
             }
-        }else {
-        Alert.alert("Please Fill in all the details!")
+        } else {
+            Alert.alert("Please fill in all the details!");
         }
     };
 
-    // const NeuMorph = ({children , size , style }) => {
-
-    //     return(
-    //         <View style = {styles.topShadow}>
-    //              <View style = {styles.bottomShadow}>
-    //                  <View 
-    //                    style = {[ styles.inner , {width: size || 40 , height: size || 40 , borderRadius: size /2 ||40/2},style
-    //                  ]}
-    //                 >
-    //                     {children}
-    //                 </View>
-
-    //              </View>
-    //         </View>     
-
-    //     )
-    // };
-
-
-
-
-
-
     return (
-
-        <View style={styles.Container}>
-            <LinearGradient start={{x: 0, y: 0}} 
-                                end={{x: 1, y: 0}} 
-                                colors={[color.gradiant1, color.gradiant ]} 
-                                style={styles.Container}>
-            <ImageBackground
-                source={require('./../../../image/OneDrive-2024-02-07/circle.png')}
-                style={styles.loginScreen}
+        <View style={styles.container}>
+            <LinearGradient
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 0 }}
+                colors={[color.purple, color.dark_purple]}
+                style={styles.container}
             >
-                {/* <Image
-          source={require('./../../../image/OneDrive-2024-02-07/logo.png')}
-          style={styles.LogoImage}
-        /> */}
+                <ImageBackground
+                    source={require('./../../../image/OneDrive-2024-02-07/circle.png')}
+                    style={styles.loginScreen}
+                >
+                    <View style={{ position: "relative", top: "5%" }}>
+                        <Text style={styles.title}>
+                            Constructly.in
+                        </Text>
+                    </View>
 
-                <View style={{ position: "relative", top: "5%" }} >
-                    <Text style={styles.Title} >
-                        Constructly.in
-                    </Text>
-                </View>
-
-             {/* <NeuMorph > */}
-                {/* <View style={styles.innerContainer}> */}
-                <LinearGradient start={{x: 0, y: 0}} 
-                                end={{x: 1, y: 0}} 
-
-                                // ['#242831', '#414345']
-                                
-                                colors={[color.Offwhite, color.Offwhite]} 
-                                style={styles.innerContainer}>
-
-                    
-
-                    
-                        <MyTextInput style={styles.inputText}
+                    <LinearGradient
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 0 }}
+                        colors={[color.Offwhite, color.Offwhite]}
+                        style={styles.innerContainer}
+                    >
+                        <MyTextInput
+                            style={styles.inputText}
                             value={email}
                             onChangeText={(text: string) => setEmail(text)}
-                            placeholder="Enter E-Mail" placeholderTextColor = {color.white}
+                            placeholder="Enter E-Mail"
+                            placeholderTextColor={color.white}
                         />
-                    
 
-                   
-                        <MyTextInput style={styles.inputText}
+                        <MyTextInput
+                            style={styles.inputText}
                             value={password}
-                            onChangeText={(text: string) => setPasswword(text)}
+                            onChangeText={(text: string) => setPassword(text)}
                             placeholder="Password"
                             secureTextEntry
-                            placeholderTextColor = {color.white}
+                            placeholderTextColor={color.white}
                         />
 
-                    
                         <Text
-                            style={styles.TextAccount}
+                            style={styles.textAccount}
                             onPress={() => navigation.navigate("SingupScreen")}
                         >
-                            Don't Have an account yet ? Sign Up
+                            Don't Have an account yet? Sign Up
                         </Text>
 
+                        <MyButton title={"LOGIN"} onPress={loginWithEmailAndPassword} />
 
-                  
-
-                    <MyButton title={"LOGIN"} onPress={loginWithEmailAndPassword} />
-                    
-
-
-                    <Text style={styles.Ortext}>OR</Text>
-                    <MyButton title={"LOGIN WITH GOOGLE"} onPress={() => onGoogleButtonPress().then((userLog) => console.log(userLog) )} />
+                        <Text style={styles.orText}>OR</Text>
+                        <MyButton title={"LOGIN WITH GOOGLE"} onPress={() => onGoogleButtonPress().then((userLog) => console.log(userLog))} />
                     </LinearGradient>
-                {/* </View> */}
-                {/* </NeuMorph> */}
-
-            </ImageBackground>
-
-            
-
+                </ImageBackground>
             </LinearGradient>
-             
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    Container: {
+    container: {
         flex: 1,
     },
 
     loginScreen: {
-        height: heightPercentageToDP('100%'),
-        width: widthPercentageToDP('100%'),
+        height: hp('100%'),
+        width: wp('100%'),
         alignItems: 'center',
     },
 
-    Title: {
+    title: {
         textAlign: 'center',
-        fontSize: widthPercentageToDP('7%'),
-        color: color.Offwhite,
-        marginTop: heightPercentageToDP('10%'),
+        fontSize: wp('7%'),
+        color: color.gold,
+        marginTop: hp('10%'),
         fontFamily: "Cardo-Bold"
     },
 
-    LogoImage: {
-        height: heightPercentageToDP('15%'),
-        width: widthPercentageToDP('40%'),
-        position: 'absolute',
-        left: 0,
-        top: 0,
-    },
-
     innerContainer: {
-        height: heightPercentageToDP('60%'),
-        width: widthPercentageToDP('90%'),
-        // backgroundColor: color.BLACK,
-        borderRadius: widthPercentageToDP('5%'),
-        paddingHorizontal: widthPercentageToDP('10%'),
+        height: hp('60%'),
+        width: wp('90%'),
+        borderRadius: wp('5%'),
+        paddingHorizontal: wp('10%'),
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
         top: "13%",
         shadowRadius: 2,
         shadowOffset: {
-          width: 100,
-          height: 100,
+            width: 100,
+            height: 100,
         },
-        shadowColor:color.BLACK,
+        shadowColor: color.BLACK,
         elevation: 5,
     },
 
-    TextAccount: {
+    textAccount: {
         alignSelf: "flex-end",
-        marginRight: widthPercentageToDP('5%'),
+        marginRight: wp('5%'),
         color: color.PRIMARY,
-        marginBottom: heightPercentageToDP('1%'),
+        marginBottom: hp('1%'),
         fontWeight: '400',
-        fontSize: widthPercentageToDP('4%'),
+        fontSize: wp('4%'),
     },
 
-    Ortext: {
-        fontSize: widthPercentageToDP('6%'),
+    orText: {
+        fontSize: wp('6%'),
         color: color.PRIMARY,
-        marginTop: heightPercentageToDP('1%'),
-        marginBottom: heightPercentageToDP('1%'),
+        marginTop: hp('1%'),
+        marginBottom: hp('1%'),
     },
     inputText: {
         color: color.white,
-        
+        // backgroundColor:"red",
+        flex:1
     },
 
-    linearGradient:{},
+    linearGradient: {},
 
-    inner:{
-      backgroundColor:color.PRIMARY,
-      alignItems:"center",
-      justifyContent:"center",
-      borderColor:color.Offwhite,
-      borderWidth:1
+    inner: {
+        backgroundColor: color.PRIMARY,
+        alignItems: "center",
+        justifyContent: "center",
+        borderColor: color.Offwhite,
+        borderWidth: 1
     },
-   
-    topShadow:{
-        shadowOffset:{
-            width:-6,
+
+    topShadow: {
+        shadowOffset: {
+            width: -6,
             height: -6
         },
 
-        shadowOpacity:1,
-        shadowRadius:6,
-        shadowColor:"FBFFFF"
+        shadowOpacity: 1,
+        shadowRadius: 6,
+        shadowColor: "FBFFFF"
     },
-    bottomShadow:{
-        shadowOffset:{
-            width:  6,
+    bottomShadow: {
+        shadowOffset: {
+            width: 6,
             height: 6
         },
 
-        shadowOpacity:1,
-        shadowRadius:6,
-        shadowColor:"B7C4DD"
+        shadowOpacity: 1,
+        shadowRadius: 6,
+        shadowColor: "B7C4DD"
     }
-
 });

@@ -16,6 +16,7 @@ import {
   SPACING,
 } from '../theme/theme';
 import CustomIcon from './CustomIcon';
+import color from '../utility/color';
 
 interface ImageBackgroundInfoProps {
   EnableBackHandler: boolean;
@@ -83,7 +84,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               <View style={styles.RatingContainer}>
                 <CustomIcon
                   name={'star'}
-                  color={COLORS.primaryOrangeHex}
+                  color={color.light_purple}
                   size={FONTSIZE.size_20}
                 />
                 <Text style={styles.RatingText}>{average_rating}</Text>
@@ -107,7 +108,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
 const styles = StyleSheet.create({
   ItemBackgroundImage: {
     width: '100%',
-    aspectRatio: 20 / 25,
+    aspectRatio: 19 / 25,
     justifyContent: 'space-between',
   },
   ImageHeaderBarContainerWithBack: {
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
   ImageInfoOuterContainer: {
     paddingVertical: SPACING.space_24,
     paddingHorizontal: SPACING.space_30,
-    backgroundColor: COLORS.primaryBlackRGBA,
+    backgroundColor: "rgba(218, 148, 16, 0.64)",
     borderTopLeftRadius: BORDERRADIUS.radius_20 * 2,
     borderTopRightRadius: BORDERRADIUS.radius_20 * 2,
   },
